@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Nexus Titan — CSS Effects</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- =====================================================
+         CURSOR
+    ====================================================== -->
+
+    <div class="cursor"></div>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header>
+      <nav>
+        <div class="logo">NEXUS TITAN</div>
+
+        <ul>
+          <li>
+            <a href="#basicos">Básicos</a>
+          </li>
+
+          <li>
+            <a href="#avancados">Avançados</a>
+          </li>
+
+          <li>
+            <a href="#interativos">Interativos</a>
+          </li>
+        </ul>
+      </nav>
+
+      <section class="hero">
+        <span class="tag"> CSS EFFECTS LIBRARY </span>
+
+        <h1 class="glitch">NEXUS TITAN</h1>
+
+        <p>Uma biblioteca visual para estudar efeitos modernos em CSS.</p>
+
+        <button class="btn hero-btn">EXPLORAR</button>
+      </section>
+
+      <!-- GRID DO FUNDO -->
+
+      <div class="hero-grid"></div>
+    </header>
+
+    <main>
+      <!-- =================================================
+             BÁSICOS
+        ================================================== -->
+
+      <section id="basicos" class="section">
+        <h2>Efeitos fundamentais</h2>
+
+        <p class="intro">
+          Efeitos que você vai usar constantemente em interfaces modernas.
+        </p>
+
+        <!-- CARD -->
+
+        <article class="effect">
+          <h3>01 — Card Hover</h3>
+
+          <p>O card sobe e recebe brilho quando o mouse passa sobre ele.</p>
+
+          <div class="demo">
+            <div class="card">
+              <span class="card-number"> 01 </span>
+
+              <h4>PLANO TITAN</h4>
+
+              <p>Treinamento completo.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- TEXTO GRADIENTE -->
+
+        <article class="effect">
+          <h3>02 — Texto Gradiente</h3>
+
+          <p>O gradiente é aplicado diretamente sobre o texto.</p>
+
+          <div class="demo">
+            <h4 class="gradient-text">SUPERE SEUS LIMITES</h4>
+          </div>
+        </article>
+
+        <!-- SHIMMER -->
+
+        <article class="effect">
+          <h3>03 — Shimmer</h3>
+
+          <p>Uma faixa de luz percorre o elemento.</p>
+
+          <div class="demo">
+            <div class="shimmer">
+              <h4>NEXUS TITAN</h4>
+
+              <p>FORÇA • FOCO • EVOLUÇÃO</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- IMAGEM -->
+
+        <article class="effect">
+          <h3>04 — Grayscale + Zoom</h3>
+
+          <p>A imagem começa em preto e branco e ganha cor no hover.</p>
+
+          <div class="demo">
+            <div class="image-box">
+              <img
+                src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48"
+                alt="Academia"
+              />
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- =================================================
+             AVANÇADOS
+        ================================================== -->
+
+      <section id="avancados" class="section">
+        <h2>Efeitos avançados</h2>
+
+        <p class="intro">
+          Aqui começam alguns recursos menos comuns e que exigem mais atenção.
+        </p>
+
+        <!-- =================================================
+                 GLITCH
+            ================================================== -->
+
+        <article class="effect">
+          <h3>05 — Glitch</h3>
+
+          <p>
+            Usa pseudo-elementos para duplicar o texto e criar uma distorção
+            digital.
+          </p>
+
+          <div class="demo">
+            <h4 class="glitch glitch-demo" data-text="NEXUS">NEXUS</h4>
+          </div>
+        </article>
+
+        <!-- =================================================
+                 TEXTO DIGITANDO
+            ================================================== -->
+
+        <article class="effect">
+          <h3>06 — Texto Digitando</h3>
+
+          <p>A animação controla a largura do texto usando steps().</p>
+
+          <div class="demo">
+            <div class="typing">SUPERE SEUS LIMITES.</div>
+          </div>
+        </article>
+
+        <!-- =================================================
+                 BORDER BEAM
+            ================================================== -->
+
+        <article class="effect">
+          <h3>07 — Border Beam</h3>
+
+          <p>Uma luz percorre a borda continuamente.</p>
+
+          <div class="demo">
+            <div class="beam-card">
+              <h4>PLANO TITAN</h4>
+
+              <p>ACESSO COMPLETO</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- =================================================
+                 SPOTLIGHT
+            ================================================== -->
+
+        <article class="effect">
+          <h3>08 — Spotlight</h3>
+
+          <p>Uma iluminação acompanha a posição do mouse dentro do card.</p>
+
+          <div class="demo">
+            <div class="spotlight">
+              <span> MOVA O MOUSE </span>
+            </div>
+          </div>
+        </article>
+
+        <!-- =================================================
+                 3D
+            ================================================== -->
+
+        <article class="effect">
+          <h3>09 — Card 3D</h3>
+
+          <p>
+            Perspective cria profundidade enquanto rotateX e rotateY inclinam o
+            elemento.
+          </p>
+
+          <div class="demo perspective">
+            <div class="three-card">
+              <span> NEXUS </span>
+
+              <strong> TITAN </strong>
+            </div>
+          </div>
+        </article>
+
+        <!-- =================================================
+                 CLIP PATH
+            ================================================== -->
+
+        <article class="effect">
+          <h3>10 — Clip Path</h3>
+
+          <p>Cria formas geométricas sem precisar de imagens.</p>
+
+          <div class="demo">
+            <div class="clip-card">TITAN</div>
+          </div>
+        </article>
+
+        <!-- =================================================
+                 MÁSCARA
+            ================================================== -->
+
+        <article class="effect">
+          <h3>11 — Reveal / Máscara</h3>
+
+          <p>O conteúdo aparece através de uma área que cresce.</p>
+
+          <div class="demo">
+            <div class="reveal">
+              <h4>EVOLUÇÃO</h4>
+
+              <p>COMEÇA AGORA</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- =================================================
+                 GRADIENTE ANIMADO
+            ================================================== -->
+
+        <article class="effect">
+          <h3>12 — Gradiente Animado</h3>
+
+          <p>O background-position é animado continuamente.</p>
+
+          <div class="demo">
+            <div class="animated-gradient">NEXUS TITAN</div>
+          </div>
+        </article>
+
+        <!-- =================================================
+                 GRID
+            ================================================== -->
+
+        <article class="effect">
+          <h3>13 — Grid Futurista</h3>
+
+          <p>Duas camadas de linear-gradient criam as linhas do grid.</p>
+
+          <div class="demo">
+            <div class="future-grid">
+              <span> SYSTEM ONLINE </span>
+            </div>
+          </div>
+        </article>
+
+        <!-- =================================================
+                 NOISE
+            ================================================== -->
+
+        <article class="effect">
+          <h3>14 — Noise / Granulado</h3>
+
+          <p>Um pseudo-elemento cria uma textura sobre o fundo.</p>
+
+          <div class="demo">
+            <div class="noise">
+              <h4>PREMIUM</h4>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- =================================================
+             INTERATIVOS
+        ================================================== -->
+
+      <section id="interativos" class="section">
+        <h2>Efeitos interativos</h2>
+
+        <p class="intro">
+          Alguns desses efeitos precisam de JavaScript para detectar ações do
+          usuário.
+        </p>
+
+        <!-- =================================================
+                 MARQUEE
+            ================================================== -->
+
+        <article class="effect">
+          <h3>15 — Marquee Infinito</h3>
+
+          <p>Texto se movimentando continuamente.</p>
+
+          <div class="marquee">
+            <div class="marquee-content">
+              FORÇA • FOCO • DISCIPLINA • EVOLUÇÃO • FORÇA • FOCO • DISCIPLINA •
+              EVOLUÇÃO •
+            </div>
+          </div>
+        </article>
+
+        <!-- =================================================
+                 CONTADOR
+            ================================================== -->
+
+        <article class="effect">
+          <h3>16 — Contador</h3>
+
+          <p>
+            Um número é incrementado através de JavaScript e estilizado com CSS.
+          </p>
+
+          <div class="demo">
+            <div class="counter">
+              <strong id="counter"> 0 </strong>
+
+              <span> % </span>
+
+              <p>PROGRESSO</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- =================================================
+                 PROGRESS BAR
+            ================================================== -->
+
+        <article class="effect">
+          <h3>17 — Progress Bar</h3>
+
+          <p>Ideal para progresso de usuários.</p>
+
+          <div class="demo">
+            <div class="progress-box">
+              <div class="progress">
+                <span></span>
+              </div>
+
+              <small> 78% concluído </small>
+            </div>
+          </div>
+        </article>
+
+        <!-- =================================================
+                 SKELETON
+            ================================================== -->
+
+        <article class="effect">
+          <h3>18 — Skeleton Loading</h3>
+
+          <p>Simula o conteúdo enquanto os dados ainda estão carregando.</p>
+
+          <div class="demo">
+            <div class="skeleton-card">
+              <div class="skeleton image"></div>
+
+              <div class="skeleton title"></div>
+
+              <div class="skeleton text"></div>
+
+              <div class="skeleton text small"></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- =================================================
+                 ACCORDION
+            ================================================== -->
+
+        <article class="effect">
+          <h3>19 — Accordion</h3>
+
+          <p>Muito útil para FAQ e suporte.</p>
+
+          <div class="faq">
+            <button class="faq-question">
+              Como funciona o plano?
+
+              <span> + </span>
+            </button>
+
+            <div class="faq-answer">
+              O plano oferece acesso completo aos serviços da Nexus Titan.
+            </div>
+
+            <button class="faq-question">
+              Como escolher um personal?
+
+              <span> + </span>
+            </button>
+
+            <div class="faq-answer">
+              Você pode escolher seu personal de acordo com seus objetivos.
+            </div>
+
+            <button class="faq-question">
+              Posso cancelar?
+
+              <span> + </span>
+            </button>
+
+            <div class="faq-answer">
+              Sim. O cancelamento pode ser feito através da área do usuário.
+            </div>
+          </div>
+        </article>
+
+        <!-- =================================================
+                 MODAL
+            ================================================== -->
+
+        <article class="effect">
+          <h3>20 — Modal</h3>
+
+          <p>Janela que aparece sobre o conteúdo.</p>
+
+          <div class="demo">
+            <button class="btn" id="openModal">ABRIR MODAL</button>
+          </div>
+        </article>
+
+        <!-- MODAL -->
+
+        <div class="modal" id="modal">
+          <div class="modal-content">
+            <button class="modal-close" id="closeModal">×</button>
+
+            <h3>NEXUS TITAN</h3>
+
+            <p>Supere seus limites.</p>
+
+            <button class="btn">COMEÇAR</button>
+          </div>
+        </div>
+
+        <!-- =================================================
+                 RIPPLE
+            ================================================== -->
+
+        <article class="effect">
+          <h3>21 — Ripple</h3>
+
+          <p>O botão cria uma onda no ponto onde você clicou.</p>
+
+          <div class="demo">
+            <button class="ripple">CLIQUE AQUI</button>
+          </div>
+        </article>
+
+        <!-- =================================================
+                 FLOATING LABEL
+            ================================================== -->
+
+        <article class="effect">
+          <h3>22 — Floating Label</h3>
+
+          <p>O texto do campo sobe quando ele recebe foco.</p>
+
+          <div class="demo">
+            <div class="input-box">
+              <input type="text" id="nome" placeholder=" " />
+
+              <label for="nome"> Seu nome </label>
+            </div>
+          </div>
+        </article>
+
+        <!-- =================================================
+                 PARALLAX
+            ================================================== -->
+
+        <article class="effect">
+          <h3>23 — Parallax</h3>
+
+          <p>O fundo se movimenta em velocidade diferente do conteúdo.</p>
+
+          <div class="parallax">
+            <div>
+              <h4>SUPERE</h4>
+
+              <p>SEUS LIMITES</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- =================================================
+                 HOVER MAGNÉTICO
+            ================================================== -->
+
+        <article class="effect">
+          <h3>24 — Hover Magnético</h3>
+
+          <p>O JavaScript desloca o botão em direção ao cursor.</p>
+
+          <div class="demo">
+            <button class="magnetic">ASSINAR PLANO</button>
+          </div>
+        </article>
+
+        <!-- =================================================
+                 DISTORTION
+            ================================================== -->
+
+        <article class="effect">
+          <h3>25 — Distorção</h3>
+
+          <p>
+            Combinação de filter e transform para criar uma pequena distorção
+            visual.
+          </p>
+
+          <div class="demo">
+            <div class="distortion">NEXUS</div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+      <h2>NEXUS TITAN</h2>
+
+      <p>FORÇA • FOCO • DISCIPLINA • EVOLUÇÃO</p>
+    </footer>
+
+    <!-- =====================================================
+         JAVASCRIPT
+         Somente para efeitos que precisam detectar
+         ações do usuário.
+    ====================================================== -->
+
+    <script>
+      /* =================================================
+           SPOTLIGHT
+        ================================================= */
+
+      const spotlight = document.querySelector(".spotlight");
+
+      spotlight.addEventListener("mousemove", function (event) {
+        const rect = spotlight.getBoundingClientRect();
+
+        const x = event.clientX - rect.left;
+
+        const y = event.clientY - rect.top;
+
+        spotlight.style.setProperty("--mouse-x", x + "px");
+
+        spotlight.style.setProperty("--mouse-y", y + "px");
+      });
+
+      /* =================================================
+           CONTADOR
+        ================================================= */
+
+      const counter = document.querySelector("#counter");
+
+      let number = 0;
+
+      const interval = setInterval(() => {
+        number++;
+
+        counter.textContent = number;
+
+        if (number >= 78) {
+          clearInterval(interval);
+        }
+      }, 25);
+
+      /* =================================================
+           ACCORDION
+        ================================================= */
+
+      const questions = document.querySelectorAll(".faq-question");
+
+      questions.forEach((question) => {
+        question.addEventListener("click", () => {
+          question.classList.toggle("active");
+
+          const answer = question.nextElementSibling;
+
+          answer.classList.toggle("open");
+        });
+      });
+
+      /* =================================================
+           MODAL
+        ================================================= */
+
+      const modal = document.querySelector("#modal");
+
+      const openModal = document.querySelector("#openModal");
+
+      const closeModal = document.querySelector("#closeModal");
+
+      openModal.addEventListener("click", () => {
+        modal.classList.add("show");
+      });
+
+      closeModal.addEventListener("click", () => {
+        modal.classList.remove("show");
+      });
+
+      modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          modal.classList.remove("show");
+        }
+      });
+
+      /* =================================================
+           RIPPLE
+        ================================================= */
+
+      const ripple = document.querySelector(".ripple");
+
+      ripple.addEventListener("click", function (event) {
+        const circle = document.createElement("span");
+
+        const rect = ripple.getBoundingClientRect();
+
+        const size = Math.max(rect.width, rect.height);
+
+        circle.style.width = size + "px";
+
+        circle.style.height = size + "px";
+
+        circle.style.left = event.clientX - rect.left - size / 2 + "px";
+
+        circle.style.top = event.clientY - rect.top - size / 2 + "px";
+
+        circle.classList.add("ripple-effect");
+
+        ripple.appendChild(circle);
+
+        setTimeout(() => {
+          circle.remove();
+        }, 600);
+      });
+
+      /* =================================================
+           HOVER MAGNÉTICO
+        ================================================= */
+
+      const magnetic = document.querySelector(".magnetic");
+
+      magnetic.addEventListener("mousemove", (event) => {
+        const rect = magnetic.getBoundingClientRect();
+
+        const x = event.clientX - rect.left - rect.width / 2;
+
+        const y = event.clientY - rect.top - rect.height / 2;
+
+        magnetic.style.transform = `translate(${x * 0.15}px,
+                    ${y * 0.15}px)`;
+      });
+
+      magnetic.addEventListener("mouseleave", () => {
+        magnetic.style.transform = "translate(0, 0)";
+      });
+    </script>
+  </body>
+</html>
