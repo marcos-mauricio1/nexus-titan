@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap');  /* TITULOS */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Outfit:wght@100..900&display=swap');  /* TEXTOS */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Oswald:wght@200..700&family=Outfit:wght@100..900&display=swap');
+
+* { /* RESET da página */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+/* ===== CABEÇALHO ===== */
+header {
+    background-color: #0E0B13;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+header img {
+    width: 9rem;
+    margin: .8rem;
+}
+
+header h1 {
+    color: #FFD84D;
+    font-family: 'Oswald';
+    font-size: 3.2rem;
+    line-height: 2.7rem;
+}
+
+header h1 span {
+    color: #A855F7;
+    font-size: 3rem;
+}
+
+.menu {
+    display: flex;
+    gap: 4rem;
+    position: absolute;
+    /* centraliza o NAV ao meio */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.matricula {
+    margin-left: auto;
+    margin-right: 2rem;
+    border: 2px solid #A855F7;
+    border-radius: .5rem;
+}
+
+.matricula a {
+    display: block;
+    padding: 1rem 2rem;
+}
+
+.menu a, .matricula a {
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-family: 'Bebas Neue';
+    color: #FFD84D;
+    letter-spacing: .1rem;
+    transition: .3s;
+}
+
+.menu a:hover {
+    color: white;
+    /* efeito neon */
+    text-shadow:
+        0 0 5px #8A2BE2,
+        0 0 10px #8A2BE2,
+        0 0 20px #8A2BE2,
+        0 0 40px #8A2BE2;
+}
