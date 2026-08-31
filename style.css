@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap');  /* TITULOS */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Outfit:wght@100..900&display=swap');  /* TEXTOS */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Oswald:wght@200..700&family=Outfit:wght@100..900&display=swap');
+
+* { /* RESET da página */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    background-color: #d6d1cd;
+}
+
+/* ===== CABEÇALHO ===== */
+header {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+header img {
+    width: 8rem;
+    margin: .8rem;
+}
+
+/* --- Menu de Navegação --- */
+.menu {
+    display: flex;
+    gap: 4rem;
+    position: absolute;
+    /* centraliza o NAV ao meio */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menu a, .matricula a {
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-family: 'Bebas Neue';
+    color: #000000;
+    letter-spacing: .1rem;
+    transition: .3s;
+}
+
+.menu a:hover {
+    color: #52216F;
+}
+
+/* --- Botão "FAÇA SUA MATRICULA" --- */
+.matricula {
+    margin-left: auto;
+    margin-right: 2rem;
+    border: 2px solid #A855F7;
+    border-radius: .5rem;
+    transition: .5s;
+}
+
+.matricula:hover {
+    background-color: #FFD84D;
+}
+
+.matricula a:hover {
+    color: #8A2BE2;
+}
+
+.matricula a {
+    display: block;
+    padding: 1rem 2rem;
+}
+
