@@ -1,5 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap');  /* TITULOS */
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Outfit:wght@100..900&display=swap');  /* TEXTOS */
+/* === TITULOS === */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap'); 
+
+@import url('https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Outfit:wght@100..900&display=swap');  
+
+/* === TEXTOS === */
 
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Oswald:wght@200..700&family=Outfit:wght@100..900&display=swap');
 
@@ -11,7 +18,7 @@
 }
 
 body {
-    background-color: #d6d1cd;
+    background-color: #F8F7FA;
 }
 
 /* ===== CABEÇALHO ===== */
@@ -22,8 +29,18 @@ header {
 }
 
 header img {
-    width: 8rem;
+    padding: 3px;
     margin: .8rem;
+}
+
+.container-texto-logo h1 {
+    font-size: 2.7rem;
+    font-family: 'Science Gothic';
+    line-height: .6;
+}
+
+.container-texto-logo h1 span {
+    color: #52216F;
 }
 
 /* --- Menu de Navegação --- */
@@ -43,11 +60,30 @@ header img {
     font-family: 'Bebas Neue';
     color: #000000;
     letter-spacing: .1rem;
+    position: relative;
     transition: .3s;
 }
 
 .menu a:hover {
-    color: #52216F;
+    color: #7B2CFF;
+}
+
+/* Linha embaixo */
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem;
+    width: 100%;
+    height: 2px;
+    background-color: #7B2CFF;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s ease;
+}
+
+.menu a:hover::after {
+    transform: scaleX(1);
 }
 
 /* --- Botão "FAÇA SUA MATRICULA" --- */
@@ -63,10 +99,6 @@ header img {
     background-color: #FFD84D;
 }
 
-.matricula a:hover {
-    color: #8A2BE2;
-}
-
 .matricula a {
     display: block;
     padding: 1rem 2rem;
@@ -75,8 +107,6 @@ header img {
 
 /* ===== SESSÃO INICIAL ===== */
 .conteudo {
-    min-height: calc(100vh - 8rem);
-
     display: flex;
     align-items: center;
 
@@ -88,7 +118,7 @@ header img {
 .conteudo-inicial {
     width: 45%;
     padding-left: 8%;
-
+    margin-bottom: 10%;
     position: relative;
     z-index: 10;
 }
@@ -111,6 +141,7 @@ header img {
 .conteudo-inicial h1 span {
     color: #7B2CFF;
     font-size: 12.5rem;
+    margin-bottom: 50%;
 }
 
 .descricao {
@@ -140,7 +171,7 @@ header img {
     color: #FFFFFF;
     text-decoration: none;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.3rem;
+    font-size: 2.2rem;
     letter-spacing: .1rem;
     border-radius: .4rem;
     transition: .3s ease;
@@ -152,7 +183,7 @@ header img {
     color: #7B2CFF;
     text-decoration: none;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.3rem;
+    font-size: 2.2rem;
     letter-spacing: .1rem;
     border-radius: .4rem;
     transition: .3s ease;
@@ -195,8 +226,12 @@ header img {
     top: -5%;
 }
 
-.mulher {
+.forma-roxa {
+    right: -2%;
+}
 
+.mulher {
+    width: 700px;
+    top: -4%;
     right: 17%;
-    z-index: 3;
 }
