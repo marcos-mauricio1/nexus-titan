@@ -72,3 +72,131 @@ header img {
     padding: 1rem 2rem;
 }
 
+
+/* ===== SESSÃO INICIAL ===== */
+.conteudo {
+    min-height: calc(100vh - 8rem);
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- Conteúdo Escrito --- */
+.conteudo-inicial {
+    width: 45%;
+    padding-left: 8%;
+
+    position: relative;
+    z-index: 10;
+}
+
+.subtitulo {
+    font-family: 'Bebas Neue';
+    font-size: 2.5rem;
+    letter-spacing: .35rem;
+    color: #7B2CFF;
+}
+
+.conteudo-inicial h1 {
+    font-family: 'Oswald';
+    font-size: 10rem;
+    line-height: .88;
+    color: #08070B;
+    margin-bottom: 2.5rem;
+}
+
+.conteudo-inicial h1 span {
+    color: #7B2CFF;
+    font-size: 12.5rem;
+}
+
+.descricao {
+    max-width: 34rem;
+    font-family: Arial, sans-serif;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    color: #3d3b41;
+    margin-bottom: 3rem;
+}
+
+.descricao span {
+    color: #7B2CFF;
+    font-size: 2.4rem;
+}
+
+/* --- Botão --- */
+.botao {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.botao a:first-child {
+    padding: 1.3rem 2.5rem;
+    background-color: #7B2CFF;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.3rem;
+    letter-spacing: .1rem;
+    border-radius: .4rem;
+    transition: .3s ease;
+}
+
+.botao a:last-child {
+    padding: 1.2rem 2.4rem;
+    border: 2px solid #7B2CFF;
+    color: #7B2CFF;
+    text-decoration: none;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.3rem;
+    letter-spacing: .1rem;
+    border-radius: .4rem;
+    transition: .3s ease;
+}
+
+/* -- efeito do botão -- */
+.botao a:first-child:hover {
+    background-color: #FFC400;
+    color: #08070B;
+    border: 2px solid #7B2CFF;
+
+    transform: translateY(-3px);
+}
+
+.botao a:last-child:hover {
+    background-color: #FFC400;
+    color: #08070B;
+
+    transform: translateY(-3px);
+}
+
+/* --- Conteúdo Visual --- */
+.conteudo-visual {
+    width: 55%;
+    height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.conteudo-visual img {
+    position: absolute;
+}
+
+.forma-amarela {
+    right: -5%;
+    top: -5%;
+}
+
+.mulher {
+
+    right: 17%;
+    z-index: 3;
+}
