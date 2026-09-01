@@ -1084,11 +1084,11 @@ main {
 .reveal {
 
     width: 350px;
-
+    height: 350px;
     padding: 60px;
-
+    
     text-align: center;
-
+    
     background: var(--purple);
 
     /*
@@ -1097,7 +1097,7 @@ main {
     */
 
     clip-path:
-        inset(45% 45% 45% 45%);
+       inset(45% 45% 45% 45% round 50%);
 
     transition:
         clip-path .8s ease;
@@ -1105,9 +1105,8 @@ main {
 
 
 .reveal:hover {
-
-    clip-path:
-        inset(0 0 0 0);
+    clip-path: inset(0% 0% 0% 0% round 100%); 
+    
 }
 
 
