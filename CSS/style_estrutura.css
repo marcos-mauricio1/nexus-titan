@@ -14,9 +14,14 @@
     font-size: 62.5%;
 }
 body{
-    background-color: #F4EFEF ;
-}
 
+    width: 100%;
+    background-color: #fdfdfc ;
+}
+main{
+    display: flex;
+    justify-content: center;
+}
 /* =========================
    
    
@@ -30,36 +35,53 @@ body{
    3. HEADER / NAVBAR
 ========================= */
 header{
+    
     position: relative;
-  
-    height: 100vh;
+    height: 110vh;
     width: 100%;
-   
+    display: flex;
+    justify-content: space-between;
     font-family: 'Barlow Condensed';
+    
   
 
 }
 header::before{
     content: "";
     position: absolute;
-    background-image: url(../HTML/imagens/BannerCavaleiro.png);
+    background-image: url(../HTML/imagens/backsemcavaleiro.png);
     background-size: cover;
+    background-position: right center;
 
+    
     z-index: -1;
     inset: 0;
-    border-radius: 0 0 10px 10px;
+   
+}
+.cavaleiro{
+    position: absolute;
+    top: 10%;
+    right:10%;
+
+}
+.cavaleiro img{
+    z-index: -2;
+    height: 80rem;
 }
 
 
 
+
+
 .card_conteudo_header{
-    position: absolute;
+
 
     width: 40%;
     height: 60%;
     margin-top: clamp(40px, 6vw, 100px);
     margin-left: 15%;
     font-size: 10rem;
+
     
 }
 .card_conteudo_header p{
@@ -72,26 +94,84 @@ header::before{
     color:#6414B8 ;
 }
 span{
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-family: 'Inter';
     color: #6414B8 ;
 }
+.botoes_card_conteudo{
+    margin-top: 2rem;
 
-button{
-    font-size: 3rem;
-    border: none;
-    height: 15%;
-    width:25%;
-    background-color: transparent;
-    border-radius: 10px;
+    width: 90%;
     
 }
+.botoes_card_conteudo, button{
+   gap: 2rem;
+    border: none;
+    height: 30%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    border-radius: 10px;
+    font-family: 'Inter';
+    cursor: pointer;
+   
+    
+}
+.botoes_card_conteudo button:hover{
+    transform: scale(1.05);
+}
+.botoes_card_conteudo button  p{
+     padding: 3.5%;
+     font-size: 1.9rem;
+     font-family: 'Inter';
+}
+
+
+
 button:nth-of-type(1){
-    background-color: #FBBF09;
+    
+    background-color: #fbc101;
+    width: 40rem;
+    transition: 0.1s;
 }
+
+button:nth-of-type(1):hover{
+    
+    background-color: #fbd709;
+}
+
+
 button:nth-of-type(2){
-    background-color: #d4c5e6 ;
+
+     width: 40%;
+    background-color:rgba(115, 22, 167, 0.3);
+    border: 0.2rem solid #490684;
+    
 }
+button:nth-of-type(2) p{
+    color: #490684;
+    text-shadow: 0 0 2rem #7e07ee;
+}
+
+
+button:nth-of-type(2):hover{
+     background-color:rgba(115, 22, 167, 0.2);
+   
+}
+
+.container_cards{
+    display: flex;
+    gap: 2rem;
+    background-color: #490684;
+    width: 80%;
+}
+.card{
+    font-size: 5rem;
+}
+
+
 
 
 /* =========================
