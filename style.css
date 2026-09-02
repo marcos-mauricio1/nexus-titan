@@ -237,6 +237,15 @@ header img {
 }
 
 
+/* === CARD INFORMATICO === */
+.card-informatico {
+    background-color: #1b112b;
+    position: absolute;
+    bottom: 2rem;
+    display: flex;
+    align-items: center;
+}
+
 
 
 
