@@ -1,0 +1,1778 @@
+
+
+/* =========================================================
+   VARIÁVEIS
+========================================================= */
+
+:root {
+
+    --preto: #08070B;
+
+    --fundo: #100D16;
+
+    --card: #17141D;
+
+    --roxo: #7B2CFF;
+
+    --roxo-claro: #A855F7;
+
+    --amarelo: #FFC400;
+
+    --amarelo-claro: #FFD84D;
+
+    --branco: #F5F5F5;
+
+    --texto: #B8B5C0;
+
+    --borda: #302A3A;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: var(--preto);
+
+    color: var(--branco);
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+
+    min-height: 700px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(123, 44, 255, .3),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(255, 196, 0, .08),
+            transparent 30%
+        ),
+
+        var(--preto);
+}
+
+
+/* =========================================================
+   NAV
+========================================================= */
+
+nav {
+
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 30px 0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.logo {
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    color: var(--amarelo);
+
+    text-shadow:
+        0 0 15px
+        rgba(255, 196, 0, .5);
+}
+
+
+nav ul {
+
+    display: flex;
+
+    gap: 30px;
+
+    list-style: none;
+}
+
+
+nav a {
+
+    position: relative;
+
+    color: var(--texto);
+
+    text-decoration: none;
+
+    transition: .3s;
+}
+
+
+nav a:hover {
+
+    color: var(--amarelo);
+}
+
+
+/* UNDERLINE */
+
+nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -7px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: var(--amarelo);
+
+    transition: .3s;
+}
+
+
+nav a:hover::after {
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    min-height: 600px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 50px;
+}
+
+
+.hero-tag {
+
+    color: var(--roxo-claro);
+
+    letter-spacing: 4px;
+
+    font-size: 13px;
+}
+
+
+.hero h1 {
+
+    font-size: clamp(
+        70px,
+        13vw,
+        160px
+    );
+
+    line-height: .9;
+
+    margin: 25px 0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--amarelo),
+            var(--roxo-claro)
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+.hero h1 strong {
+
+    display: block;
+}
+
+
+.hero p {
+
+    color: var(--texto);
+
+    font-size: 18px;
+
+    margin-bottom: 30px;
+}
+
+
+.hero-btn {
+
+    padding: 16px 35px;
+
+    background: var(--amarelo);
+
+    color: var(--preto);
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+
+.hero-btn:hover {
+
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 20px
+        rgba(255, 196, 0, .6);
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+main {
+
+    width: min(
+        1100px,
+        90%
+    );
+
+    margin: auto;
+}
+
+
+.efeito {
+
+    padding: 90px 0;
+
+    border-bottom:
+        1px solid
+        var(--borda);
+}
+
+
+.efeito h2 {
+
+    color: var(--amarelo);
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+
+.descricao {
+
+    color: var(--texto);
+
+    max-width: 750px;
+
+    margin-bottom: 35px;
+}
+
+
+.demo {
+
+    min-height: 280px;
+
+    padding: 40px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: var(--fundo);
+
+    border:
+        1px solid
+        var(--borda);
+
+    border-radius: 15px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   01 — GLOW ROXO
+========================================================= */
+
+.glow-roxo {
+
+    padding: 30px 60px;
+
+    background: var(--card);
+
+    color: var(--roxo-claro);
+
+    border:
+        1px solid
+        var(--roxo);
+
+    border-radius: 10px;
+
+    box-shadow:
+
+        0 0 10px
+        var(--roxo),
+
+        0 0 30px
+        rgba(123,44,255,.5);
+
+    font-size: 25px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   02 — GLOW AMARELO
+========================================================= */
+
+.glow-amarelo {
+
+    padding: 16px 35px;
+
+    background: var(--amarelo);
+
+    color: var(--preto);
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px
+        rgba(255,196,0,.5);
+
+    transition: .3s;
+}
+
+
+.glow-amarelo:hover {
+
+    transform: scale(1.05);
+
+    box-shadow:
+
+        0 0 15px
+        var(--amarelo),
+
+        0 0 35px
+        rgba(255,196,0,.6);
+}
+
+
+/* =========================================================
+   03 — CARD
+========================================================= */
+
+.card {
+
+    width: 300px;
+
+    padding: 30px;
+
+    background: var(--card);
+
+    border:
+        1px solid
+        var(--borda);
+
+    border-radius: 12px;
+
+    transition: .3s ease;
+}
+
+
+.card h3 {
+
+    color: var(--amarelo);
+
+    margin-bottom: 10px;
+}
+
+
+.card p {
+
+    color: var(--texto);
+}
+
+
+.card:hover {
+
+    transform:
+        translateY(-10px);
+
+    border-color:
+        var(--roxo);
+
+    box-shadow:
+
+        0 15px 30px
+        rgba(0,0,0,.5),
+
+        0 0 20px
+        rgba(123,44,255,.25);
+}
+
+
+/* =========================================================
+   04 — ZOOM
+========================================================= */
+
+.imagem-container {
+
+    width: 320px;
+
+    height: 220px;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+}
+
+
+.imagem-container img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: .5s;
+}
+
+
+.imagem-container:hover img {
+
+    transform:
+        scale(1.15);
+}
+
+
+/* =========================================================
+   05 — OVERLAY
+========================================================= */
+
+.banner {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 300px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--preto),
+            rgba(8,7,11,.2)
+        ),
+
+        url(
+            "https://images.unsplash.com/photo-1534438327276-14e5300c3a48"
+        )
+        center / cover;
+}
+
+
+.banner::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(8,7,11,.35);
+}
+
+
+.banner-conteudo {
+
+    position: relative;
+
+    z-index: 1;
+
+    padding: 80px 50px;
+}
+
+
+.banner h3 {
+
+    font-size: 35px;
+
+    color: var(--amarelo);
+}
+
+
+/* =========================================================
+   06 — TEXTO GRADIENTE
+========================================================= */
+
+.texto-gradiente {
+
+    font-size: clamp(
+        35px,
+        6vw,
+        60px
+    );
+
+    text-align: center;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--amarelo),
+            var(--roxo)
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =========================================================
+   07 — NEON
+========================================================= */
+
+.texto-neon {
+
+    font-size: 70px;
+
+    color: var(--roxo-claro);
+
+    text-shadow:
+
+        0 0 5px var(--roxo-claro),
+
+        0 0 15px var(--roxo),
+
+        0 0 30px var(--roxo),
+
+        0 0 60px var(--roxo);
+}
+
+
+/* =========================================================
+   08 — BORDA BRILHANTE
+========================================================= */
+
+.borda-brilhante {
+
+    width: 300px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    background: var(--card);
+
+    border:
+        1px solid
+        var(--roxo);
+
+    border-radius: 10px;
+
+    box-shadow:
+
+        0 0 5px var(--roxo),
+
+        inset 0 0 15px
+        rgba(123,44,255,.15);
+}
+
+
+/* =========================================================
+   09 — LINHA
+========================================================= */
+
+.linha {
+
+    width: 80%;
+
+    height: 3px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--roxo),
+            var(--amarelo),
+            var(--roxo),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   10 — FADE
+========================================================= */
+
+.fade {
+
+    text-align: center;
+
+    animation:
+        aparecer 2s ease forwards;
+}
+
+
+.fade h3 {
+
+    color: var(--amarelo);
+
+    font-size: 30px;
+}
+
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   11 — SLIDE
+========================================================= */
+
+.slide {
+
+    animation:
+        slide 1s ease forwards;
+}
+
+
+.slide h3 {
+
+    font-size: 40px;
+
+    color: var(--amarelo);
+}
+
+
+@keyframes slide {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateX(-100px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+/* =========================================================
+   12 — PULSANTE
+========================================================= */
+
+.botao-pulsante {
+
+    padding: 16px 35px;
+
+    background: var(--amarelo);
+
+    color: var(--preto);
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    animation:
+        pulsar 2s infinite;
+}
+
+
+@keyframes pulsar {
+
+    0% {
+
+        box-shadow:
+            0 0 0 0
+            rgba(255,196,0,.7);
+    }
+
+    70% {
+
+        box-shadow:
+            0 0 0 20px
+            rgba(255,196,0,0);
+    }
+
+    100% {
+
+        box-shadow:
+            0 0 0 0
+            rgba(255,196,0,0);
+    }
+}
+
+
+/* =========================================================
+   13 — PROGRESSO
+========================================================= */
+
+.progresso-container {
+
+    width: 500px;
+
+    max-width: 100%;
+}
+
+
+.progresso {
+
+    width: 100%;
+
+    height: 12px;
+
+    background: var(--borda);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+
+.progresso span {
+
+    display: block;
+
+    width: 75%;
+
+    height: 100%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--roxo),
+            var(--roxo-claro)
+        );
+
+    border-radius: 10px;
+
+    animation:
+        carregar 2s ease;
+}
+
+
+.progresso-container p {
+
+    color: var(--texto);
+
+    margin-top: 10px;
+}
+
+
+@keyframes carregar {
+
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 75%;
+    }
+}
+
+
+/* =========================================================
+   14 — GLASS
+========================================================= */
+
+.glass-demo {
+
+    background:
+
+        radial-gradient(
+            circle at 30% 50%,
+            rgba(123,44,255,.4),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 70% 30%,
+            rgba(255,196,0,.2),
+            transparent 25%
+        ),
+
+        var(--preto);
+}
+
+
+.glass {
+
+    width: 350px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    background:
+        rgba(255,255,255,.05);
+
+    backdrop-filter:
+        blur(15px);
+
+    -webkit-backdrop-filter:
+        blur(15px);
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    border-radius: 15px;
+}
+
+
+.glass h3 {
+
+    color: var(--amarelo);
+
+    margin-bottom: 10px;
+}
+
+
+.glass p {
+
+    color: var(--texto);
+}
+
+
+/* =========================================================
+   15 — FUNDO COM LUZES
+========================================================= */
+
+.fundo-luzes {
+
+    width: 100%;
+
+    min-height: 300px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(123,44,255,.25),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(255,196,0,.1),
+            transparent 25%
+        ),
+
+        var(--preto);
+}
+
+
+.fundo-luzes h3 {
+
+    font-size: 45px;
+}
+
+
+.fundo-luzes p {
+
+    color: var(--amarelo);
+}
+
+
+/* =========================================================
+   16 — UNDERLINE
+========================================================= */
+
+.underline {
+
+    position: relative;
+
+    color: var(--branco);
+
+    text-decoration: none;
+
+    font-size: 25px;
+
+    font-weight: bold;
+}
+
+
+.underline::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -8px;
+
+    width: 0;
+
+    height: 3px;
+
+    background: var(--amarelo);
+
+    transition: .3s;
+}
+
+
+.underline:hover::after {
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   17 — IMAGEM CINZA
+========================================================= */
+
+.imagem-cinza {
+
+    width: 320px;
+
+    height: 220px;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+}
+
+
+.imagem-cinza img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    filter:
+        grayscale(100%);
+
+    transition: .5s;
+}
+
+
+.imagem-cinza:hover img {
+
+    filter:
+        grayscale(0%);
+
+    transform:
+        scale(1.05);
+}
+
+
+/* =========================================================
+   18 — SHIMMER
+========================================================= */
+
+.shimmer {
+
+    position: relative;
+
+    overflow: hidden;
+
+    width: 350px;
+
+    padding: 40px;
+
+    background: var(--card);
+
+    border:
+        1px solid
+        var(--borda);
+
+    border-radius: 15px;
+}
+
+
+.shimmer::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -100%;
+
+    width: 50%;
+
+    height: 100%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.15),
+            transparent
+        );
+
+    transform:
+        skewX(-20deg);
+
+    transition: .7s;
+}
+
+
+.shimmer:hover::after {
+
+    left: 150%;
+}
+
+
+.shimmer h3 {
+
+    color: var(--amarelo);
+}
+
+
+/* =========================================================
+   19 — CLIP PATH
+========================================================= */
+
+.clip {
+
+    width: 350px;
+
+    height: 200px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--roxo),
+            var(--amarelo)
+        );
+
+    clip-path:
+
+        polygon(
+            0 12%,
+            8% 0,
+            92% 0,
+            100% 12%,
+            100% 88%,
+            92% 100%,
+            8% 100%,
+            0 88%
+        );
+}
+
+
+.clip span {
+
+    font-size: 40px;
+
+    font-weight: bold;
+
+    color: var(--preto);
+}
+
+
+/* =========================================================
+   20 — CARD 3D
+========================================================= */
+
+.perspectiva {
+    
+    perspective: 1000px;
+}
+
+
+.card-3d {
+
+    width: 300px;
+
+    height: 180px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--roxo),
+            #32105C
+        );
+
+    border-radius: 15px;
+
+    transition: .5s;
+
+    transform-style:
+        preserve-3d;
+}
+
+
+.card-3d:hover {
+
+    transform:
+
+        rotateX(10deg)
+
+        rotateY(-15deg)
+
+        translateY(-10px)
+
+        scale(1.05);
+
+    box-shadow:
+
+        -20px 20px 30px
+        rgba(0,0,0,.5),
+
+        0 0 30px
+        rgba(123,44,255,.4);
+}
+
+
+.card-3d h3 {
+
+    font-size: 40px;
+
+    color: var(--amarelo);
+}
+
+
+/* =========================================================
+   21 — GRADIENTE ANIMADO
+========================================================= */
+
+.gradiente-animado {
+
+    padding: 50px;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+    border-radius: 15px;
+
+    background:
+
+        linear-gradient(
+            45deg,
+            var(--roxo),
+            var(--amarelo),
+            #32105C,
+            var(--roxo)
+        );
+
+    background-size:
+        400% 400%;
+
+    animation:
+        gradiente 6s ease infinite;
+}
+
+
+@keyframes gradiente {
+
+    0% {
+        background-position:
+            0% 50%;
+    }
+
+    50% {
+        background-position:
+            100% 50%;
+    }
+
+    100% {
+        background-position:
+            0% 50%;
+    }
+}
+
+
+/* =========================================================
+   22 — GRID FUTURISTA
+========================================================= */
+
+.grid-futurista {
+
+    width: 100%;
+
+    min-height: 300px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background-color:
+        var(--preto);
+
+    background-image:
+
+        linear-gradient(
+            rgba(123,44,255,.12) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(123,44,255,.12) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        40px 40px;
+}
+
+
+.grid-futurista h3 {
+
+    font-size: 40px;
+
+    color: var(--amarelo);
+
+    text-shadow:
+        0 0 15px
+        rgba(255,196,0,.5);
+}
+
+
+/* =========================================================
+   23 — PARTÍCULAS
+========================================================= */
+
+.particulas {
+
+    position: relative;
+
+    width: 400px;
+
+    height: 200px;
+}
+
+
+.particulas span {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    width: 5px;
+
+    height: 5px;
+
+    background: var(--roxo);
+
+    border-radius: 50%;
+
+    box-shadow:
+
+        50px 20px var(--roxo),
+
+        -80px 40px var(--amarelo),
+
+        120px -50px var(--roxo-claro),
+
+        -130px -60px var(--roxo),
+
+        180px 70px var(--amarelo),
+
+        -200px 80px var(--roxo-claro),
+
+        70px -100px var(--amarelo),
+
+        -60px -110px var(--roxo);
+
+    animation:
+        flutuar 4s infinite alternate;
+}
+
+
+@keyframes flutuar {
+
+    from {
+
+        transform:
+            translateY(-10px);
+    }
+
+    to {
+
+        transform:
+            translateY(10px);
+    }
+}
+
+
+/* =========================================================
+   24 — MIX BLEND MODE
+========================================================= */
+
+.blend-demo {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: var(--preto);
+}
+
+
+.blend-circulo {
+
+    width: 180px;
+
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: var(--roxo);
+
+    mix-blend-mode: screen;
+}
+
+
+.blend-circulo.dois {
+
+    background: var(--amarelo);
+
+    margin-left: -70px;
+
+    mix-blend-mode: screen;
+}
+
+
+/* =========================================================
+   25 — SCROLL
+========================================================= */
+
+.scroll-area {
+
+    min-height: 500px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.scroll-card {
+
+    width: 350px;
+
+    padding: 50px;
+
+    text-align: center;
+
+    background: var(--card);
+
+    border:
+        1px solid
+        var(--roxo);
+
+    border-radius: 15px;
+
+    animation:
+
+        scroll-aparecer linear;
+
+    animation-timeline: view();
+
+    animation-range:
+        entry 0% cover 35%;
+}
+
+
+.scroll-card h3 {
+
+    color: var(--amarelo);
+
+    margin-bottom: 10px;
+}
+
+
+.scroll-card p {
+
+    color: var(--texto);
+}
+
+
+@keyframes scroll-aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(100px)
+            scale(.8);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   26 — FILTER
+========================================================= */
+
+.filter-container {
+
+    width: 320px;
+
+    height: 220px;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+}
+
+
+.filter-container img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    filter:
+
+        brightness(60%)
+        contrast(130%)
+        saturate(150%);
+
+    transition: .5s;
+}
+
+
+.filter-container:hover img {
+
+    filter:
+
+        brightness(100%)
+        contrast(100%)
+        saturate(100%);
+
+    transform:
+        scale(1.05);
+}
+
+
+/* =========================================================
+   27 — BEFORE / AFTER
+========================================================= */
+
+.pseudo-card {
+
+    position: relative;
+
+    width: 350px;
+
+    padding: 50px;
+
+    background: var(--card);
+
+    border:
+        1px solid
+        var(--borda);
+
+    text-align: center;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+}
+
+
+.pseudo-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 4px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            var(--amarelo),
+            var(--roxo)
+        );
+}
+
+
+.pseudo-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+
+    height: 100px;
+
+    right: -50px;
+
+    bottom: -50px;
+
+    border-radius: 50%;
+
+    background:
+
+        rgba(123,44,255,.25);
+
+    transition: .4s;
+}
+
+
+.pseudo-card:hover::after {
+
+    transform:
+        scale(2);
+}
+
+
+.pseudo-card h3 {
+
+    color: var(--amarelo);
+
+    margin-bottom: 10px;
+}
+
+
+.pseudo-card p {
+
+    color: var(--texto);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    padding: 80px 20px;
+
+    text-align: center;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(123,44,255,.15),
+            transparent 40%
+        ),
+
+        var(--preto);
+}
+
+
+footer h2 {
+
+    color: var(--amarelo);
+
+    margin-bottom: 10px;
+}
+
+
+footer p {
+
+    color: var(--texto);
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    nav {
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
+    nav ul {
+
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    .hero {
+
+        padding: 30px 20px;
+    }
+
+
+    .texto-neon {
+
+        font-size: 45px;
+    }
+
+
+    .demo {
+
+        padding: 20px;
+    }
+
+
+    .banner-conteudo {
+
+        padding: 80px 25px;
+    }
+
+
+    .card-3d,
+    .shimmer,
+    .pseudo-card {
+
+        max-width: 100%;
+    }
+
+}

@@ -1,0 +1,294 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap"); /* TITULOS */
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Outfit:wght@100..900&display=swap"); /* TEXTOS */
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Oswald:wght@200..700&family=Outfit:wght@100..900&display=swap");
+
+* {
+  /* RESET da página */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+    background-color: #F4EFEE;
+}
+
+/* ===== CABEÇALHO ===== */
+header {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+header img {
+    width: 8rem;
+    margin: .8rem;
+}
+
+/* --- Menu de Navegação --- */
+.menu {
+    display: flex;
+    gap: 4rem;
+    position: absolute;
+    /* centraliza o NAV ao meio */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.menu a, .matricula a {
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-family: 'Bebas Neue';
+    color: #000000;
+    letter-spacing: .1rem;
+    transition: .3s;
+}
+
+.menu a:hover {
+    color: #52216F;
+}
+
+/* Main */
+
+/* Banner */
+
+.banner {
+    position: relative;
+    height: 50rem;
+    overflow: hidden;
+}
+
+.lado-esquerdo {
+  position: absolute;
+  height: 100%;
+  width: 70%;
+  background-color: #e7e1e1;
+  padding: 8rem;
+  clip-path: polygon(
+    /* Isso ta criando a divisoria inclinada */ 0 0,
+    65% 0,
+    52% 100%,
+    0 100%
+  );
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  transition: 0.5s;
+}
+
+.lado-esquerdo h1 {
+  color: #5810A8;
+  font-size: 4rem;
+  transition: font-size 0.5s ease;
+  font-family: "Anton", sans-serif;
+}
+
+.lado-esquerdo p {
+  font-size: 2.9rem;
+  transition: font-size 0.5s ease;
+  font-family: "Montserrat", sans-serif;
+}
+
+.banner:hover > .lado-esquerdo {
+  clip-path: polygon(
+    /* Isso ta criando a divisoria inclinada */ 0 0,
+    76% 0,
+    63% 100%,
+    0 100%
+  );
+}
+
+.banner:hover > .lado-esquerdo > h1 {
+  font-size: 4.2rem;
+}
+
+.banner:hover > .lado-esquerdo > p {
+  font-size: 3.1rem;
+}
+
+.lado-direito {
+  position: absolute;
+  background: url(/Imagens/Profissionais/Banner.png) no-repeat center;
+  background-size: cover;
+  right: 0;
+  width: 80%;
+  height: 100%;
+  padding: 8rem;
+  clip-path: polygon(
+    /* Isso ta criando a divisoria inclinada */
+    16% 0,
+    100% 0,
+    100% 100%,
+    1.4% 100%
+  );
+}
+
+/* Experiêcia */
+
+.experiencia {
+  background-color: #F4EFEE;
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: 4rem;
+  padding: 0 3rem;
+}
+
+.titulos {
+    margin-left: 4.5rem;
+}
+
+.experiencia > .titulos > span {
+  font-size: 2.7rem;
+  font-family: 'Anton', sans-serif;
+  color: #C6B8C9;
+}
+
+.experiencia > .titulos > h2 {
+  font-size: 4.5rem;
+  color: #5810A8;
+  font-family: 'Anton', sans-serif;
+}
+
+.experiencia > article {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.2rem;
+    border-right: 1.5px solid #C6B8C9;
+    padding-right: 5rem;
+    height: 90%;
+    width: 35vw;
+    display: flex;
+    align-items: center;
+}
+
+.coluna {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 90%;
+    width: 15vw;
+    gap: 2rem;
+}
+
+.coluna img {
+    width: 30%;
+    margin-bottom: .5rem;
+}
+
+.coluna h3 {
+  color: #5810A8;
+    font-family: 'Anton', sans-serif;
+    font-size: 1.5rem;
+}
+
+.coluna p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.7rem;
+}
+
+.profissionais {
+  width: 100%;
+  height: 90vh;
+  background-color: #e7e1e1;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.superior {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 50rem;
+}
+
+.titulos {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  justify-content: center;
+}
+
+.titulos > span {
+  font-size: 3.7rem;
+  font-family: 'Anton', sans-serif;
+  color: #C6B8C9;
+}
+
+.titulos > h2 {
+  font-size: 5.5rem;
+  color: #5810A8;
+  font-family: 'Anton', sans-serif;
+}
+
+.botoes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 3rem;
+  border: 1px solid blue;
+}
+
+.botao {
+  padding: 2rem;
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.2rem;
+}
+
+.personal {
+  height: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.card {
+  height: 100%;
+  border-radius: 2rem;
+  width: 15%;
+  background-color: #2D0D54;
+  display: flex;
+  flex-direction: column;
+}
+
+.card > figure {
+  height: 30%;
+  width: 100%;
+}
+
+.card > figure > figcaption {
+  font-size: 3.7rem;
+}
+
+.card > figure > span {
+  font-size: 2.4rem;
+}
+
+.card > .box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  font-size: 2.4rem;
+  width: 60%;
+  background-color: #2D0D54;
+  border: 1px solid #5810A8;
+}
+
+.card > p {
+  font-size: 2.3rem;
+}
