@@ -112,7 +112,7 @@ header img {
   position: absolute;
   height: 100%;
   width: 70%;
-  background-color: #f5ebf2;
+  background-color: #39245E;
   padding: 8rem;
   clip-path: polygon(
     /* Isso ta criando a divisoria inclinada */ 0 0,
@@ -136,7 +136,7 @@ header img {
 }
 
 .lado-esquerdo p {
-  color: #0B0A0F;
+  color: #ffffff;
   font-size: 2.9rem;
   transition: font-size 0.5s ease;
   font-family: "Montserrat", sans-serif;
