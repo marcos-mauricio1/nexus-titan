@@ -1,0 +1,384 @@
+/* CONFIGURAÇÕES GERAIS - ESTILO CLARO / LIGHT THEME */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+body {
+  background: linear-gradient(rgba(248, 250, 252, 0.88), rgba(241, 245, 249, 0.92)),
+              url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
+  background-size: cover;
+  color: #1e293b;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.purple-text { color: #6b21a8; font-weight: 800; }
+.gold-text { color: #b45309; font-weight: 800; }
+
+/* MARCA D'ÁGUA SUAVE NO CENTRO */
+.watermark-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 600px;
+  pointer-events: none;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.watermark-logo {
+  width: 85%;
+  height: auto;
+  opacity: 0.08;
+  user-select: none;
+}
+
+/* HERO SECTION COM A LOGO EM DESTAQUE */
+.hero-top {
+  text-align: center;
+  padding: 10px 20px 20px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.titan-badge-logo {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 15px;
+  filter: drop-shadow(0 10px 15px rgba(180, 83, 9, 0.25));
+}
+
+.titan-helmet {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.hero-top h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: 1.5px;
+}
+
+.hero-top p {
+  color: #475569;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+/* CONTAINER DO FORMULÁRIO */
+.matricula-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px 60px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.matricula-card {
+  width: 100%;
+  max-width: 750px;
+  background: #ffffff;
+  border: 1px solid rgba(107, 33, 168, 0.15);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08), 0 0 20px rgba(107, 33, 168, 0.05);
+}
+
+/* BARRA DE PROGRESSO */
+.progress-bar-wrapper {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.progress-line {
+  position: absolute;
+  top: 22px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #e2e8f0;
+  z-index: 1;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #6b21a8, #d97706);
+  transition: width 0.4s ease;
+  border-radius: 2px;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.step-circle {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #f8fafc;
+  border: 2px solid #cbd5e1;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.step-item span {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.step-item.active .step-circle {
+  background: #6b21a8;
+  border-color: #6b21a8;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(107, 33, 168, 0.3);
+}
+
+.step-item.active span {
+  color: #6b21a8;
+  font-weight: 800;
+}
+
+/* FORM ETAPAS */
+.form-step {
+  display: none;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.form-step.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.step-heading {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.25rem;
+  color: #6b21a8;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 10px;
+}
+
+.step-sub {
+  color: #475569;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* INPUTS CLAROS */
+.input-block {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.input-block label {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.input-block input,
+.input-block select {
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 14px 16px;
+  color: #0f172a;
+  font-size: 1rem;
+  font-weight: 600;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-block input:focus,
+.input-block select:focus {
+  background: #ffffff;
+  border-color: #6b21a8;
+  box-shadow: 0 0 0 3px rgba(107, 33, 168, 0.15);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.flex-3-1 {
+  grid-template-columns: 3fr 1fr;
+}
+
+.error-msg {
+  color: #dc2626;
+  font-size: 0.8rem;
+  margin-top: 6px;
+  font-weight: 700;
+  display: none;
+}
+
+.input-block.invalid input,
+.input-block.invalid select {
+  border-color: #dc2626;
+  background: #fff5f5;
+}
+
+.input-block.invalid .error-msg {
+  display: block;
+}
+
+/* BOTÕES */
+.btn-group {
+  display: flex;
+  margin-top: 30px;
+}
+
+.btn-group.space-between { justify-content: space-between; }
+
+.btn-titan-purple, .btn-titan-gold, .btn-titan-outline {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 14px 28px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-titan-purple {
+  background: #6b21a8;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(107, 33, 168, 0.25);
+}
+
+.btn-titan-purple:hover {
+  background: #7e22ce;
+  transform: translateY(-2px);
+}
+
+.btn-titan-gold {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+}
+
+.btn-titan-gold:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+.btn-titan-outline {
+  background: transparent;
+  color: #64748b;
+  border: 1.5px solid #cbd5e1;
+}
+
+.btn-titan-outline:hover {
+  color: #0f172a;
+  border-color: #64748b;
+  background: #f1f5f9;
+}
+
+/* RESUMO DA MATRÍCULA */
+.summary-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 1rem;
+}
+
+.summary-line:last-child { border-bottom: none; }
+
+/* SUCESSO */
+.success-card {
+  text-align: center;
+  padding: 20px 10px;
+  animation: fadeIn 0.5s ease;
+}
+
+.success-icon-box {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px;
+  filter: drop-shadow(0 10px 15px rgba(217, 119, 6, 0.25));
+}
+
+.success-helmet {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.success-card h2 {
+  font-family: 'Orbitron', sans-serif;
+  color: #b45309;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+.success-card p {
+  font-size: 1.1rem;
+  color: #334155;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.success-actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.hidden { display: none !important; }
