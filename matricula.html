@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matrícula | NEXUS TITAN</title>
+  
+  <!-- Google Fonts & Lucide Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <link rel="stylesheet" href="matricula.css">
+</head>
+<body>
+
+  <!-- MARCA D'ÁGUA SUAVE NO CENTRO DA TELA -->
+  <div class="watermark-container">
+    <img src="imagem/LOGO 2.png" alt="Marca d'água Nexus Titan" class="watermark-logo">
+  </div>
+
+  <!-- CONTAINER PRINCIPAL DE MATRÍCULA -->
+  <main class="matricula-main">
+
+    <!-- HERO / LOGO OFICIAL DA ACADEMIA -->
+    <section class="hero-top">
+      <div class="titan-badge-logo">
+        <img src="imagem/LOGO 2.png" alt="Nexus Titan Logo" class="titan-helmet">
+      </div>
+      <h1>SISTEMA DE <span class="purple-text">MATRÍCULA</span> <span class="gold-text">TITAN</span></h1>
+      <p>Forje o seu destino. Complete as etapas abaixo para garantir seu acesso VIP.</p>
+    </section>
+
+    <!-- CARD DO FORMULÁRIO -->
+    <div class="matricula-card">
+
+      <!-- BARRA DE PROGRESSO EM ETAPAS -->
+      <div class="progress-bar-wrapper">
+        <div class="progress-line">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="steps-container">
+          <div class="step-item active" id="stepIndicator-1">
+            <div class="step-circle"><i data-lucide="user"></i></div>
+            <span>Pessoal</span>
+          </div>
+          <div class="step-item" id="stepIndicator-2">
+            <div class="step-circle"><i data-lucide="map-pin"></i></div>
+            <span>Endereço</span>
+          </div>
+          <div class="step-item" id="stepIndicator-3">
+            <div class="step-circle"><i data-lucide="dumbbell"></i></div>
+            <span>Plano</span>
+          </div>
+          <div class="step-item" id="stepIndicator-4">
+            <div class="step-circle"><i data-lucide="shield-check"></i></div>
+            <span>Confirmação</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORMULÁRIO -->
+      <form id="formMatricula" novalidate>
+
+        <!-- ETAPA 1: DADOS PESSOAIS -->
+        <div class="form-step active" id="step-1">
+          <h2 class="step-heading"><i data-lucide="user"></i> DADOS PESSOAIS</h2>
+
+          <div class="input-block">
+            <label for="nome">Nome Completo *</label>
+            <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+            <span class="error-msg">Por favor, preencha seu nome completo.</span>
+          </div>
+
+          <div class="form-row">
+            <div class="input-block">
+              <label for="nascimento">Data de Nascimento *</label>
+              <input type="date" id="nascimento" required>
+              <span class="error-msg">Informe sua data de nascimento.</span>
+            </div>
+            <div class="input-block">
+              <label for="cpf">CPF *</label>
+              <input type="text" id="cpf" placeholder="000.000.000-00" maxlength="14" required>
+              <span class="error-msg">Informe um CPF válido.</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="input-block">
+              <label for="email">E-mail *</label>
+              <input type="email" id="email" placeholder="seuemail@exemplo.com" required>
+              <span class="error-msg">Informe um e-mail válido.</span>
+            </div>
+            <div class="input-block">
+              <label for="telefone">Telefone / WhatsApp *</label>
+              <input type="tel" id="telefone" placeholder="(00) 00000-0000" maxlength="15" required>
+              <span class="error-msg">Informe um número de contato.</span>
+            </div>
+          </div>
+
+          <div class="input-block">
+            <label for="sexo">Sexo *</label>
+            <select id="sexo" required>
+              <option value="">Selecione...</option>
+              <option value="masculino">Masculino</option>
+              <option value="feminino">Feminino</option>
+              <option value="outro">Prefiro não informar / Outro</option>
+            </select>
+            <span class="error-msg">Selecione uma opção.</span>
+          </div>
+
+          <div class="btn-group space-between">
+            <a href="index.html" class="btn-titan-outline">
+              <i data-lucide="arrow-left"></i> VOLTAR AO INÍCIO
+            </a>
+            <button type="button" class="btn-titan-purple" onclick="nextStep(1)">
+              AVANÇAR <i data-lucide="arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- ETAPA 2: ENDEREÇO -->
+        <div class="form-step" id="step-2">
+          <h2 class="step-heading"><i data-lucide="map-pin"></i> ENDEREÇO</h2>
+
+          <div class="form-row">
+            <div class="input-block">
+              <label for="cep">CEP *</label>
+              <input type="text" id="cep" placeholder="00000-000" maxlength="9" required>
+              <span class="error-msg">Informe o CEP.</span>
+            </div>
+            <div class="input-block">
+              <label for="bairro">Bairro *</label>
+              <input type="text" id="bairro" placeholder="Seu bairro" required>
+              <span class="error-msg">Informe o bairro.</span>
+            </div>
+          </div>
+
+          <div class="form-row flex-3-1">
+            <div class="input-block">
+              <label for="rua">Rua / Logradouro *</label>
+              <input type="text" id="rua" placeholder="Nome da rua" required>
+              <span class="error-msg">Informe a rua.</span>
+            </div>
+            <div class="input-block">
+              <label for="numero">Número *</label>
+              <input type="text" id="numero" placeholder="Nº" required>
+              <span class="error-msg">Campo obrigatório.</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="input-block">
+              <label for="cidade">Cidade *</label>
+              <input type="text" id="cidade" placeholder="Sua cidade" required>
+              <span class="error-msg">Informe a cidade.</span>
+            </div>
+            <div class="input-block">
+              <label for="estado">Estado (UF) *</label>
+              <input type="text" id="estado" placeholder="UF" maxlength="2" required>
+              <span class="error-msg">Informe o estado.</span>
+            </div>
+          </div>
+
+          <div class="btn-group space-between">
+            <button type="button" class="btn-titan-outline" onclick="prevStep(2)">
+              <i data-lucide="arrow-left"></i> VOLTAR
+            </button>
+            <button type="button" class="btn-titan-purple" onclick="nextStep(2)">
+              AVANÇAR <i data-lucide="arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- ETAPA 3: PLANO E OBJETIVOS -->
+        <div class="form-step" id="step-3">
+          <h2 class="step-heading"><i data-lucide="dumbbell"></i> PLANO E OBJETIVOS</h2>
+
+          <div class="form-row">
+            <div class="input-block">
+              <label for="modalidade">Modalidade Desejada *</label>
+              <select id="modalidade" required>
+                <option value="">Selecione...</option>
+                <option value="Musculação">Musculação</option>
+                <option value="Cardio">Cardio / Endurance</option>
+                <option value="Treino Funcional">Treino Funcional</option>
+                <option value="Lutas / Artes Marciais">Lutas / Artes Marciais</option>
+                <option value="Pass Livre (Todas)">Pass Livre (Acesso Total)</option>
+              </select>
+              <span class="error-msg">Selecione a modalidade.</span>
+            </div>
+
+            <div class="input-block">
+              <label for="plano">Plano Escolhido *</label>
+              <select id="plano" required>
+                <option value="">Selecione...</option>
+                <option value="Plano Mensal Titan">Plano Mensal Titan</option>
+                <option value="Plano Trimestral Titan">Plano Trimestral Titan</option>
+                <option value="Plano Anual VIP Titan">Plano Anual VIP Titan</option>
+              </select>
+              <span class="error-msg">Selecione o plano.</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="input-block">
+              <label for="horario">Melhor Horário para Treinar *</label>
+              <select id="horario" required>
+                <option value="">Selecione...</option>
+                <option value="Manhã (06h - 12h)">Manhã (06h - 12h)</option>
+                <option value="Tarde (12h - 17h)">Tarde (12h - 17h)</option>
+                <option value="Noite (17h - 22h)">Noite (17h - 22h)</option>
+              </select>
+              <span class="error-msg">Selecione o horário.</span>
+            </div>
+
+            <div class="input-block">
+              <label for="objetivo">Objetivo Principal *</label>
+              <select id="objetivo" required>
+                <option value="">Selecione...</option>
+                <option value="Ganhar massa muscular">Ganhar massa muscular</option>
+                <option value="Emagrecer">Emagrecer</option>
+                <option value="Melhorar condicionamento">Melhorar condicionamento</option>
+                <option value="Saúde e qualidade de vida">Saúde e qualidade de vida</option>
+                <option value="Lutas">Lutas</option>
+                <option value="Outro">Outro</option>
+              </select>
+              <span class="error-msg">Selecione seu objetivo.</span>
+            </div>
+          </div>
+
+          <div class="btn-group space-between">
+            <button type="button" class="btn-titan-outline" onclick="prevStep(3)">
+              <i data-lucide="arrow-left"></i> VOLTAR
+            </button>
+            <button type="button" class="btn-titan-purple" onclick="nextStep(3)">
+              REVISAR <i data-lucide="arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- ETAPA 4: CONFIRMAÇÃO -->
+        <div class="form-step" id="step-4">
+          <h2 class="step-heading"><i data-lucide="shield-check"></i> RESUMO DA MATRÍCULA</h2>
+          <p class="step-sub">Confirme as informações antes de finalizar seu cadastro na NEXUS TITAN.</p>
+
+          <div class="summary-box">
+            <div class="summary-line"><span>Nome:</span> <strong id="res-nome">-</strong></div>
+            <div class="summary-line"><span>CPF:</span> <strong id="res-cpf">-</strong></div>
+            <div class="summary-line"><span>E-mail:</span> <strong id="res-email">-</strong></div>
+            <div class="summary-line"><span>Telefone:</span> <strong id="res-telefone">-</strong></div>
+            <div class="summary-line"><span>Cidade/UF:</span> <strong id="res-cidade">-</strong></div>
+            <div class="summary-line"><span>Modalidade:</span> <strong id="res-modalidade" class="purple-text">-</strong></div>
+            <div class="summary-line"><span>Plano:</span> <strong id="res-plano" class="gold-text">-</strong></div>
+          </div>
+
+          <div class="btn-group space-between">
+            <button type="button" class="btn-titan-outline" onclick="prevStep(4)">
+              <i data-lucide="arrow-left"></i> VOLTAR
+            </button>
+            <button type="submit" class="btn-titan-gold">
+              FINALIZAR MATRÍCULA <i data-lucide="zap"></i>
+            </button>
+          </div>
+        </div>
+
+      </form>
+
+      <!-- TELA DE SUCESSO FINAL -->
+      <div id="successCard" class="success-card hidden">
+        <div class="success-icon-box">
+          <img src="imagem/LOGO 2.png" alt="Nexus Titan" class="success-helmet">
+        </div>
+        <h2>MATRÍCULA CONCLUÍDA COM SUCESSO!</h2>
+        <p>Seja bem-vindo à elite <strong>NEXUS TITAN</strong>. Enviamos os detalhes do seu plano e os dados de acesso para o seu e-mail.</p>
+        
+        <div class="success-actions">
+          <a href="index.html" class="btn-titan-gold">
+            <i data-lucide="home"></i> VOLTAR PARA O INÍCIO
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="matricula.js"></script>
+</body>
+</html>
