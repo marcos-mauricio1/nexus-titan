@@ -1,32 +1,249 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="NexusTitan Academia — supere seus limites, treine com qualidade e alcance sua melhor versão.">
-    <meta name="keywords" content="academia, musculação, fitness, treino, exercícios, academia NexusTitan">
-    <meta name="author" content="NexusTitan Academia">
-    <link rel="stylesheet" href="modalidades.css">
-    <title>NexusTitan</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modalidades - Nexus Titan Academia</title>
+  <link rel="stylesheet" href="modalidades.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <header>
-        <img src="imagens-modalidades/icones/logo-principal.png" alt="Logo NexusTitan">
-        
-        <nav class="menu">
-            <a href="">INÍCIO</a>
-            <a href="">MODALIDADES</a>
-            <a href="">ESTRUTURA</a>
-            <a href="">PROFISSIONAIS</a>
-            <a href="">SOBRE</a>
-        </nav>
-        
-        <nav class="matricula">
-            <a href="">FAÇA SUA MATRICULA</a>
-        </nav>
 
-    </header>
-    <main></main>
-    <footer></footer>
+  <!-- HEADER / NAVBAR -->
+  <header class="navbar-wrapper">
+    <nav class="navbar">
+      <div class="brand-container">
+        <img src="imagem/LOGO 2.png" alt="Nexus Titan Logo" class="brand-logo-img">
+        <div class="brand-text">
+          <div class="brand-title">
+            <span class="text-nexus">NEXUS</span>
+            <span class="text-titan">TITAN</span>
+          </div>
+          <span class="text-academia">ACADEMIA</span>
+        </div>
+        <div class="diagonal-divider"></div>
+      </div>
+
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="index.html"><i data-lucide="home"></i><span>INÍCIO</span><div class="hover-line"></div></a>
+        </li>
+        <li class="nav-item active">
+          <a href="modalidades.html"><i data-lucide="shield-check"></i><span>MODALIDADES</span><div class="hover-line"></div></a>
+        </li>
+        <li class="nav-item">
+          <a href="estrutura.html">
+            <svg class="custom-dumbbell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 12h20"/><path d="M5 8v8"/><path d="M7 6v12"/><path d="M17 6v12"/><path d="M19 8v8"/>
+            </svg>
+            <span>ESTRUTURA</span><div class="hover-line"></div>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#profissionais"><i data-lucide="users"></i><span>PROFISSIONAIS</span><div class="hover-line"></div></a>
+        </li>
+        <li class="nav-item">
+          <a href="sobre.html"><i data-lucide="info"></i><span>SOBRE</span><div class="hover-line"></div></a>
+        </li>
+      </ul>
+
+      <a href="matricula.html" class="btn-cta">
+        <span>FAÇA SUA MATRÍCULA</span>
+        <i data-lucide="arrow-right"></i>
+      </a>
+    </nav>
+  </header>
+
+  <main class="page-container-full">
+  <!-- HERO SECTION MODALIDADES -->
+  <section class="hero-modalidades">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">NOSSAS <span class="highlight-purple">MODALIDADES</span></h1>
+      <p class="hero-subtitle">Diversas modalidades para todos os objetivos e níveis. Encontre a que mais combina com você.</p>
+    </div>
+  </section>
+
+  <!-- CARDS DE MODALIDADES -->
+  <section class="cards-section">
+    
+    <!-- CARD 01: MUSCULAÇÃO -->
+    <div class="mod-card">
+      <div class="card-badge">01</div>
+      <div class="card-img-wrapper">
+        <img src="imagem/yoga.png" alt="Musculação">
+        
+        <!-- CAMADA QUE APARECE NO HOVER -->
+        <div class="card-hover-info">
+          <h4>DETALHES DA AULA</h4>
+          <p><strong>📅 Dias:</strong> Segunda a Sábado</p>
+          <p><strong>⏰ Horário:</strong> 06:00 às 22:00</p>
+          <p><strong>🧘 Prof.:</strong> Ricardo Silva</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <h3>YOGA</h3>
+        <p>Equilíbrio, flexibilidade e bem-estar para o corpo e a mente.</p>
+        <span class="card-link">PASSE O MOUSE PARA DETALHES <i data-lucide="arrow-right"></i></span>
+      </div>
+    </div>
+
+    <!-- CARD 02: CARDIO -->
+    <div class="mod-card">
+      <div class="card-badge">02</div>
+      <div class="card-img-wrapper">
+        <img src="imagem/step - modalidades.png" alt="Cardio">
+        
+        <!-- CAMADA QUE APARECE NO HOVER -->
+        <div class="card-hover-info">
+          <h4>DETALHES DA AULA</h4>
+          <p><strong>📅 Dias:</strong> Segunda a Sexta</p>
+          <p><strong>⏰ Horário:</strong> 07:00 às 21:00</p>
+          <p><strong>👟 Profª.:</strong> Camila Santos</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <h3>STEP</h3>
+        <p>Movimentos intensos e ritmados para melhorar seu condicionamento físico.</p>
+        <span class="card-link">PASSE O MOUSE PARA DETALHES <i data-lucide="arrow-right"></i></span>
+      </div>
+    </div>
+
+    <!-- CARD 03: FUNCIONAL -->
+    <div class="mod-card">
+      <div class="card-badge">3</i></div>
+      <div class="card-img-wrapper">
+        <img src="imagem/modalidades lutando.png" alt="Funcional">
+        
+        <!-- CAMADA QUE APARECE NO HOVER -->
+        <div class="card-hover-info">
+          <h4>DETALHES DA AULA</h4>
+          <p><strong>📅 Dias:</strong> Terças e Quintas</p>
+          <p><strong>⏰ Horário:</strong> 08:00 | 18:00 | 19:30</p>
+          <p><strong>🥊 Prof.:</strong> Lucas Mendes</p>
+        </div>
+      </div>
+      <div class="card-body">
+        <h3>LUTA</h3>
+        <p>Força, disciplina e técnica para superar seus próprios limites.</p>
+        <span class="card-link">PASSE O MOUSE PARA DETALHES <i data-lucide="arrow-right"></i></span>
+      </div>
+    </div>
+
+  </section>
+</main>
+    <!-- BANNER ROXO DE DESTAQUE -->
+    <section class="cta-purple-banner">
+      <h2>ENCONTRE A <span class="highlight-purple-text">MODALIDADE</span> IDEAL <span class="highlight-yellow-text">PARA VOCÊ</span></h2>
+      
+      <div class="features-grid">
+        <div class="feature-item">
+          <div class="feature-icon"><i data-lucide="user-check"></i></div>
+          <p>Acompanhamento profissional</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><i data-lucide="activity"></i></div>
+          <p>Treinos para todos os níveis</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><i data-lucide="shield"></i></div>
+          <p>Ambientes exclusivos e completos</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon"><i data-lucide="target"></i></div>
+          <p>Resultados reais e consistentes</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ OFICIAL -->
+  <footer class="footer-site">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand-container">
+          <img src="imagem/LOGO 2.png" alt="Nexus Titan Logo" class="brand-logo-img">
+          <div class="brand-text">
+            <div class="brand-title">
+              <span class="text-nexus-white">NEXUS</span>
+              <span class="text-titan">TITAN</span>
+            </div>
+            <span class="text-academia">ACADEMIA</span>
+          </div>
+        </div>
+        <p class="slogan-footer">Disciplina. Foco. Evolução.</p>
+        <div class="social-icons">
+          <a href="#"><i data-lucide="instagram"></i></a>
+          <a href="#"><i data-lucide="phone"></i></a>
+          <a href="#"><i data-lucide="facebook"></i></a>
+          <a href="#"><i data-lucide="youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-cols">
+        <div class="f-col">
+          <h4>NAVIGAÇÃO</h4>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="modalidades.html">Modalidades</a></li>
+            <li><a href="estrutura.html">Estrutura</a></li>
+            <li><a href="#profissionais">Profissionais</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="#">Unidades</a></li>
+            <li><a href="#">Contato</a></li>
+          </ul>
+        </div>
+        <div class="f-col">
+          <h4>MODALIDADES</h4>
+          <ul>
+            <li><a href="#">Musculação</a></li>
+            <li><a href="#">Cardio</a></li>
+            <li><a href="#">Funcional</a></li>
+            <li><a href="#">Lutas</a></li>
+            <li><a href="#">Spinning</a></li>
+            <li><a href="#">Yoga</a></li>
+            <li><a href="#">Dança</a></li>
+          </ul>
+        </div>
+        <div class="f-col">
+          <h4>PLANOS</h4>
+          <ul>
+            <li><a href="#">Start</a></li>
+            <li><a href="#">Titan</a></li>
+            <li><a href="#">Pro</a></li>
+            <li><a href="#">Todos os planos</a></li>
+          </ul>
+        </div>
+        <div class="f-col">
+          <h4>CONTATO</h4>
+          <p>(11) 99999-9999</p>
+          <p>contato@nexustitan.com.br</p>
+          <p>24 horas por dia</p>
+          <a href="matricula.html" class="btn-fale">FALE CONOSCO</a>
+        </div>
+      </div>
+
+      <div class="footer-watermark">
+        <img src="imagem/LOGO 2.png" alt="Watermark Logo">
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Nexus Titan. Todos os direitos reservados.</p>
+      <div class="legal-links">
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Termos de Uso</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) { lucide.createIcons(); }
+    });
+  </script>
 </body>
 </html>
