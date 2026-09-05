@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f3ef; /* Fundo Creme / Claro */
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Header de ponta a ponta em tom claro */
+.navbar-wrapper {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: #ffffff; /* Fundo Branco */
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.navbar {
+  width: 100%;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+}
+
+/* Área da Logo e Tipografia */
+.brand-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo-img {
+  height: 54px;
+  width: auto;
+  object-fit: contain;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  display: flex;
+  gap: 6px;
+  line-height: 1;
+}
+
+.text-nexus {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 1.15rem;
+  color: #2b1055; /* Roxo Escuro Premium */
+  letter-spacing: -0.5px;
+}
+
+.text-titan {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 1.15rem;
+  color: #d9b206; /* Amarelo / Dourado da marca */
+  letter-spacing: -0.5px;
+}
+
+.text-academia {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: #7e22ce; /* Roxo intermediário */
+  letter-spacing: 5px;
+  margin-top: 3px;
+  text-transform: uppercase;
+}
+
+/* Divisor Inclinado */
+.diagonal-divider {
+  width: 2px;
+  height: 76px;
+  background-color: #d9b206;
+  transform: rotate(25deg);
+  margin-left: 18px;
+  margin-right: 12px;
+}
+
+/* Tópicos do Menu */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  height: 100%;
+}
+
+.nav-item {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.nav-item a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+  color: #334155; /* Grafite escuro para legibilidade no fundo claro */
+  height: 100%;
+  padding: 0 4px;
+  transition: color 0.2s ease;
+}
+
+.nav-item a i,
+.custom-dumbbell {
+  width: 22px;
+  height: 22px;
+  stroke-width: 2.2;
+  color: #334155;
+  transition: color 0.2s ease, stroke 0.2s ease, transform 0.2s ease;
+}
+
+.nav-item a span {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* Linha de Destaque no Hover */
+.hover-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #7e22ce;
+  transform: scaleX(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Efeito Hover nos itens do menu */
+.nav-item:hover a,
+.nav-item:hover a i,
+.nav-item:hover .custom-dumbbell {
+  color: #7e22ce;
+  stroke: #7e22ce;
+}
+
+.nav-item:hover a i,
+.nav-item:hover .custom-dumbbell {
+  transform: translateY(-2px);
+}
+
+.nav-item:hover .hover-line {
+  transform: scaleX(1);
+}
+
+/* Botão Inclinado Roxo com Ícone Dourado */
+.btn-cta {
+  height: 100%;
+  padding: 0 35px 0 50px;
+  background: linear-gradient(135deg, #6b21a8 0%, #3b0764 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  clip-path: polygon(25px 0%, 100% 0%, 100% 100%, 0% 100%);
+  transition: filter 0.2s ease, padding 0.2s ease;
+}
+
+.btn-cta i {
+  width: 18px;
+  height: 18px;
+  stroke-width: 3;
+  color: #d9b206; /* Seta dourada */
+  transition: transform 0.2s ease;
+}
+
+.btn-cta:hover {
+  filter: brightness(1.15);
+  padding-left: 55px;
+}
+
+.btn-cta:hover i {
+  transform: translateX(4px);
+}
