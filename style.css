@@ -1,5 +1,7 @@
 /* === TITULOS === */
 
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Science+Gothic:wght@100..900&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap'); 
 
 @import url('https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap');
@@ -14,98 +16,218 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+html {
     font-size: 62.5%;
 }
 
 body {
-    background-color: #F8F7FA;
+  background-color: #f5f3ef; /* Fundo Creme / Claro */
+    font-family: "Orbitron", sans-serif;
 }
 
-/* ===== CABEÇALHO ===== */
-header {
+/* Header de ponta a ponta em tom claro */
+.navbar-wrapper {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #ffffff; /* Fundo Branco */
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.navbar {
+    width: 100%;
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+}
+
+/* Área da Logo e Tipografia */
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo-img {
+    height: 54px;
+    width: auto;
+    object-fit: contain;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-title {
+    display: flex;
+    gap: 6px;
+    line-height: 1;
+}
+
+.text-nexus {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    color: #2b1055; /* Roxo Escuro Premium */
+    letter-spacing: -0.5px;
+}
+
+.text-titan {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    color: #d9b206; /* Amarelo / Dourado da marca */
+    letter-spacing: -0.5px;
+}
+
+.text-academia {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #7e22ce; /* Roxo intermediário */
+    letter-spacing: 5px;
+    margin-top: 3px;
+    text-transform: uppercase;
+}
+
+/* Divisor Inclinado */
+.diagonal-divider {
+    width: 2px;
+    height: 76px;
+    background-color: #d9b206;
+    transform: rotate(25deg);
+    margin-left: 18px;
+    margin-right: 12px;
+}
+
+/* Tópicos do Menu */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+    height: 100%;
+}
+
+.nav-item {
+    height: 100%;
     display: flex;
     align-items: center;
     position: relative;
 }
 
-header img {
-    padding: 3px;
-    margin: .8rem;
-}
-
-.container-texto-logo h1 {
-    font-size: 2.7rem;
-    font-family: 'Science Gothic';
-    line-height: .6;
-}
-
-.container-texto-logo h1 span {
-    color: #52216F;
-}
-
-/* --- Menu de Navegação --- */
-.menu {
+.nav-item a {
     display: flex;
-    gap: 4rem;
-    position: absolute;
-    /* centraliza o NAV ao meio */
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.menu a, .matricula a {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
     text-decoration: none;
-    font-size: 2.5rem;
-    font-family: 'Bebas Neue';
-    color: #000000;
-    letter-spacing: .1rem;
-    position: relative;
-    transition: .3s;
+    color: #334155; /* Grafite escuro para legibilidade no fundo claro */
+    height: 100%;
+    padding: 0 4px;
+    transition: color 0.2s ease;
 }
 
-.menu a:hover {
-    color: #7B2CFF;
+.nav-item a i,
+.custom-dumbbell {
+    width: 22px;
+    height: 22px;
+    stroke-width: 2.2;
+    color: #334155;
+    transition:
+    color 0.2s ease,
+    stroke 0.2s ease,
+    transform 0.2s ease;
 }
 
-/* Linha embaixo */
-.menu a::after {
-    content: "";
+.nav-item a span {
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+/* Linha de Destaque no Hover */
+.hover-line {
     position: absolute;
+    bottom: 0;
     left: 0;
-    bottom: -0.5rem;
     width: 100%;
-    height: 2px;
-    background-color: #7B2CFF;
+    height: 3px;
+    background-color: #7e22ce;
     transform: scaleX(0);
-    transform-origin: left;
-    transition: transform .3s ease;
+    transition: transform 0.2s ease-in-out;
 }
 
-.menu a:hover::after {
+/* Efeito Hover nos itens do menu */
+.nav-item:hover a,
+.nav-item:hover a i,
+.nav-item:hover .custom-dumbbell {
+    color: #7e22ce;
+    stroke: #7e22ce;
+}
+
+.nav-item:hover a i,
+.nav-item:hover .custom-dumbbell {
+    transform: translateY(-2px);
+}
+
+.nav-item:hover .hover-line {
     transform: scaleX(1);
 }
 
-/* --- Botão "FAÇA SUA MATRICULA" --- */
-.matricula {
-    margin-left: auto;
-    margin-right: 2rem;
-    border: 2px solid #A855F7;
-    border-radius: .5rem;
-    transition: .5s;
+/* Botão Inclinado Roxo com Ícone Dourado */
+.btn-cta {
+    height: 100%;
+    padding: 0 35px 0 50px;
+    background: linear-gradient(135deg, #6b21a8 0%, #3b0764 100%);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+    clip-path: polygon(25px 0%, 100% 0%, 100% 100%, 0% 100%);
+    transition:
+    filter 0.2s ease,
+    padding 0.2s ease;
 }
 
-.matricula:hover {
-    background-color: #FFD84D;
+.btn-cta i {
+    width: 18px;
+    height: 18px;
+    stroke-width: 3;
+    color: #d9b206; /* Seta dourada */
+    transition: transform 0.2s ease;
 }
 
-.matricula a {
-    display: block;
-    padding: 1rem 2rem;
+.btn-cta:hover {
+    filter: brightness(1.15);
+    padding-left: 55px;
+}
+
+.btn-cta:hover i {
+    transform: translateX(4px);
 }
 
 
 /* ===== SESSÃO INICIAL ===== */
+main {
+    margin-top: 10rem;
+}
+
 .conteudo {
     display: flex;
     align-items: center;
@@ -124,14 +246,23 @@ header img {
 }
 
 .subtitulo {
-    font-family: 'Bebas Neue';
+    font-family: "Orbitron", sans-serif;
     font-size: 2.5rem;
     letter-spacing: .35rem;
-    color: #7B2CFF;
+    background: linear-gradient(
+        to bottom,
+        #7B2CFF 0%,
+        #3b166d 100%
+    );
+    /* define o degrade no texto */
+    -webkit-background-clip: text; /* aplica a cor dentro do texto */
+    -webkit-text-fill-color: transparent; /* deixa A COR do texto transparente */
 }
 
 .conteudo-inicial h1 {
-    font-family: 'Oswald';
+    font-family: "Orbitron", sans-serif;
+    font-weight: 900;
+    letter-spacing: -5px;
     font-size: 10rem;
     line-height: .88;
     color: #08070B;
@@ -139,7 +270,14 @@ header img {
 }
 
 .conteudo-inicial h1 span {
-    color: #7B2CFF;
+    background: linear-gradient(
+        to bottom,
+        #7B2CFF 0%,
+        #3b166d 100%
+    );
+    /* define o degrade no texto */
+    -webkit-background-clip: text; /* aplica a cor dentro do texto */
+    -webkit-text-fill-color: transparent; /* deixa A COR do texto transparente */
     font-size: 12.5rem;
     margin-bottom: 50%;
 }
@@ -231,13 +369,18 @@ header img {
 /* === INFORMAÇÕES ESCRITAS === */
 /* --- Container Principal --- */
 .card-informatico {
-    width: 80%;
-    min-height: 13rem;
-    
-    margin: -10rem auto 0;
-    background: #1c0c36;
-    border: 1px solid #30283A;
-    border-radius: 1.2rem;
+    width: 100%;    
+    margin: -15rem auto 0;
+
+    background: radial-gradient(
+    ellipse at center,
+    #2f1f42 0%,
+    #1f1631 45%,
+    #1b1525 75%,
+    #14111b 100%
+);
+    border: 1px solid #7B2CFF;
+
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -269,13 +412,6 @@ header img {
     background: #52216F;
 }
 
-
-/* --- Icones imagens --- */
-.card img {
-    object-fit: contain;
-}
-
-
 /* --- Textos --- */
 .card p {
     color: #F5F5F5;
@@ -301,231 +437,588 @@ header img {
 }
 
 
-/* === CARD INFORMATICO === */
-.card-informatico {
-    background-color: #1b112b;
-    position: absolute;
-    bottom: 2rem;
-    display: flex;
-    align-items: center;
+/* ===== SESSÃO MODALIDADES ===== */
+.modalidades {
+    width: 100%;
+    background-color: #F8F7FA;
+    overflow: hidden;
+    background-color: #0E0B13;
 }
 
-
-
-
-
-
-
-/* ===== RODAPÉ ===== */
-/* Container Principal do Rodapé */
-.spartan-footer {
-    width: 100%;
-    background-color: #050505;
-    padding: 60px 20px 40px 20px;
+/* === TITULO === */
+.titulo {
     display: flex;
     justify-content: center;
-    border-top: 1px solid #111;
-    margin-top: 5rem;
-}
-
-.footer-container {
-    max-width: 1250px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 2.2fr 1fr 1.3fr 1fr 1.8fr;
-    gap: 30px;
-    align-items: start;
-}
-
-/* --- COLUNA 1: MARCA E LOGO --- */
-.brand-header {
-    display: flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
+    margin-top: 3rem;
 }
 
-.spartan-logo {
-    width: 65px;
-    height: auto;
-    filter: drop-shadow(0 0 8px rgba(138, 43, 226, 0.6));
+.linha-horizontal {
+    background: linear-gradient(
+        to right,
+        transparent,
+        #7B2CFF
+    );
+
+    width: 10%;
+    height: 2px;
 }
 
-.brand-text {
+.titulo h2 {
+    color: #6b21a8;
+    font-size: 2.5rem;
+    letter-spacing: 7px;
+    font-weight: 600;
+    font-family: 'Science Gothic', sans-serif;
+    padding: 0 2rem;
+}
+
+
+/* === FRASE PRINCIPAL === */
+.titulo-p {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.titulo-p p {
     display: flex;
     flex-direction: column;
-}
-
-.brand-top {
-    font-size: 20px;
-    font-family: 'Science Gothic';
-    font-weight: 800;
-    font-style: italic;
-    color: #ffffff;
-    letter-spacing: 0.5px;
-    line-height: 1;
-}
-
-.brand-bottom {
-    font-size: 24px;
-    font-weight: 900;
-    font-style: italic;
-    color: #FFC400; /* Dourado/Amarelo brilhante */
-    letter-spacing: 1px;
-    line-height: 1.1;
-    font-family: 'Science Gothic';
-}
-
-.slogan {
-    color: #ffffff;
-    font-size: 18px;
-    font-weight: 400;
-    margin-bottom: 22px;
-    font-family: 'Outfit';
-}
-
-/* Ícones de Redes Sociais Círculares com Brilho */
-.social-icons {
-    display: flex;
-    gap: 12px;
-}
-
-.social-btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid #FFC400;
-    display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 14px;
-    box-shadow: 0 0 10px rgba(252, 163, 17, 0.25);
-    transition: all 0.3s ease;
+
+    font-family: "Orbitron", sans-serif;
+    font-weight: 900;
+    letter-spacing: -5px;
+    font-size: 8rem;
+    line-height: .88;
+    color: #e2e8f0;
+
+    margin-bottom: 2.5rem;
 }
 
-.social-btn:hover {
-    transform: translateY(-3px);
-    border-color: #a855f7;
-    color: #FFC400;
-    box-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
+.titulo-p .frase {
+    display: block;
 }
 
-/* --- TÍTULOS DAS COLUNAS --- */
-.col-title {
-    color: #FFC400;
-    font-size: 20px;
-    font-family: 'Bebas Neue';
-    font-weight: 500;
-    letter-spacing: 2px;
-    margin-bottom: 18px;
-    text-transform: uppercase;
+.titulo-p .cor {
+    display: block;
+
+    background: linear-gradient(
+        to bottom,
+        #7B2CFF 0%,
+        #3b166d 100%
+    );
+
+    /* define o degrade no texto */
+    -webkit-background-clip: text; /* aplica a cor dentro do texto */
+    -webkit-text-fill-color: transparent; /* deixa A COR do texto transparente */
 }
 
-/* --- LISTAS DE LINKS --- */
-.footer-list {
-    list-style: none;
-}
-
-.footer-list li {
-    margin-bottom: 8px;
-}
-
-.footer-list li a {
-    color: #888888;
-    text-decoration: none;
-    font-size: 17px;
-    font-family: 'Outfit';
-    font-weight: 400;
-    transition: color 0.25s ease;
-}
-
-.footer-list li a:hover {
-    color: #ffffff;
-}
-
-/* Links Selecionados/Destaque */
-.footer-list li a.active-link,
-.footer-list li a.highlight-link {
-    color: #FFC400;
-}
-
-/* --- COLUNA DE CONTATO --- */
-.contact-info {
-    list-style: none;
-    margin-bottom: 20px;
-    font-family: 'Outfit';
-}
-
-.contact-info li {
+/* ===== CONTAINERS MODALIDADES ===== */
+.treino-musculacao,
+.treino-funcional,
+.treino-yoga,
+.treino-lutas {
     display: flex;
     align-items: center;
-    gap: 10px;
-    color: #ffffff;
-    font-size: 13px;
-    margin-bottom: 12px;
-}
-
-.contact-info li i {
-    color: #a855f7; /* Roxo brilhante para os ícones */
-    font-size: 15px;
-    width: 18px;
-    text-align: center;
-}
-
-/* Botão Fale Conosco */
-.btn-fale-conosco {
-    display: inline-block;
     width: 100%;
-    max-width: 220px;
-    text-align: center;
-    padding: 10px 15px;
-    border: 1px solid #a855f7;
-    border-radius: 6px;
-    color: #ffffff;
-    font-size: 15px;
+    height: 50rem;
+    overflow: hidden;
+    position: relative;
+}
+
+/* === CAIXA IMAGENS === */
+.imagem-modalidade {
+    width: 65%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+
+    transition: transform 0.6s ease;
+}
+
+/* === CAIXA TEXTOS === */
+.texto-modalidade {
+    width: 35%;
+    padding: 6rem;
+    position: relative;
+    z-index: 1;
+
+    transition: transform 0.6s ease;
+}
+
+
+/* === CORTES DIAGONAIS === */
+/* - efeito diagonal direito - */
+.treino-musculacao .imagem-modalidade,
+.treino-yoga .imagem-modalidade {
+
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        82% 100%,
+        0 100%
+    );
+
+    /* começa um pouco para fora */
+
+    transform: translateX(-30px);
+}
+
+
+/* - efeito diagonal esquerdo - */
+.treino-funcional .imagem-modalidade,
+.treino-lutas .imagem-modalidade {
+
+    clip-path: polygon(
+        18% 0,
+        100% 0,
+        100% 100%,
+        0 100%
+    );
+
+    /* começa um pouco para fora */
+
+    transform: translateX(30px);
+}
+
+/* === IMAGEM ORIGINAL === */
+.imagem-modalidade img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    transition: filter 0.6s ease;
+}
+
+/* posiciona a segunda imagem */
+.treino-funcional .imagem-modalidade img {
+    object-position: center top;
+}
+
+
+/* ====== SOMBRA NAS IMAGENS ====== */
+.imagem-modalidade::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 3;
+
+    transition: transform 0.7s ease;
+}
+
+/* --- sombra para imagens da esquerda --- */
+.treino-musculacao .imagem-modalidade::after,
+.treino-yoga .imagem-modalidade::after {
+    left: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.65) 0%,
+        rgba(0, 0, 0, 0.35) 35%,
+        rgba(0, 0, 0, 0) 75%
+    );
+}
+
+/* --- sombra para imagens da direita --- */
+.treino-funcional .imagem-modalidade::after,
+.treino-lutas .imagem-modalidade::after {
+    right: 0;
+    background: linear-gradient(
+        to left,
+        rgba(0, 0, 0, 0.65) 0%,
+        rgba(0, 0, 0, 0.35) 35%,
+        rgba(0, 0, 0, 0) 75%
+    );
+}
+
+/* ===== SOMBRA NO HOVER ===== */
+/* - imagens da esquerda - */
+.treino-musculacao:has(.imagem-modalidade:hover) .imagem-modalidade::after,
+.treino-yoga:has(.imagem-modalidade:hover) .imagem-modalidade::after {
+
+    transform: translateX(-100%);
+}
+
+/* - imagens da direita - */
+.treino-funcional:has(.imagem-modalidade:hover) .imagem-modalidade::after,
+.treino-lutas:has(.imagem-modalidade:hover) .imagem-modalidade::after {
+
+    transform: translateX(100%);
+}
+
+/* === EFEITO HOVER === */
+/* ===== SOMBRA NO HOVER ===== */
+/* - imagens da esquerda - */
+.treino-musculacao:has(.imagem-modalidade:hover) .imagem-modalidade::after,
+.treino-yoga:has(.imagem-modalidade:hover) .imagem-modalidade::after {
+
+    transform: translateX(-100%);
+}
+
+/* - imagens da direita - */
+.treino-funcional:has(.imagem-modalidade:hover) .imagem-modalidade::after,
+.treino-lutas:has(.imagem-modalidade:hover) .imagem-modalidade::after {
+
+    transform: translateX(100%);
+}
+
+/* - musculação e yoga - */
+/* Só ativa quando o mouse está sobre a imagem */
+.treino-musculacao:has(.imagem-modalidade:hover) .imagem-modalidade,
+.treino-yoga:has(.imagem-modalidade:hover) .imagem-modalidade {
+
+    transform: translateX(0);
+    /* faz a imagem voltar pro lugar original */
+}
+
+.treino-musculacao:has(.imagem-modalidade:hover) .texto-modalidade,
+.treino-yoga:has(.imagem-modalidade:hover) .texto-modalidade {
+
+    transform: translateX(8px);
+}
+
+/* - funcional e lutas - */
+/* Só ativa quando o mouse está sobre a imagem */
+.treino-funcional:has(.imagem-modalidade:hover) .imagem-modalidade,
+.treino-lutas:has(.imagem-modalidade:hover) .imagem-modalidade {
+
+    transform: translateX(0);
+    /* faz a imagem voltar pro lugar original */
+}
+
+.treino-funcional:has(.imagem-modalidade:hover) .texto-modalidade,
+.treino-lutas:has(.imagem-modalidade:hover) .texto-modalidade {
+
+    transform: translateX(-8px);
+}
+
+/* --- TEXTOS MODALIDADES --- */
+.texto-modalidade h3 {
+    font-size: 4rem;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 900;
+    background: linear-gradient(
+        to bottom,
+        #A855F7 0%,
+        #6b21a8 100%
+    );
+
+    /* define o degrade no texto */
+    -webkit-background-clip: text;
+    /* aplica a cor dentro do texto */
+    -webkit-text-fill-color: transparent;
+    /* deixa A COR do texto transparente */
+
+    margin-bottom: 1.5rem;
+}
+
+
+.texto-modalidade p {
+    font-size: 2.5rem;
+    color: #F5F5F5;
+}
+
+
+/* primeiro parágrafo */
+.texto-modalidade p:nth-of-type(1) {
     font-weight: 800;
-    letter-spacing: 1px;
+    margin-top: 1rem;
+    line-height: 1;
+    color: #A7A3AE;
+}
+
+/* segundo parágrafo */
+.texto-modalidade p:nth-of-type(2) {
+    margin-top: 2rem;
+    line-height: 1.4;
+    color: #F5F5F5;
+}
+
+/* === BOTÃO MODALIDADES === */
+.botao-modalidades {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 5rem 0;
+}
+
+.botao-modalidades nav a {
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    border: 2px solid #7B2CFF;
+    color: #7B2CFF;
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
     text-decoration: none;
-    background: transparent;
-    box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
-    transition: all 0.3s ease;
+
+    transition: 
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-.btn-fale-conosco:hover {
-    background-color: #a855f7;
-    color: #ffffff;
-    box-shadow: 0 0 18px rgba(168, 85, 247, 0.6);
+.botao-modalidades nav a:hover {
+    background-color: #7B2CFF;
+    color: #F5F5F5;
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(123, 44, 255, 0.35);
 }
 
-/* --- RESPONSIVIDADE (Para Celulares e Tablets) --- */
-@media (max-width: 992px) {
-    .footer-container {
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-    }
+/* ===== SESSÃO ESTRUTURA ===== */
+/* --- Container --- */
+.estrutura {
+    width: 100%;
+    height: 70rem;
+
+    position: relative;
+    overflow: hidden;
+
+    background-image: url("imagens-inicio/banner-principal/academia.jpg");
+
+    background-size: cover;
+    background-position: 75% center;
+    background-repeat: no-repeat;
 }
 
-@media (max-width: 576px) {
-    .footer-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
+/* === DEGRADE SOBRE A IMAGEM === */
+.estrutura::before {
+    content: "";
 
-    .brand-header {
-        justify-content: center;
-    }
+    position: absolute;
+    inset: 0;
 
-    .social-icons {
-        justify-content: center;
-    }
+    z-index: 1;
 
-    .contact-info li {
-        justify-content: center;
-    }
+    background: linear-gradient(
+        to left,
 
-    .btn-fale-conosco {
-        margin: 0 auto;
-    }
+        #F8F7FA 0%,
+        #F8F7FA 20%,
+
+        rgba(248, 247, 250, 0.98) 30%,
+        rgba(248, 247, 250, 0.85) 38%,
+        rgba(248, 247, 250, 0.65) 46%,
+        rgba(248, 247, 250, 0.40) 55%,
+        rgba(248, 247, 250, 0.18) 65%,
+
+        rgba(248, 247, 250, 0) 78%
+    );
+
+    pointer-events: none;
 }
+
+/* === CONTEÚDO DA SEÇÃO === */
+.estrutura-conteudo {
+    width: 40%;
+    height: 100%;
+
+    margin-left: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 3rem;
+    padding-left: 16rem;
+
+    position: relative;
+    z-index: 2;
+}
+
+/* === TAG === */
+.estrutura-tag {
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 1.4rem;
+    font-weight: 700;
+
+    letter-spacing: .25rem;
+
+    color: #7B2CFF;
+
+    margin-bottom: 1.5rem;
+}
+
+
+
+/* === TITULO === */
+.estrutura-conteudo h2 {
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 5.5rem;
+    font-weight: 900;
+
+    line-height: .9;
+    letter-spacing: -2px;
+
+    color: #08070B;
+
+    margin-bottom: 2rem;
+}
+
+
+.estrutura-conteudo h2 span {
+    display: block;
+
+    color: #FFC400;
+}
+
+
+/* === DESCRIÇÃO === */
+.estrutura-descricao {
+    max-width: 38rem;
+
+    font-family: "Rajdhani";
+
+    font-size: 1.7rem;
+
+    line-height: 1.45;
+
+    color: #4B4652;
+
+    margin-bottom: 3rem;
+}
+
+/* === DIFERENCIAIS === */
+.estrutura-diferenciais {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 2rem 3rem;
+
+    margin-bottom: 3rem;
+}
+
+
+/* === DIFERENCIAL === */
+.diferencial {
+    display: flex;
+
+    align-items: center;
+
+    gap: 1.2rem;
+}
+
+.diferencial .icone {
+    width: 3.5rem;
+    height: 3.5rem;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border: 1.5px solid #7B2CFF;
+
+    border-radius: .8rem;
+
+    color: #7B2CFF;
+
+    font-size: 1.8rem;
+
+    transition:
+        background-color .3s ease,
+        color .3s ease,
+        transform .3s ease;
+}
+
+
+.diferencial p {
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 1.3rem;
+
+    line-height: 1.25;
+
+    color: #3E3945;
+}
+
+
+.diferencial strong {
+    font-weight: 700;
+
+    color: #08070B;
+}
+
+
+/* === EFEITO DIFERENCIAIS === */
+.diferencial:hover .icone {
+    background-color: #7B2CFF;
+
+    color: #F8F7FA;
+
+    transform: translateY(-3px);
+}
+
+/* === BOTÃO === */
+.botao-estrutura {
+    width: fit-content;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 2rem;
+
+    padding: 1.3rem 1.8rem;
+
+    border: 1.5px solid #7B2CFF;
+
+    text-decoration: none;
+
+    font-family: "Orbitron", sans-serif;
+
+    font-size: 1.3rem;
+    font-weight: 700;
+
+    color: #3B166D;
+
+    transition:
+        background-color .3s ease,
+        color .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+
+.botao-estrutura span {
+    font-size: 2.2rem;
+
+    color: #FFC400;
+
+    line-height: 0;
+
+    transition: transform .3s ease;
+}
+
+/* -- EFEITO DO BOTÃO -- */
+.botao-estrutura:hover {
+    background-color: #7B2CFF;
+
+    color: #FFFFFF;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 25px rgba(123, 44, 255, .18);
+}
+
+
+.botao-estrutura:hover span {
+    transform: translateX(5px);
+
+    color: #FFC400;
+}
+

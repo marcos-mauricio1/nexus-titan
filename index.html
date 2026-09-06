@@ -1,41 +1,98 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>NexusTitan</title>
-</head>
-<body>
-    <header>
-        <img src="imagens-inicio/logo-icone/logo-header.png" alt="Logo NexusTitan">
-
-        <div class="container-texto-logo">
-            <h1>
-                NEXUS <br>
-                <span>TITAN</span>
-            </h1>
-        </div>
+    </head>
+    <body>
         
-        <nav class="menu">
-            <a href="">INÍCIO</a>
-            <a href="">MODALIDADES</a>
-            <a href="">ESTRUTURA</a>
-            <a href="">PROFISSIONAIS</a>
-            <a href="">SOBRE</a>
-        </nav>
-        
-        <nav class="matricula">
-            <a href="">FAÇA SUA MATRICULA</a>
-        </nav>
+        <header class="navbar-wrapper">
+            <nav class="navbar">
+            <!-- LOGO OFICIAL + TEXTO DA MARCA -->
+            <div class="brand-container">
+                <img
+                src="imagens-inicio/logo-icone/logo-header.png"
+                alt="Nexus Titan Logo"
+                class="brand-logo-img"
+                />
 
-        <div class="conteudo-principal">
-            
-        </div>
+                <div class="brand-text">
+                <div class="brand-title">
+                    <span class="text-nexus">NEXUS</span>
+                    <span class="text-titan">TITAN</span>
+                </div>
+                <span class="text-academia">ACADEMIA</span>
+                </div>
 
-    </header>
+                <div class="diagonal-divider"></div>
+            </div>
 
-    <main>
+            <!-- TÓPICOS DO MENU -->
+            <ul class="nav-menu">
+                <li class="nav-item">
+                <a href="#inicio">
+                    <i data-lucide="home"></i>
+                    <span>INÍCIO</span>
+                    <div class="hover-line"></div>
+                </a>
+                </li>
+
+                <li class="nav-item">
+                <a href="#modalidades">
+                    <i data-lucide="shield-check"></i>
+                    <span>MODALIDADES</span>
+                    <div class="hover-line"></div>
+                </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#estrutura">
+                    <!-- Ícone Haltere Horizontal Personalizado -->
+                    <svg
+                    class="custom-dumbbell"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    >
+                    <path d="M2 12h20" />
+                    <path d="M5 8v8" />
+                    <path d="M7 6v12" />
+                    <path d="M17 6v12" />
+                    <path d="M19 8v8" />
+                    </svg>
+                    <span>ESTRUTURA</span>
+                    <div class="hover-line"></div>
+                </a>
+                </li>
+                <li class="nav-item">
+                <a href="#profissionais">
+                    <i data-lucide="users"></i>
+                    <span>PROFISSIONAIS</span>
+                    <div class="hover-line"></div>
+                </a>
+                </li>
+                <li class="nav-item">
+                <a href="sobre.html">
+                    <i data-lucide="info"></i>
+                    <span>SOBRE</span>
+                    <div class="hover-line"></div>
+                </a>
+                </li>
+            </ul>
+
+            <!-- BOTÃO FAÇA SUA MATRÍCULA -->
+            <a href="matricula.html" class="btn-cta">
+                <span>FAÇA SUA MATRÍCULA</span>
+                <i data-lucide="arrow-right"></i>
+            </a>
+            </nav>
+        </header>
+
+        <main>
         <section class="conteudo">
 
             <!-- === CONTEÚDO ESCRITO === -->
@@ -65,94 +122,218 @@
                 <img src="imagens-inicio/banner-principal/mulher.png" class="mulher" alt="">
             </div>
         </section>
+
+        <!-- === CAIXA DE IFORMAÇÕES === -->
+        <section class="card-informatico">
+
+                <!-- card 1 -->
+            <div class="card">
+                <img src="imagens-inicio/logo-icone/icone-peso.png" alt="">
+
+                <p>
+                    <span>10+</span> <br>
+                    DE EXPERIÊNCIA.
+                </p>
+            </div>
+
+                <!-- card 2 -->
+            <div class="card">
+                <img src="imagens-inicio/logo-icone/icone-pessoa.png" alt="">
+
+                <p>
+                    <span>2.000+</span> <br>
+                    TRANSFORMADOS.
+                </p>
+            </div>
+
+                <!-- card 3 -->
+            <div class="card">
+                <img src="imagens-inicio/logo-icone/icone-peso2.png" alt="">
+
+                <p>
+                    <span>20+</span><br>
+                    PROFISSIONAIS<br>
+                    ESPECIALIZADOS.
+                </p>
+            </div>
+
+            <!-- card 4 -->
+            <div class="card">
+                <img src="imagens-inicio/logo-icone/icone-estrela.png" alt="">
+
+                <p>
+                    <span>30+</span> <br>
+                    EQUIPAMENTOS<br>
+                    MODERNOS.
+                </p>
+            </div>
+
+        </section>
+
+        <section class="modalidades">
+
+            <!-- == TITULO == -->
+            <div class="titulo">
+                <div class="linha-horizontal"></div>
+                <h2>MODALDADES</h2>
+                <div class="linha-horizontal"></div>
+            </div>
+            <div class="titulo-p">
+                <p>
+                    <span class="frase">TREINE DO SEU</span>
+                    <span class="cor">JEITO</span>
+                </p>
+            </div>
+
+            <!-- === FOTOS E EXPLICAÇÃO === -->
+            
+                <!-- CONTAINER MUSCULAÇÃO -->
+            <div class="treino-musculacao">
+                <div class="imagem-modalidade">
+                    <img src="imagens-inicio/modalidades/treino-musculacao.jpg" alt="exemplo musculação">
+                </div>
+                <!-- -- TEXTO -- -->
+                <div class="texto-modalidade">
+                    <h3>MUSCULAÇAO</h3>
+                    <p>FORÇA, HIPERTROFIA E DEFINIÇÃO MUSCULAR.</p>
+                    <p>Treinos personalizados para desenvolver sua força, melhorar seu condicionamento e alcançar seus objetivos.</p>
+                </div>
+            </div>
+
+                <!-- CONTAINER FUNCIONAL -->
+            <div class="treino-funcional">
+
+                <!-- -- TEXTO -- -->
+                <div class="texto-modalidade">
+                    <h3>FUNCIONAL</h3>
+                    <p>OVIMENTO, RESISTÊNCIA E PERFORMANCE.</p>
+                    <p>Exercícios dinâmicos que trabalham força, equilíbrio, coordenação e condicionamento físico.</p>
+                </div>
+
+                <div class="imagem-modalidade">
+                    <img src="imagens-inicio/modalidades/treino-funcional.jpg" alt="">
+                </div>
+            </div>
+
+                <!-- CONTAINER YOGA -->
+            <div class="treino-yoga">
+                <div class="imagem-modalidade">
+                    <img src="imagens-inicio/modalidades/treino-yoga.jpg" alt="">
+                </div>
+
+                <!-- -- TEXTO -- -->
+                <div class="texto-modalidade">
+                    <h3>YOGA</h3>
+                    <p>EQUILÍBRIO ENTRE CORPO E MENTE</p>
+                    <p>Práticas que combinam movimento, respiração e concentração para melhorar sua flexibilidade, equilíbrio e bem-estar.</p>
+                </div>
+
+            </div>
+
+                <!-- CONTAINER LUTA -->
+            <div class="treino-lutas">
+
+                <!-- -- TEXTO -- -->
+                <div class="texto-modalidade">
+                    <h3>LUTAS</h3>
+                    <p>DICIPLINA, TÉCNICA E SUPERAÇÃO.</p>
+                    <p>Treinos que desenvolvem condicionamento, coordenação, agilidade e confiança em um ambiente de evolução constante.</p>
+                </div>
+
+                <div class="imagem-modalidade">
+                    <img src="imagens-inicio/modalidades/treino-luta.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="botao-modalidades">
+                <nav>
+                    <a href="">VER TODAS AS MODALIDADES</a>
+                </nav>
+            </div>
+        </section>
+
+        <section class="estrutura">
+
+            <div class="estrutura-conteudo">
+
+                <span class="estrutura-tag">AMBIENTE FEITO PARA</span>
+
+                <h2>
+            A SUA
+            <span>EVOLUÇÃO</span>
+                </h2>
+
+                <p class="estrutura-descricao">
+            Estrutura completa, equipamentos de alta performance
+            e um ambiente que inspira resultados.
+                </p>
+
+                <div class="estrutura-diferenciais">
+
+                    <div class="diferencial">
+                        <div class="icone">♙</div>
+                        <p>
+                    Equipamentos<br>
+                    <strong>de última geração</strong>
+                        </p>
+                    </div>
+
+                    <div class="diferencial">
+                        <div class="icone">◉</div>
+                        <p>
+                    Ambiente<br>
+                            <strong>climatizado</strong>
+                        </p>
+                    </div>
+
+                    <div class="diferencial">
+                        <div class="icone">▦</div>
+                        <p>
+                    Vestiários<br>
+                            <strong>modernos</strong>
+                        </p>
+                    </div>
+
+                    <div class="diferencial">
+                        <div class="icone">♙</div>
+                        <p>
+                    Espaço amplo<br>
+                            <strong>e confortável</strong>
+                        </p>
+                    </div>
+
+                </div>
+
+                <a href="#" class="botao-estrutura">
+            CONHEÇA NOSSA ESTRUTURA
+                    <span>›</span>
+                </a>
+
+            </div>
+
+        </section>
+
+        <section class="profissionais">
+
+            <div class="linha-horizontal"></div>
+            <h3>PROFISSIONAIS</h3>
+            <div class="linha-horizontal"></div>
+
+            <p>PESSOAS QUE TE <span>INSPIRAM</span> E TE GUIAM.</p>
+            <p>Na NexusTitan, temos uma equipe especializada para acompanhar sua evolução, orientar seus treinos e ajudar você a alcançar seus objetivos.</p>
+
+            <nav>
+                <a href="">CONHECER OS PROFISSIONAIS</a>
+            </nav>
+
+        </section>
     </main>
 
 
-    <!-- RODAPÉ PRINCIPAL -->
-    <footer class="spartan-footer">
-        <div class="footer-container">
-        <!-- Coluna 1: Logo, Título, Slogan e Redes Sociais -->
-        <div class="footer-col brand-col">
-            <div class="brand-header">
-            <!-- Substitua 'logo.png' pelo caminho do seu capacete espartano -->
-            <img
-                src="imagens-inicio/logo-icone/logo-header.png"
-                alt="Logo Spartan"
-                class="spartan-logo"
-            />
-            <div class="brand-text">
-                <span class="brand-top">NEXUS</span>
-                <span class="brand-bottom">TITAN</span>
-            </div>
-            </div>
-            <p class="slogan">Disciplina. Foco. Evolução.</p>
-            <div class="social-icons">
-            <a href="#" class="social-btn"
-                ><i class="fa-brands fa-instagram"></i
-            ></a>
-            <a href="#" class="social-btn"
-                ><i class="fa-brands fa-facebook-f"></i
-            ></a>
-            <a href="#" class="social-btn"
-                ><i class="fa-brands fa-youtube"></i
-            ></a>
-            <a href="#" class="social-btn"
-                ><i class="fa-brands fa-tiktok"></i
-            ></a>
-            </div>
-        </div>
 
-        <!-- Coluna 2: Navegação -->
-        <div class="footer-col">
-            <h4 class="col-title">NAVEGAÇÃO</h4>
-            <ul class="footer-list">
-            <li><a href="#" class="active-link">Início</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Modalidades</a></li>
-            <li><a href="#">Planos</a></li>
-            <li><a href="#">Unidades</a></li>
-            <li><a href="#">Contato</a></li>
-            </ul>
-        </div>
 
-        <!-- Coluna 3: Modalidades -->
-        <div class="footer-col">
-            <h4 class="col-title">MODALIDADES</h4>
-            <ul class="footer-list">
-            <li><a href="#">Musculação</a></li>
-            <li><a href="#">Funcional</a></li>
-            <li><a href="#">Funcional</a></li>
-            <li><a href="#">Spinning</a></li>
-            <li><a href="#">Yoga</a></li>
-            <li><a href="#" class="highlight-link">Lutas</a></li>
-            <li><a href="#">Dança</a></li>
-            <li><a href="#">Todas as modalidades</a></li>
-                </ul>
-        </div>
 
-        <!-- Coluna 4: Planos -->
-        <div class="footer-col">
-            <h4 class="col-title">PLANOS</h4>
-            <ul class="footer-list">
-            <li><a href="#">Start</a></li>
-            <li><a href="#">Titan</a></li>
-            <li><a href="#">Pro</a></li>
-            <li><a href="#" class="highlight-link">Todos os planos</a></li>
-            </ul>
-        </div>
 
-        <!-- Coluna 5: Contato e Botão -->
-        <div class="footer-col contact-col">
-            <h4 class="col-title">CONTATO</h4>
-            <ul class="contact-info">
-            <li><i class="fa-solid fa-phone"></i> (11) 99959-9999</li>
-            <li><i class="fa-solid fa-envelope"></i> contato@spartan.com.br</li>
-            <li><i class="fa-regular fa-clock"></i> 24 horas por dia</li>
-            </ul>
-            <a href="#" class="btn-fale-conosco">FALE CONOSCO</a>
-        </div>
-        </div>
-    </footer>
-</body>
+
+    </body>
 </html>
