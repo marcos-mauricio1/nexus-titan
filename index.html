@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <title>NexusTitan</title>
     </head>
     <body>
@@ -123,133 +127,147 @@
             </div>
         </section>
 
-        <!-- === CAIXA DE IFORMAÇÕES === -->
-        <section class="card-informatico">
-
-                <!-- card 1 -->
-            <div class="card">
-                <img src="imagens-inicio/logo-icone/icone-peso.png" alt="">
-
-                <p>
-                    <span>10+</span> <br>
-                    DE EXPERIÊNCIA.
-                </p>
-            </div>
-
-                <!-- card 2 -->
-            <div class="card">
-                <img src="imagens-inicio/logo-icone/icone-pessoa.png" alt="">
-
-                <p>
-                    <span>2.000+</span> <br>
-                    TRANSFORMADOS.
-                </p>
-            </div>
-
-                <!-- card 3 -->
-            <div class="card">
-                <img src="imagens-inicio/logo-icone/icone-peso2.png" alt="">
-
-                <p>
-                    <span>20+</span><br>
-                    PROFISSIONAIS<br>
-                    ESPECIALIZADOS.
-                </p>
-            </div>
-
-            <!-- card 4 -->
-            <div class="card">
-                <img src="imagens-inicio/logo-icone/icone-estrela.png" alt="">
-
-                <p>
-                    <span>30+</span> <br>
-                    EQUIPAMENTOS<br>
-                    MODERNOS.
-                </p>
-            </div>
-
-        </section>
-
+        <!-- ===== SESSÃO MODALIDADES ===== -->
         <section class="modalidades">
 
-            <!-- == TITULO == -->
-            <div class="titulo">
-                <div class="linha-horizontal"></div>
-                <h2>MODALDADES</h2>
-                <div class="linha-horizontal"></div>
-            </div>
-            <div class="titulo-p">
-                <p>
-                    <span class="frase">TREINE DO SEU</span>
-                    <span class="cor">JEITO</span>
-                </p>
-            </div>
+            <!-- === TÍTULO DA SEÇÃO === -->
 
-            <!-- === FOTOS E EXPLICAÇÃO === -->
-            
-                <!-- CONTAINER MUSCULAÇÃO -->
-            <div class="treino-musculacao">
-                <div class="imagem-modalidade">
-                    <img src="imagens-inicio/modalidades/treino-musculacao.jpg" alt="exemplo musculação">
-                </div>
-                <!-- -- TEXTO -- -->
-                <div class="texto-modalidade">
-                    <h3>MUSCULAÇAO</h3>
-                    <p>FORÇA, HIPERTROFIA E DEFINIÇÃO MUSCULAR.</p>
-                    <p>Treinos personalizados para desenvolver sua força, melhorar seu condicionamento e alcançar seus objetivos.</p>
-                </div>
-            </div>
+            <div class="titulo-modalidades">
 
-                <!-- CONTAINER FUNCIONAL -->
-            <div class="treino-funcional">
+                <span>PARA TODOS OS OBJETIVOS</span>
 
-                <!-- -- TEXTO -- -->
-                <div class="texto-modalidade">
-                    <h3>FUNCIONAL</h3>
-                    <p>OVIMENTO, RESISTÊNCIA E PERFORMANCE.</p>
-                    <p>Exercícios dinâmicos que trabalham força, equilíbrio, coordenação e condicionamento físico.</p>
-                </div>
-
-                <div class="imagem-modalidade">
-                    <img src="imagens-inicio/modalidades/treino-funcional.jpg" alt="">
-                </div>
-            </div>
-
-                <!-- CONTAINER YOGA -->
-            <div class="treino-yoga">
-                <div class="imagem-modalidade">
-                    <img src="imagens-inicio/modalidades/treino-yoga.jpg" alt="">
-                </div>
-
-                <!-- -- TEXTO -- -->
-                <div class="texto-modalidade">
-                    <h3>YOGA</h3>
-                    <p>EQUILÍBRIO ENTRE CORPO E MENTE</p>
-                    <p>Práticas que combinam movimento, respiração e concentração para melhorar sua flexibilidade, equilíbrio e bem-estar.</p>
-                </div>
+                <h2>
+                    TREINE DO SEU <strong>JEITO</strong>
+                </h2>
 
             </div>
 
-                <!-- CONTAINER LUTA -->
-            <div class="treino-lutas">
 
-                <!-- -- TEXTO -- -->
-                <div class="texto-modalidade">
-                    <h3>LUTAS</h3>
-                    <p>DICIPLINA, TÉCNICA E SUPERAÇÃO.</p>
-                    <p>Treinos que desenvolvem condicionamento, coordenação, agilidade e confiança em um ambiente de evolução constante.</p>
-                </div>
+            <!-- === CARDS DAS MODALIDADES === -->
 
-                <div class="imagem-modalidade">
-                    <img src="imagens-inicio/modalidades/treino-luta.jpg" alt="">
-                </div>
+            <div class="lista-modalidades">
+
+                <!-- Card Musculação -->
+
+                <article class="modalidade-card musculacao">
+
+                    <div class="modalidade-conteudo">
+
+                        <img 
+                            src="imagens-inicio/logo-icone/icone-peso.png" 
+                            alt="Ícone de musculação"
+                        >
+
+                        <div class="modalidade-texto">
+
+                            <h3>MUSCULAÇÃO</h3>
+
+                            <p>
+                                Força, hipertrofia e definição muscular.
+                            </p>
+
+                        </div>
+
+                        <a href="#" class="modalidade-botao">
+                            →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Card Cardio -->
+
+                <article class="modalidade-card cardio">
+
+                    <div class="modalidade-conteudo">
+
+                        <img 
+                            src="imagens-inicio/logo-icone/icone-cardio.png" 
+                            alt="Ícone de cardio"
+                        >
+
+                        <div class="modalidade-texto">
+
+                            <h3>FUNCIONAL</h3>
+
+                            <p>
+                                Movimentos que melhoram sua performance.
+                            </p>
+
+                        </div>
+
+                        <a href="#" class="modalidade-botao">
+                            →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Card Funcional -->
+
+                <article class="modalidade-card funcional">
+
+                    <div class="modalidade-conteudo">
+
+                        <img 
+                            src="imagens-inicio/logo-icone/icone-funcional.png" 
+                            alt="Ícone de funcional"
+                        >
+
+                        <div class="modalidade-texto">
+
+                            <h3>YOGA</h3>
+
+                            <p>
+                                Equilíbrio entre corpo e mente.
+                            </p>
+
+                        </div>
+
+                        <a href="#" class="modalidade-botao">
+                            →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Card Yoga -->
+
+                <article class="modalidade-card yoga">
+
+                    <div class="modalidade-conteudo">
+
+                        <img 
+                            src="imagens-inicio/logo-icone/icone-yoga.png" 
+                            alt="Ícone de yoga"
+                        >
+
+                        <div class="modalidade-texto">
+
+                            <h3>LUTA</h3>
+
+                            <p>
+                                Equilíbrio entre corpo e mente.
+                            </p>
+
+                        </div>
+
+                        <a href="#" class="modalidade-botao">
+                            →
+                        </a>
+
+                    </div>
+
+                </article>
+
             </div>
 
-            <div class="botao-modalidades">
-                <nav>
-                    <a href="">VER TODAS AS MODALIDADES</a>
-                </nav>
-            </div>
         </section>
 
         <section class="estrutura">
@@ -313,23 +331,118 @@
 
         </section>
 
+    <!-- ===== SEÇÃO PROFISSIONAIS ===== -->
         <section class="profissionais">
 
-            <div class="linha-horizontal"></div>
-            <h3>PROFISSIONAIS</h3>
-            <div class="linha-horizontal"></div>
+            <div class="profissionais-conteudo">
 
-            <p>PESSOAS QUE TE <span>INSPIRAM</span> E TE GUIAM.</p>
-            <p>Na NexusTitan, temos uma equipe especializada para acompanhar sua evolução, orientar seus treinos e ajudar você a alcançar seus objetivos.</p>
+                <span class="numero">03</span>
 
-            <nav>
-                <a href="">CONHECER OS PROFISSIONAIS</a>
-            </nav>
+                <div class="profissionais-texto">
+
+                    <span class="subtitulo">PROFISSIONAIS</span>
+
+                    <h2>
+                        PESSOAS QUE TE
+                        <strong>INSPIRAM</strong> E GUIAM.
+                    </h2>
+
+                    <p>
+                        Uma equipe especializada para acompanhar sua
+                        evolução, orientar seus treinos e ajudar você a
+                        alcançar seus objetivos.
+                    </p>
+
+                    <a href="#" class="botao-profissionais">
+                        CONHECER OS PROFISSIONAIS
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
 
         </section>
     </main>
 
+    <footer class="footer-site">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand-container">
+          <img src="imagem/LOGO 2.png" alt="Nexus Titan Logo" class="brand-logo-img">
+          <div class="brand-text">
+            <div class="brand-title">
+              <span class="text-nexus-white">NEXUS</span>
+              <span class="text-titan">TITAN</span>
+            </div>
+            <span class="text-academia">ACADEMIA</span>
+          </div>
+        </div>
+        <p class="slogan-footer">Disciplina. Foco. Evolução.</p>
+        <div class="social-icons">
+          <a href="#"><i data-lucide="instagram"></i></a>
+          <a href="#"><i data-lucide="phone"></i></a>
+          <a href="#"><i data-lucide="facebook"></i></a>
+          <a href="#"><i data-lucide="youtube"></i></a>
+        </div>
+      </div>
 
+      <div class="footer-cols">
+        <div class="f-col">
+          <h4>NAVIGAÇÃO</h4>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="modalidades.html">Modalidades</a></li>
+            <li><a href="estrutura.html">Estrutura</a></li>
+            <li><a href="#profissionais">Profissionais</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="#">Unidades</a></li>
+            <li><a href="#">Contato</a></li>
+          </ul>
+        </div>
+        <div class="f-col">
+          <h4>MODALIDADES</h4>
+          <ul>
+            <li><a href="#">Musculação</a></li>
+            <li><a href="#">Cardio</a></li>
+            <li><a href="#">Funcional</a></li>
+            <li><a href="#">Lutas</a></li>
+            <li><a href="#">Spinning</a></li>
+            <li><a href="#">Yoga</a></li>
+            <li><a href="#">Dança</a></li>
+          </ul>
+        </div>
+        <div class="f-col">
+          <h4>PLANOS</h4>
+          <ul>
+            <li><a href="#">Start</a></li>
+            <li><a href="#">Titan</a></li>
+            <li><a href="#">Pro</a></li>
+            <li><a href="#">Todos os planos</a></li>
+          </ul>
+        </div>
+        <div class="f-col">
+          <h4>CONTATO</h4>
+          <p>(11) 99999-9999</p>
+          <p>contato@nexustitan.com.br</p>
+          <p>24 horas por dia</p>
+          <a href="matricula.html" class="btn-fale">FALE CONOSCO</a>
+        </div>
+      </div>
+
+      <div class="footer-watermark">
+        <img src="imagem/LOGO 2.png" alt="Watermark Logo">
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Nexus Titan. Todos os direitos reservados.</p>
+      <div class="legal-links">
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Termos de Uso</a>
+      </div>
+    </div>
+    </footer>
 
 
 

@@ -24,7 +24,7 @@ html {
 
 body {
   background-color: #f5f3ef; /* Fundo Creme / Claro */
-    font-family: "Orbitron", sans-serif;
+    font-family: 'Rajdhani', sans-serif;
 }
 
 /* Header de ponta a ponta em tom claro */
@@ -246,7 +246,7 @@ main {
 }
 
 .subtitulo {
-    font-family: "Orbitron", sans-serif;
+    font-family: 'Rajdhani';
     font-size: 2.5rem;
     letter-spacing: .35rem;
     background: linear-gradient(
@@ -260,7 +260,7 @@ main {
 }
 
 .conteudo-inicial h1 {
-    font-family: "Orbitron", sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-weight: 900;
     letter-spacing: -5px;
     font-size: 10rem;
@@ -284,7 +284,7 @@ main {
 
 .descricao {
     max-width: 34rem;
-    font-family: Arial, sans-serif;
+    font-family: 'Rajdhani';
     font-size: 2.5rem;
     line-height: 1.2;
     color: #3d3b41;
@@ -308,8 +308,8 @@ main {
     background-color: #7B2CFF;
     color: #FFFFFF;
     text-decoration: none;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.2rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
     letter-spacing: .1rem;
     border-radius: .4rem;
     transition: .3s ease;
@@ -320,8 +320,8 @@ main {
     border: 2px solid #7B2CFF;
     color: #7B2CFF;
     text-decoration: none;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.2rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
     letter-spacing: .1rem;
     border-radius: .4rem;
     transition: .3s ease;
@@ -361,417 +361,268 @@ main {
 
 .mulher {
     width: 700px;
-    top: -4%;
+    top: 2.6%;
     right: 25%;
 }
 
 
-/* === INFORMAÇÕES ESCRITAS === */
-/* --- Container Principal --- */
-.card-informatico {
-    width: 100%;    
-    margin: -15rem auto 0;
-
-    background: radial-gradient(
-    ellipse at center,
-    #2f1f42 0%,
-    #1f1631 45%,
-    #1b1525 75%,
-    #14111b 100%
-);
-    border: 1px solid #7B2CFF;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    position: relative;
-    z-index: 10;
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
-}
-
-/* --- Cada Card --- */
-.card {
-    width: 25%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    padding: 2rem 3rem;
-    position: relative;
-}
-
-
-/* --- Linha entre Cards --- */
-.card:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 20%;
-    height: 60%;
-    width: 1px;
-    background: #52216F;
-}
-
-/* --- Textos --- */
-.card p {
-    color: #F5F5F5;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.3rem;
-    line-height: 1.5;
-    margin: 0;
-}
-
-/* --- Numeros --- */
-.card p span {
-    font-size: 3rem;
-    font-weight: 700;
-
-    color: #F5F5F5;
-}
-
-
-/* --- Dealhes roxo nos icones ---*/
-
-.card img {
-    filter: drop-shadow(0 0 0.5rem rgba(123, 44, 255, 0.4));
-}
-
-
 /* ===== SESSÃO MODALIDADES ===== */
+
 .modalidades {
     width: 100%;
-    background-color: #F8F7FA;
-    overflow: hidden;
-    background-color: #0E0B13;
+
+    padding: 0 5% 5% 5%;
+
+    background: #F5F4F2;
 }
 
-/* === TITULO === */
-.titulo {
+
+/* === TÍTULO === */
+
+.titulo-modalidades {
+    text-align: center;
+
+    margin-bottom: 4rem;
+}
+
+.titulo-modalidades span {
+    display: block;
+
+    margin-bottom: 0.5rem;
+
+    color: #7B2CFF;
+
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    letter-spacing: 0.1rem;
+}
+
+.titulo-modalidades h2 {
+    margin: 0;
+
+    color: #17131F;
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+
+    line-height: 1.1;
+}
+
+.titulo-modalidades h2 strong {
+    color: #7B2CFF;
+}
+
+
+/* === LISTA DE MODALIDADES === */
+
+.lista-modalidades {
+    width: 100%;
+    max-width: 1900px;
+
+    margin: 0 auto;
+
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 3rem;
+
+    gap: 2rem;
 }
 
-.linha-horizontal {
+
+/* === CARD === */
+
+.modalidade-card {
+    flex: 1;
+
+    height: 25rem;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 1.5rem;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.20);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+
+/* === IMAGENS DOS CARDS === */
+
+.modalidade-card.musculacao {
+    background-image: url("imagens-inicio/modalidades/treino-musculacao.jpg");
+}
+
+.modalidade-card.cardio {
+    background-image: url("imagens-inicio/modalidades/treino-funcional.jpg");
+}
+
+.modalidade-card.funcional {
+    background-image: url("imagens-inicio/modalidades/treino-yoga.jpg");
+}
+
+.modalidade-card.yoga {
+    background-image: url("imagens-inicio/modalidades/treino-luta.jpg");
+}
+
+
+/* === ZOOM DA IMAGEM === */
+
+.modalidade-card {
+    background-size: 115% auto;
+}
+
+
+/* === OVERLAY ROXO === */
+
+.modalidade-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
     background: linear-gradient(
-        to right,
-        transparent,
-        #7B2CFF
+        90deg,
+        rgba(14, 11, 19, 0.95) 0%,
+        rgba(55, 20, 90, 0.72) 50%,
+        rgba(123, 44, 255, 0.25) 100%
     );
 
-    width: 10%;
-    height: 2px;
-}
-
-.titulo h2 {
-    color: #6b21a8;
-    font-size: 2.5rem;
-    letter-spacing: 7px;
-    font-weight: 600;
-    font-family: 'Science Gothic', sans-serif;
-    padding: 0 2rem;
+    z-index: 1;
 }
 
 
-/* === FRASE PRINCIPAL === */
-.titulo-p {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
+/* === CONTEÚDO === */
 
-.titulo-p p {
+.modalidade-conteudo {
+    position: absolute;
+
+    inset: 0;
+
+    padding: 2.5rem;
+
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
-    font-family: "Orbitron", sans-serif;
-    font-weight: 900;
-    letter-spacing: -5px;
-    font-size: 8rem;
-    line-height: .88;
-    color: #e2e8f0;
+    justify-content: flex-end;
 
-    margin-bottom: 2.5rem;
-}
-
-.titulo-p .frase {
-    display: block;
-}
-
-.titulo-p .cor {
-    display: block;
-
-    background: linear-gradient(
-        to bottom,
-        #7B2CFF 0%,
-        #3b166d 100%
-    );
-
-    /* define o degrade no texto */
-    -webkit-background-clip: text; /* aplica a cor dentro do texto */
-    -webkit-text-fill-color: transparent; /* deixa A COR do texto transparente */
-}
-
-/* ===== CONTAINERS MODALIDADES ===== */
-.treino-musculacao,
-.treino-funcional,
-.treino-yoga,
-.treino-lutas {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 50rem;
-    overflow: hidden;
-    position: relative;
-}
-
-/* === CAIXA IMAGENS === */
-.imagem-modalidade {
-    width: 65%;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
     z-index: 2;
-
-    transition: transform 0.6s ease;
-}
-
-/* === CAIXA TEXTOS === */
-.texto-modalidade {
-    width: 35%;
-    padding: 6rem;
-    position: relative;
-    z-index: 1;
-
-    transition: transform 0.6s ease;
 }
 
 
-/* === CORTES DIAGONAIS === */
-/* - efeito diagonal direito - */
-.treino-musculacao .imagem-modalidade,
-.treino-yoga .imagem-modalidade {
+/* === ÍCONE === */
 
-    clip-path: polygon(
-        0 0,
-        100% 0,
-        82% 100%,
-        0 100%
-    );
+.modalidade-conteudo > img {
+    width: 5rem;
+    height: 5rem;
 
-    /* começa um pouco para fora */
-
-    transform: translateX(-30px);
-}
-
-
-/* - efeito diagonal esquerdo - */
-.treino-funcional .imagem-modalidade,
-.treino-lutas .imagem-modalidade {
-
-    clip-path: polygon(
-        18% 0,
-        100% 0,
-        100% 100%,
-        0 100%
-    );
-
-    /* começa um pouco para fora */
-
-    transform: translateX(30px);
-}
-
-/* === IMAGEM ORIGINAL === */
-.imagem-modalidade img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-
-    transition: filter 0.6s ease;
-}
-
-/* posiciona a segunda imagem */
-.treino-funcional .imagem-modalidade img {
-    object-position: center top;
-}
-
-
-/* ====== SOMBRA NAS IMAGENS ====== */
-.imagem-modalidade::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    pointer-events: none;
-    z-index: 3;
-
-    transition: transform 0.7s ease;
-}
-
-/* --- sombra para imagens da esquerda --- */
-.treino-musculacao .imagem-modalidade::after,
-.treino-yoga .imagem-modalidade::after {
-    left: 0;
-    background: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.65) 0%,
-        rgba(0, 0, 0, 0.35) 35%,
-        rgba(0, 0, 0, 0) 75%
-    );
-}
-
-/* --- sombra para imagens da direita --- */
-.treino-funcional .imagem-modalidade::after,
-.treino-lutas .imagem-modalidade::after {
-    right: 0;
-    background: linear-gradient(
-        to left,
-        rgba(0, 0, 0, 0.65) 0%,
-        rgba(0, 0, 0, 0.35) 35%,
-        rgba(0, 0, 0, 0) 75%
-    );
-}
-
-/* ===== SOMBRA NO HOVER ===== */
-/* - imagens da esquerda - */
-.treino-musculacao:has(.imagem-modalidade:hover) .imagem-modalidade::after,
-.treino-yoga:has(.imagem-modalidade:hover) .imagem-modalidade::after {
-
-    transform: translateX(-100%);
-}
-
-/* - imagens da direita - */
-.treino-funcional:has(.imagem-modalidade:hover) .imagem-modalidade::after,
-.treino-lutas:has(.imagem-modalidade:hover) .imagem-modalidade::after {
-
-    transform: translateX(100%);
-}
-
-/* === EFEITO HOVER === */
-/* ===== SOMBRA NO HOVER ===== */
-/* - imagens da esquerda - */
-.treino-musculacao:has(.imagem-modalidade:hover) .imagem-modalidade::after,
-.treino-yoga:has(.imagem-modalidade:hover) .imagem-modalidade::after {
-
-    transform: translateX(-100%);
-}
-
-/* - imagens da direita - */
-.treino-funcional:has(.imagem-modalidade:hover) .imagem-modalidade::after,
-.treino-lutas:has(.imagem-modalidade:hover) .imagem-modalidade::after {
-
-    transform: translateX(100%);
-}
-
-/* - musculação e yoga - */
-/* Só ativa quando o mouse está sobre a imagem */
-.treino-musculacao:has(.imagem-modalidade:hover) .imagem-modalidade,
-.treino-yoga:has(.imagem-modalidade:hover) .imagem-modalidade {
-
-    transform: translateX(0);
-    /* faz a imagem voltar pro lugar original */
-}
-
-.treino-musculacao:has(.imagem-modalidade:hover) .texto-modalidade,
-.treino-yoga:has(.imagem-modalidade:hover) .texto-modalidade {
-
-    transform: translateX(8px);
-}
-
-/* - funcional e lutas - */
-/* Só ativa quando o mouse está sobre a imagem */
-.treino-funcional:has(.imagem-modalidade:hover) .imagem-modalidade,
-.treino-lutas:has(.imagem-modalidade:hover) .imagem-modalidade {
-
-    transform: translateX(0);
-    /* faz a imagem voltar pro lugar original */
-}
-
-.treino-funcional:has(.imagem-modalidade:hover) .texto-modalidade,
-.treino-lutas:has(.imagem-modalidade:hover) .texto-modalidade {
-
-    transform: translateX(-8px);
-}
-
-/* --- TEXTOS MODALIDADES --- */
-.texto-modalidade h3 {
-    font-size: 4rem;
-    font-family: "Orbitron", sans-serif;
-    font-weight: 900;
-    background: linear-gradient(
-        to bottom,
-        #A855F7 0%,
-        #6b21a8 100%
-    );
-
-    /* define o degrade no texto */
-    -webkit-background-clip: text;
-    /* aplica a cor dentro do texto */
-    -webkit-text-fill-color: transparent;
-    /* deixa A COR do texto transparente */
+    object-fit: contain;
 
     margin-bottom: 1.5rem;
+
+    filter: drop-shadow(
+        0 0 0.8rem rgba(168, 85, 247, 0.7)
+    );
+
+    transition: transform 0.3s ease;
 }
 
 
-.texto-modalidade p {
-    font-size: 2.5rem;
-    color: #F5F5F5;
+/* === TEXTO === */
+
+.modalidade-texto {
+    max-width: 22rem;
 }
 
+.modalidade-texto h3 {
+    margin: 0 0 0.7rem;
 
-/* primeiro parágrafo */
-.texto-modalidade p:nth-of-type(1) {
-    font-weight: 800;
-    margin-top: 1rem;
-    line-height: 1;
-    color: #A7A3AE;
+    color: #FFFFFF;
+
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+
+    letter-spacing: 0.05rem;
 }
 
-/* segundo parágrafo */
-.texto-modalidade p:nth-of-type(2) {
-    margin-top: 2rem;
+.modalidade-texto p {
+    margin: 0;
+
+    color: #E5E1EA;
+
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+
     line-height: 1.4;
-    color: #F5F5F5;
 }
 
-/* === BOTÃO MODALIDADES === */
-.botao-modalidades {
+
+/* === BOTÃO === */
+
+.modalidade-botao {
+    position: absolute;
+
+    right: 2rem;
+    bottom: 2rem;
+
+    width: 3.5rem;
+    height: 3.5rem;
+
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
-    padding: 5rem 0;
-}
+    background: #FFC400;
 
-.botao-modalidades nav a {
-    display: inline-block;
-    padding: 1.5rem 3rem;
-    border: 2px solid #7B2CFF;
-    color: #7B2CFF;
-    font-family: "Orbitron", sans-serif;
-    font-size: 1.6rem;
-    font-weight: 800;
+    border-radius: 0.7rem;
+
+    color: #17131F;
+
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+
     text-decoration: none;
 
-    transition: 
-        background-color 0.3s ease,
-        color 0.3s ease,
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+    transition: transform 0.3s ease,
+                background 0.3s ease;
 }
 
-.botao-modalidades nav a:hover {
-    background-color: #7B2CFF;
-    color: #F5F5F5;
-    transform: translateY(-3px);
-    box-shadow: 0 0 20px rgba(123, 44, 255, 0.35);
+
+/* === HOVER DO BOTÃO === */
+
+.modalidade-botao:hover {
+    transform: translateX(0.3rem);
+
+    background: #FFD84D;
 }
+
+
+/* === HOVER DO CARD === */
+
+.modalidade-card:hover {
+    transform: translateY(-0.5rem);
+
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+}
+
+
+/* === HOVER DO ÍCONE === */
+
+.modalidade-card:hover .modalidade-conteudo > img {
+    transform: translateY(-0.3rem);
+}
+
 
 /* ===== SESSÃO ESTRUTURA ===== */
 /* --- Container --- */
@@ -799,19 +650,19 @@ main {
     z-index: 1;
 
     background: linear-gradient(
-        to left,
+    to left,
 
-        #F8F7FA 0%,
-        #F8F7FA 20%,
+    #12051F 0%,
+    #24103D 20%,
 
-        rgba(248, 247, 250, 0.98) 30%,
-        rgba(248, 247, 250, 0.85) 38%,
-        rgba(248, 247, 250, 0.65) 46%,
-        rgba(248, 247, 250, 0.40) 55%,
-        rgba(248, 247, 250, 0.18) 65%,
+    rgba(53, 28, 82, 0.98) 30%,
+    rgba(67, 40, 102, 0.88) 38%,
+    rgba(91, 63, 133, 0.68) 46%,
+    rgba(117, 91, 157, 0.45) 55%,
+    rgba(143, 120, 179, 0.20) 65%,
 
-        rgba(248, 247, 250, 0) 78%
-    );
+    rgba(160, 140, 195, 0) 78%
+);
 
     pointer-events: none;
 }
@@ -838,12 +689,12 @@ main {
 .estrutura-tag {
     font-family: "Orbitron", sans-serif;
 
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 700;
 
     letter-spacing: .25rem;
 
-    color: #7B2CFF;
+    color: #d3b2f0;
 
     margin-bottom: 1.5rem;
 }
@@ -860,7 +711,7 @@ main {
     line-height: .9;
     letter-spacing: -2px;
 
-    color: #08070B;
+    color: #ffffff;
 
     margin-bottom: 2rem;
 }
@@ -883,7 +734,7 @@ main {
 
     line-height: 1.45;
 
-    color: #4B4652;
+    color: #ffffff;
 
     margin-bottom: 3rem;
 }
@@ -910,8 +761,8 @@ main {
 }
 
 .diferencial .icone {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 4rem;
+    height: 4rem;
 
     display: flex;
 
@@ -920,11 +771,11 @@ main {
 
     flex-shrink: 0;
 
-    border: 1.5px solid #7B2CFF;
+    border: 1.5px solid #d3b2f0;
 
     border-radius: .8rem;
 
-    color: #7B2CFF;
+    color: #d3b2f0;
 
     font-size: 1.8rem;
 
@@ -938,18 +789,18 @@ main {
 .diferencial p {
     font-family: "Montserrat", sans-serif;
 
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 
     line-height: 1.25;
 
-    color: #3E3945;
+    color: #ffffff;
 }
 
 
 .diferencial strong {
     font-weight: 700;
 
-    color: #08070B;
+    color: #ffffff;
 }
 
 
@@ -983,7 +834,7 @@ main {
     font-size: 1.3rem;
     font-weight: 700;
 
-    color: #3B166D;
+    color: #ffffff;
 
     transition:
         background-color .3s ease,
@@ -1022,3 +873,320 @@ main {
     color: #FFC400;
 }
 
+
+
+/* ===== SEÇÃO PROFISSIONAIS ===== */
+
+.profissionais {
+    width: 100%;
+    min-height: 65rem;
+
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    background-color: #F5F4F2;
+
+    background-image: url("imagens-inicio/banner-principal/funcionarios.png");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+}
+
+
+/* === CONTEÚDO === */
+
+.profissionais-conteudo {
+    width: 55%;
+
+    position: relative;
+    z-index: 3;
+
+    padding: 8rem 4rem 8rem 8%;
+}
+
+
+/* === NÚMERO === */
+
+.numero {
+    position: absolute;
+
+    left: 3rem;
+    top: 10rem;
+
+    color: #7B2CFF;
+
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 7rem;
+    font-weight: 300;
+
+    line-height: 1;
+}
+
+
+/* === LINHA DO NÚMERO === */
+
+.numero::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 8rem;
+
+    width: 2px;
+    height: 15rem;
+
+    background: #7B2CFF;
+
+    transform: translateX(-50%);
+}
+
+
+/* === TEXTO === */
+
+.profissionais-texto {
+    max-width: 60rem;
+
+    margin-left: 8rem;
+}
+
+
+/* === SUBTÍTULO === */
+
+.subtitulo {
+    display: block;
+
+    margin-bottom: 1.5rem;
+
+    color: #6421B5;
+
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+
+    letter-spacing: 0.08rem;
+}
+
+
+/* === TÍTULO === */
+
+.profissionais-texto h2 {
+    margin: 0 0 2.5rem;
+
+    color: #111111;
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 5.5rem;
+    font-weight: 700;
+
+    line-height: 1.05;
+}
+
+
+/* === DESTAQUE === */
+
+.profissionais-texto h2 strong {
+    color: #6F20D5;
+}
+
+
+/* === DESCRIÇÃO === */
+
+.profissionais-texto p {
+    max-width: 55rem;
+
+    margin: 0 0 3rem;
+
+    color: #37323D;
+
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+
+    line-height: 1.5;
+}
+
+
+/* === BOTÃO === */
+
+.botao-profissionais {
+    width: fit-content;
+
+    padding: 1.5rem 2.5rem;
+
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+
+    border: 2px solid #7B2CFF;
+    border-radius: 0.6rem;
+
+    color: #5F20B7;
+
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+
+/* === SETA === */
+
+.botao-profissionais span {
+    font-size: 2.5rem;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* === HOVER === */
+
+.botao-profissionais:hover {
+    background: #7B2CFF;
+    color: #FFFFFF;
+}
+
+.botao-profissionais:hover span {
+    transform: translateX(0.5rem);
+}
+
+
+/* === DETALHE AMARELO === */
+
+.profissionais::after {
+    content: "";
+
+    position: absolute;
+
+    left: -5rem;
+    bottom: -10rem;
+
+    width: 20rem;
+    height: 20rem;
+
+    background: #FFC400;
+
+    border-radius: 50%;
+
+    z-index: 1;
+}
+
+
+/* === RESPONSIVIDADE === */
+
+@media (max-width: 1100px) {
+
+    .profissionais {
+        background-size: auto 90%;
+        background-position: right bottom;
+    }
+
+    .profissionais-conteudo {
+        width: 60%;
+        padding-left: 6%;
+    }
+
+    .profissionais-texto {
+        margin-left: 6rem;
+    }
+
+    .profissionais-texto h2 {
+        font-size: 4.5rem;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .profissionais {
+        min-height: auto;
+
+        background-size: 100% auto;
+        background-position: center bottom;
+
+        padding-bottom: 45rem;
+    }
+
+    .profissionais-conteudo {
+        width: 100%;
+        padding: 7rem 8%;
+    }
+
+    .numero {
+        top: 4rem;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .profissionais {
+        padding-bottom: 35rem;
+
+        background-size: 120% auto;
+    }
+
+    .profissionais-conteudo {
+        padding: 6rem 5%;
+    }
+
+    .profissionais-texto {
+        margin-left: 0;
+        margin-top: 5rem;
+    }
+
+    .numero {
+        left: 5%;
+        top: 2rem;
+
+        font-size: 5rem;
+    }
+
+    .profissionais-texto h2 {
+        font-size: 3.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FOOTER STYLES */
+.footer-site {
+  background-color: #090514; color: #94a3b8; padding: 60px 40px 20px; position: relative; overflow: hidden; border-top: 3px solid #7e22ce;
+}
+.footer-top { display: grid; grid-template-columns: 1.2fr 3fr; gap: 40px; max-width: 1200px; margin: 0 auto 40px; position: relative; z-index: 2; }
+.text-nexus-white { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 1.15rem; color: #ffffff; }
+.slogan-footer { font-family: 'Rajdhani', sans-serif; font-weight: 700; color: #d9b206; margin: 15px 0 20px; font-size: 1.1rem; }
+.social-icons { display: flex; gap: 15px; }
+.social-icons a { color: #d9b206; background: rgba(217, 178, 6, 0.1); width: 38px; height: 38px; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+.footer-cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.f-col h4 { font-family: 'Orbitron', sans-serif; color: #d9b206; font-size: 0.9rem; margin-bottom: 20px; }
+.f-col ul { list-style: none; }
+.f-col ul li { margin-bottom: 10px; }
+.f-col ul li a { color: #cbd5e1; text-decoration: none; font-weight: 600; }
+.f-col p { font-weight: 600; color: #cbd5e1; margin-bottom: 8px; }
+.btn-fale { display: inline-block; margin-top: 10px; padding: 8px 16px; border: 1px solid #7e22ce; color: #ffffff; text-decoration: none; font-family: 'Orbitron', sans-serif; font-size: 0.7rem; font-weight: 800; border-radius: 4px; }
+.footer-watermark { position: absolute; right: -20px; bottom: -20px; opacity: 0.05; pointer-events: none; }
+.footer-watermark img { width: 220px; }
+.footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; }
+.legal-links a { color: #94a3b8; text-decoration: none; margin-left: 20px; }
