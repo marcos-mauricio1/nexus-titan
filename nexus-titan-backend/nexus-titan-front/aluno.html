@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Aluno</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header><h1>NEXUS <span>TITAN</span></h1>
+    <button onclick="location='index.html'">← Voltar</button>
+</header>
+<main><h1>Área do Aluno</h1>
+    <p class="muted">Selecione seu cadastro para visualizar seus dados.</p><select id="alunoSel"></select>
+    <button onclick="carregarAluno()">Carregar minha área</button>
+    <div id="conteudo"></div>
+    <section class="panel"><h2>Solicitar alteração</h2><select id="st"></select><select id="sd"></select><select id="sm"
+                                                                                                                 onchange="outro.classList.toggle('hidden',this.value!=='OUTRO')">
+        <option value="EXERCICIO_MUITO_PESADO">Exercício muito pesado</option>
+        <option value="EXERCICIO_MUITO_FACIL">Exercício muito fácil</option>
+        <option value="DOR_OU_DESCONFORTO">Dor ou desconforto</option>
+        <option value="SEM_EQUIPAMENTO">Sem equipamento</option>
+        <option value="OUTRO">Outro</option>
+    </select><textarea id="outro" class="hidden" placeholder="Descreva o motivo"></textarea>
+        <button onclick="solicitar()">Enviar solicitação</button>
+    </section>
+</main>
+<script src="js/api.js"></script>
+<script src="js/aluno.js"></script>
+</body>
+</html>

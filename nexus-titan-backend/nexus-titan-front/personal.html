@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Personal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header><h1>NEXUS <span>TITAN</span></h1>
+    <button onclick="location='index.html'">← Voltar</button>
+</header>
+<main><h1>Painel do Personal</h1>
+    <button onclick="carregarBase()">Atualizar dados</button>
+    <section class="panel"><h2>Criar treino</h2><input id="tn" placeholder="Nome"><select id="tt">
+        <option>EMAGRECIMENTO</option>
+        <option>GANHO_MASSA</option>
+        <option>CONDICIONAMENTO</option>
+        <option>PERSONALIZADO</option>
+    </select><input id="to" placeholder="Objetivo"><textarea id="tdesc" placeholder="Descrição"></textarea><select
+            id="ta"></select><select id="tp"></select>
+        <button onclick="criarTreino()">Criar treino</button>
+    </section>
+    <section class="panel"><h2>Criar dia</h2><select id="dt"></select><select id="ds">
+        <option>Segunda-feira</option>
+        <option>Terça-feira</option>
+        <option>Quarta-feira</option>
+        <option>Quinta-feira</option>
+        <option>Sexta-feira</option>
+        <option>Sábado</option>
+        <option>Domingo</option>
+    </select>
+        <button onclick="criarDia()">Adicionar dia</button>
+    </section>
+    <section class="panel"><h2>Adicionar exercício</h2><select id="ed"></select><input id="en"
+                                                                                       placeholder="Nome"><textarea
+            id="edesc" placeholder="Descrição"></textarea><input id="es" type="number" placeholder="Séries"><input
+            id="er" type="number" placeholder="Repetições"><input id="edr" type="number"
+                                                                  placeholder="Descanso (segundos)"><input id="ec"
+                                                                                                           type="number"
+                                                                                                           step="0.1"
+                                                                                                           placeholder="Carga (opcional)">
+        <button onclick="criarExercicio()">Adicionar exercício</button>
+    </section>
+    <section><h2>Solicitações</h2>
+        <div id="sol"></div>
+    </section>
+</main>
+<script src="js/api.js"></script>
+<script src="js/personal.js"></script>
+</body>
+</html>
