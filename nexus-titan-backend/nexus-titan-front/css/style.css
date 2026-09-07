@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #08070B;
+    color: #fff
+}
+
+header {
+    padding: 20px 8%;
+    background: #111016;
+    border-bottom: 2px solid #8221FA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px
+}
+
+.brand span, h1 span {
+    color: #8221FA
+}
+
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px
+}
+
+.grid {
+    display: grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px
+}
+
+.card, .panel {
+    background: #15131C;
+    border: 1px solid #27232F;
+    border-radius: 12px;
+    padding: 22px
+}
+
+.panel {
+    max-width: 800px;
+    margin: 20px 0
+}
+
+button {
+    background: #8221FA;
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 4px
+}
+
+button:hover {
+    background: #6F16D9
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 7px 0 12px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #0f0e14;
+    color: #fff
+}
+
+textarea {
+    min-height: 90px
+}
+
+.muted {
+    color: #aaa
+}
+
+.hidden {
+    display: none
+}
+
+.item {
+    border-top: 1px solid #27232F;
+    padding: 14px 0
+}
+
+.badge {
+    display: inline-block;
+    background: #27232F;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 12px
+}
+
+.danger {
+    background: #a52a2a
+}
+
+.ok {
+    background: #1f7a3a
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 18px 5%
+    }
+
+    main {
+        padding: 25px 15px
+    }
+}

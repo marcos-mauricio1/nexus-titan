@@ -1,0 +1,2597 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nexus Titan - Teste Backend</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            color: #111;
+        }
+
+        header {
+            background: #08070B;
+            color: white;
+            padding: 25px;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+            font-size: 30px;
+        }
+
+        header span {
+            color: #8221FA;
+        }
+
+        header p {
+            margin: 0;
+            color: #ccc;
+        }
+
+        main {
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .topo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .topo h2 {
+            margin: 0;
+        }
+
+        button {
+            border: 0;
+            background: #8221FA;
+            color: white;
+            padding: 11px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #6F16D9;
+        }
+
+        .status {
+            padding: 12px 15px;
+            border-radius: 8px;
+            background: white;
+            border: 1px solid #ddd;
+            margin-bottom: 25px;
+        }
+
+        .status.ok {
+            border-left: 5px solid #1b9e4b;
+        }
+
+        .status.erro {
+            border-left: 5px solid #d62828;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 22px;
+        }
+
+        .endpoint {
+            font-family: Consolas, monospace;
+            background: #f1f1f1;
+            padding: 8px 10px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            word-break: break-all;
+        }
+
+        pre {
+            background: #08070B;
+            color: #e9e9e9;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            max-height: 420px;
+            font-size: 13px;
+            line-height: 1.45;
+        }
+
+        .linha {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .linha input,
+        .linha select {
+            flex: 1;
+            min-width: 160px;
+        }
+
+        textarea {
+            min-height: 110px;
+            resize: vertical;
+            margin-bottom: 10px;
+        }
+
+        .small {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .section-title {
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+
+        .editor {
+            display: grid;
+            gap: 10px;
+        }
+
+        .editor label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>NEXUS <span>TITAN</span></h1>
+    <p>Painel de teste do Backend</p>
+</header>
+
+<main>
+
+    <div class="topo">
+        <div>
+            <h2>Teste da API</h2>
+            <p class="small">
+                Backend: http://localhost:8080
+            </p>
+        </div>
+
+        <button onclick="carregarTudo()">
+            🔄 Carregar tudo
+        </button>
+    </div>
+
+    <div id="status" class="status">
+        Aguardando teste...
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- 1. LISTAGENS -->
+    <!-- ================================================= -->
+
+    <h2 class="section-title">1. Listagens</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>👨‍🎓 Alunos</h3>
+
+            <div class="endpoint">
+                GET /alunos
+            </div>
+
+            <button onclick="buscar('/alunos', 'resultadoAlunos')">
+                Testar
+            </button>
+
+            <pre id="resultadoAlunos">Nenhum teste realizado.</pre>
+        </div>
+
+
+        <div class="card">
+            <h3>🏋️ Personais</h3>
+
+            <div class="endpoint">
+                GET /personais
+            </div>
+
+            <button onclick="buscar('/personais', 'resultadoPersonais')">
+                Testar
+            </button>
+
+            <pre id="resultadoPersonais">Nenhum teste realizado.</pre>
+        </div>
+
+
+        <div class="card">
+            <h3>💪 Treinos</h3>
+
+            <div class="endpoint">
+                GET /treinos
+            </div>
+
+            <button onclick="buscar('/treinos', 'resultadoTreinos')">
+                Testar
+            </button>
+
+            <pre id="resultadoTreinos">Nenhum teste realizado.</pre>
+        </div>
+
+
+        <div class="card">
+            <h3>📅 Dias de treino</h3>
+
+            <div class="endpoint">
+                GET /treino-dias
+            </div>
+
+            <button onclick="buscar('/treino-dias', 'resultadoTreinoDias')">
+                Testar
+            </button>
+
+            <pre id="resultadoTreinoDias">Nenhum teste realizado.</pre>
+        </div>
+
+
+        <div class="card">
+            <h3>🏋️ Exercícios</h3>
+
+            <div class="endpoint">
+                GET /exercicios
+            </div>
+
+            <button onclick="buscar('/exercicios', 'resultadoExercicios')">
+                Testar
+            </button>
+
+            <pre id="resultadoExercicios">Nenhum teste realizado.</pre>
+        </div>
+
+
+        <div class="card">
+            <h3>🔔 Solicitações</h3>
+
+            <div class="endpoint">
+                GET /solicitacoes-alteracao
+            </div>
+
+            <button onclick="buscar('/solicitacoes-alteracao', 'resultadoSolicitacoes')">
+                Testar
+            </button>
+
+            <pre id="resultadoSolicitacoes">Nenhum teste realizado.</pre>
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- 2. BUSCAR POR ID -->
+    <!-- ================================================= -->
+
+    <h2 class="section-title">2. Buscar por ID</h2>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h3>Buscar registro</h3>
+
+            <div class="linha">
+
+                <input
+                        id="tipoId"
+                        placeholder="Ex: alunos"
+                >
+
+                <input
+                        id="idBusca"
+                        type="number"
+                        placeholder="ID"
+                >
+
+            </div>
+
+            <p class="small">
+                Exemplos: alunos, personais, treinos,
+                treino-dias, exercicios,
+                solicitacoes-alteracao
+            </p>
+
+            <button onclick="buscarPorId()">
+                Buscar
+            </button>
+
+            <pre id="resultadoId">
+Nenhum teste realizado.
+            </pre>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- 3. RELACIONAMENTOS -->
+    <!-- ================================================= -->
+
+    <h2 class="section-title">3. Relacionamentos</h2>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h3>👨‍🎓 Treinos do aluno</h3>
+
+            <div class="endpoint">
+                GET /treinos/aluno/{id}
+            </div>
+
+            <div class="linha">
+
+                <input
+                        id="alunoIdRelacao"
+                        type="number"
+                        placeholder="ID do aluno"
+                >
+
+                <button onclick="buscarTreinosAluno()">
+                    Buscar
+                </button>
+
+            </div>
+
+            <pre id="resultadoTreinosAluno">
+Nenhum teste realizado.
+            </pre>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>📅 Dias de um treino</h3>
+
+            <div class="endpoint">
+                GET /treino-dias/treino/{id}
+            </div>
+
+            <div class="linha">
+
+                <input
+                        id="treinoIdRelacao"
+                        type="number"
+                        placeholder="ID do treino"
+                >
+
+                <button onclick="buscarDiasTreino()">
+                    Buscar
+                </button>
+
+            </div>
+
+            <pre id="resultadoDiasTreino">
+Nenhum teste realizado.
+            </pre>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🏋️ Exercícios de um dia</h3>
+
+            <div class="endpoint">
+                GET /exercicios/dia/{id}
+            </div>
+
+            <div class="linha">
+
+                <input
+                        id="diaIdRelacao"
+                        type="number"
+                        placeholder="ID do treino dia"
+                >
+
+                <button onclick="buscarExerciciosDia()">
+                    Buscar
+                </button>
+
+            </div>
+
+            <pre id="resultadoExerciciosDia">
+Nenhum teste realizado.
+            </pre>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- 4. PERSONAL - EDITAR TREINO -->
+    <!-- ================================================= -->
+
+    <h2 class="section-title">
+        4. Área do Personal — Editar treino do aluno
+    </h2>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h3>🏋️ Selecionar aluno</h3>
+
+            <div class="endpoint">
+                GET /alunos
+            </div>
+
+            <select
+                    id="personalAlunoSelect"
+                    onchange="carregarTreinosDoPersonal()"
+            >
+
+                <option value="">
+                    Selecione um aluno
+                </option>
+
+            </select>
+
+            <br><br>
+
+            <p class="small">
+                Depois de selecionar o aluno,
+                os treinos dele aparecerão abaixo.
+            </p>
+
+            <select
+                    id="personalTreinoSelect"
+                    onchange="selecionarTreinoPersonal()"
+            >
+
+                <option value="">
+                    Selecione um treino
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>✏️ Editar treino</h3>
+
+            <div class="endpoint">
+                PUT /treinos/{id}
+            </div>
+
+            <div class="editor">
+
+                <div>
+
+                    <label>
+                        Nome do treino
+                    </label>
+
+                    <input
+                            id="editNomeTreino"
+                            placeholder="Nome do treino"
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Objetivo
+                    </label>
+
+                    <input
+                            id="editObjetivoTreino"
+                            placeholder="Objetivo"
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Tipo do treino
+                    </label>
+
+                    <select id="editTipoTreino">
+
+                        <option value="">
+                            Selecione
+                        </option>
+
+                        <option value="Emagrecimento">
+                            Emagrecimento
+                        </option>
+
+                        <option value="Ganho de Massa">
+                            Ganho de Massa
+                        </option>
+
+                        <option value="Condicionamento">
+                            Condicionamento
+                        </option>
+
+                        <option value="Personalizado">
+                            Personalizado
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Descrição
+                    </label>
+
+                    <textarea
+                            id="editDescricaoTreino"
+                            placeholder="Descrição do treino"
+                    ></textarea>
+
+                </div>
+
+
+                <button onclick="salvarTreinoPersonal()">
+                    💾 Salvar alteração
+                </button>
+
+            </div>
+
+            <pre id="resultadoEdicaoTreino">
+Nenhum treino selecionado.
+            </pre>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- 5. PERSONAL - EDITAR EXERCÍCIO -->
+    <!-- ================================================= -->
+
+    <h2 class="section-title">
+        5. Área do Personal — Editar exercício
+    </h2>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h3>📅 Selecionar dia</h3>
+
+            <div class="endpoint">
+                GET /treino-dias/treino/{id}
+            </div>
+
+            <select
+                    id="personalDiaSelect"
+                    onchange="carregarExerciciosPersonal()"
+            >
+
+                <option value="">
+                    Selecione um dia
+                </option>
+
+            </select>
+
+            <br><br>
+
+            <select
+                    id="personalExercicioSelect"
+                    onchange="carregarExercicioParaEdicao()"
+            >
+
+                <option value="">
+                    Selecione um exercício
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>✏️ Editar exercício</h3>
+
+            <div class="endpoint">
+                PUT /exercicios/{id}
+            </div>
+
+            <div class="editor">
+
+                <div>
+
+                    <label>
+                        Nome
+                    </label>
+
+                    <input
+                            id="editNomeExercicio"
+                            type="text"
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Descrição
+                    </label>
+
+                    <textarea
+                            id="editDescricaoExercicio"
+                    ></textarea>
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Séries
+                    </label>
+
+                    <input
+                            id="editSeriesExercicio"
+                            type="number"
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Repetições
+                    </label>
+
+                    <input
+                            id="editRepeticoesExercicio"
+                            type="number"
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Tempo de descanso
+                    </label>
+
+                    <input
+                            id="editDescansoExercicio"
+                            type="number"
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Carga
+                    </label>
+
+                    <input
+                            id="editCargaExercicio"
+                            type="number"
+                            step="0.1"
+                    >
+
+                </div>
+
+
+                <button onclick="salvarExercicioPersonal()">
+                    💾 Salvar exercício
+                </button>
+
+            </div>
+
+            <pre id="resultadoEdicaoExercicio">
+Nenhum exercício selecionado.
+            </pre>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- 6. FLUXO COMPLETO -->
+    <!-- ================================================= -->
+
+    <h2 class="section-title">
+        6. Fluxo completo
+    </h2>
+
+    <div class="card">
+
+        <h3>
+            🔗 Aluno → Treino → Dia → Exercícios
+        </h3>
+
+        <div class="linha">
+
+            <input
+                    id="fluxoAluno"
+                    type="number"
+                    placeholder="ID aluno"
+            >
+
+            <input
+                    id="fluxoTreino"
+                    type="number"
+                    placeholder="ID treino"
+            >
+
+            <input
+                    id="fluxoDia"
+                    type="number"
+                    placeholder="ID treino dia"
+            >
+
+            <button onclick="testarFluxo()">
+                Testar fluxo
+            </button>
+
+        </div>
+
+        <pre id="resultadoFluxo">
+Nenhum teste realizado.
+        </pre>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- 7. SOLICITAÇÃO -->
+    <!-- ================================================= -->
+
+    <h2 class="section-title">
+        7. Solicitação
+    </h2>
+
+    <div class="card">
+
+        <h3>
+            🔔 Consultar solicitação
+        </h3>
+
+        <div class="endpoint">
+            GET /solicitacoes-alteracao/{id}
+        </div>
+
+        <div class="linha">
+
+            <input
+                    id="solicitacaoId"
+                    type="number"
+                    placeholder="ID da solicitação"
+            >
+
+            <button onclick="buscarSolicitacao()">
+                Buscar
+            </button>
+
+        </div>
+
+        <pre id="resultadoSolicitacao">
+Nenhum teste realizado.
+        </pre>
+
+    </div>
+
+</main>
+
+
+<script>
+
+    const API = "http://localhost:8080";
+
+
+    // ======================================================
+    // FUNÇÕES GERAIS
+    // ======================================================
+
+    function mostrarJSON(dados) {
+
+        return typeof dados === "string"
+            ? dados
+            : JSON.stringify(
+                dados,
+                null,
+                4
+            );
+    }
+
+
+    async function respostaComoJSON(resposta) {
+
+        const texto =
+            await resposta.text();
+
+        try {
+
+            return JSON.parse(texto);
+
+        } catch {
+
+            return texto;
+
+        }
+
+    }
+
+
+    // ======================================================
+    // BUSCAR
+    // ======================================================
+
+    async function buscar(
+        endpoint,
+        elementoId
+    ) {
+
+        const elemento =
+            document.getElementById(
+                elementoId
+            );
+
+        elemento.textContent =
+            "Carregando...";
+
+
+        try {
+
+            const resposta =
+                await fetch(
+                    API + endpoint
+                );
+
+
+            const dados =
+                await respostaComoJSON(
+                    resposta
+                );
+
+
+            elemento.textContent =
+                mostrarJSON(dados);
+
+
+            atualizarStatus(
+
+                (resposta.ok
+                    ? "✅ "
+                    : "❌ ") +
+
+                endpoint +
+
+                " → HTTP " +
+
+                resposta.status,
+
+                resposta.ok
+                    ? "ok"
+                    : "erro"
+            );
+
+
+        } catch (erro) {
+
+            elemento.textContent =
+                "ERRO:\n\n" +
+                erro.message;
+
+
+            atualizarStatus(
+                "❌ Não foi possível conectar ao Backend.",
+                "erro"
+            );
+
+        }
+
+    }
+
+
+    // ======================================================
+    // BUSCAR POR ID
+    // ======================================================
+
+    async function buscarPorId() {
+
+        const tipo =
+            document.getElementById(
+                "tipoId"
+            ).value.trim();
+
+
+        const id =
+            document.getElementById(
+                "idBusca"
+            ).value;
+
+
+        if (!tipo || !id) {
+
+            alert(
+                "Preencha o tipo e o ID."
+            );
+
+            return;
+
+        }
+
+
+        await buscar(
+
+            "/" +
+            tipo +
+            "/" +
+            id,
+
+            "resultadoId"
+
+        );
+
+    }
+
+
+    // ======================================================
+    // RELACIONAMENTO — TREINOS DO ALUNO
+    // ======================================================
+
+    async function buscarTreinosAluno() {
+
+        const id =
+            document.getElementById(
+                "alunoIdRelacao"
+            ).value;
+
+
+        if (!id) {
+
+            alert(
+                "Informe o ID do aluno."
+            );
+
+            return;
+
+        }
+
+
+        await buscar(
+
+            "/treinos/aluno/" +
+            id,
+
+            "resultadoTreinosAluno"
+
+        );
+
+    }
+
+
+    // ======================================================
+    // RELACIONAMENTO — DIAS
+    // ======================================================
+
+    async function buscarDiasTreino() {
+
+        const id =
+            document.getElementById(
+                "treinoIdRelacao"
+            ).value;
+
+
+        if (!id) {
+
+            alert(
+                "Informe o ID do treino."
+            );
+
+            return;
+
+        }
+
+
+        await buscar(
+
+            "/treino-dias/treino/" +
+            id,
+
+            "resultadoDiasTreino"
+
+        );
+
+    }
+
+
+    // ======================================================
+    // RELACIONAMENTO — EXERCÍCIOS
+    // ======================================================
+
+    async function buscarExerciciosDia() {
+
+        const id =
+            document.getElementById(
+                "diaIdRelacao"
+            ).value;
+
+
+        if (!id) {
+
+            alert(
+                "Informe o ID do treino dia."
+            );
+
+            return;
+
+        }
+
+
+        await buscar(
+
+            "/exercicios/dia/" +
+            id,
+
+            "resultadoExerciciosDia"
+
+        );
+
+    }
+
+
+    // ======================================================
+    // PERSONAL — CARREGAR ALUNOS
+    // ======================================================
+
+    async function carregarAlunosPersonal() {
+
+        try {
+
+            const resposta =
+                await fetch(
+                    API + "/alunos"
+                );
+
+
+            if (!resposta.ok) {
+
+                throw new Error(
+                    "Erro ao carregar alunos: " +
+                    resposta.status
+                );
+
+            }
+
+
+            const alunos =
+                await resposta.json();
+
+
+            const select =
+                document.getElementById(
+                    "personalAlunoSelect"
+                );
+
+
+            select.innerHTML =
+                '<option value="">Selecione um aluno</option>';
+
+
+            alunos.forEach(aluno => {
+
+                const option =
+                    document.createElement(
+                        "option"
+                    );
+
+
+                option.value =
+                    aluno.id;
+
+
+                option.textContent =
+                    aluno.nome +
+                    " (ID " +
+                    aluno.id +
+                    ")";
+
+
+                select.appendChild(
+                    option
+                );
+
+            });
+
+
+            atualizarStatus(
+                "✅ Alunos carregados.",
+                "ok"
+            );
+
+
+        } catch (erro) {
+
+            atualizarStatus(
+                "❌ " + erro.message,
+                "erro"
+            );
+
+        }
+
+    }
+
+
+    // ======================================================
+    // PERSONAL — CARREGAR TREINOS DO ALUNO
+    // ======================================================
+
+    async function carregarTreinosDoPersonal() {
+
+        const alunoId =
+            document.getElementById(
+                "personalAlunoSelect"
+            ).value;
+
+
+        const selectTreino =
+            document.getElementById(
+                "personalTreinoSelect"
+            );
+
+
+        selectTreino.innerHTML =
+            '<option value="">Selecione um treino</option>';
+
+
+        limparCamposTreino();
+
+        limparCamposExercicio();
+
+
+        if (!alunoId) {
+
+            return;
+
+        }
+
+
+        try {
+
+            const resposta =
+                await fetch(
+
+                    API +
+                    "/treinos/aluno/" +
+                    alunoId
+
+                );
+
+
+            if (!resposta.ok) {
+
+                throw new Error(
+                    "Erro ao buscar treinos: " +
+                    resposta.status
+                );
+
+            }
+
+
+            const treinos =
+                await resposta.json();
+
+
+            treinos.forEach(treino => {
+
+                const option =
+                    document.createElement(
+                        "option"
+                    );
+
+
+                option.value =
+                    treino.id;
+
+
+                option.textContent =
+                    treino.nome +
+                    " (ID " +
+                    treino.id +
+                    ")";
+
+
+                selectTreino.appendChild(
+                    option
+                );
+
+            });
+
+
+            atualizarStatus(
+                "✅ Treinos do aluno carregados.",
+                "ok"
+            );
+
+
+        } catch (erro) {
+
+            atualizarStatus(
+                "❌ " + erro.message,
+                "erro"
+            );
+
+        }
+
+    }
+
+
+    // ======================================================
+    // PERSONAL — SELECIONAR TREINO
+    // ======================================================
+
+    async function selecionarTreinoPersonal() {
+
+        await carregarTreinoParaEdicao();
+
+        await carregarDiasParaEdicao();
+
+    }
+
+
+    // ======================================================
+    // PERSONAL — CARREGAR TREINO
+    // ======================================================
+
+    async function carregarTreinoParaEdicao() {
+
+        const treinoId =
+            document.getElementById(
+                "personalTreinoSelect"
+            ).value;
+
+
+        if (!treinoId) {
+
+            document.getElementById(
+                "resultadoEdicaoTreino"
+            ).textContent =
+                "Nenhum treino selecionado.";
+
+            return;
+
+        }
+
+
+        try {
+
+            const resposta =
+                await fetch(
+
+                    API +
+                    "/treinos/" +
+                    treinoId
+
+                );
+
+
+            if (!resposta.ok) {
+
+                throw new Error(
+                    "Erro ao buscar treino: " +
+                    resposta.status
+                );
+
+            }
+
+
+            const treino =
+                await resposta.json();
+
+
+            document.getElementById(
+                "editNomeTreino"
+            ).value =
+                treino.nome || "";
+
+
+            document.getElementById(
+                "editObjetivoTreino"
+            ).value =
+                treino.objetivo || "";
+
+
+            document.getElementById(
+                "editTipoTreino"
+            ).value =
+                treino.tipoTreino || "";
+
+
+            document.getElementById(
+                "editDescricaoTreino"
+            ).value =
+                treino.descricao || "";
+
+
+            document.getElementById(
+                "resultadoEdicaoTreino"
+            ).textContent =
+                JSON.stringify(
+                    treino,
+                    null,
+                    4
+                );
+
+
+        } catch (erro) {
+
+            atualizarStatus(
+                "❌ " + erro.message,
+                "erro"
+            );
+
+        }
+
+    }
+
+
+    // ======================================================
+    // PERSONAL — SALVAR TREINO
+    // ======================================================
+
+    async function salvarTreinoPersonal() {
+
+        const treinoId =
+            document.getElementById(
+                "personalTreinoSelect"
+            ).value;
+
+
+        const nome =
+            document.getElementById(
+                "editNomeTreino"
+            ).value.trim();
+
+
+        const objetivo =
+            document.getElementById(
+                "editObjetivoTreino"
+            ).value.trim();
+
+
+        const tipoTreino =
+            document.getElementById(
+                "editTipoTreino"
+            ).value;
+
+
+        const descricao =
+            document.getElementById(
+                "editDescricaoTreino"
+            ).value.trim();
+
+
+        const resultado =
+            document.getElementById(
+                "resultadoEdicaoTreino"
+            );
+
+
+        if (!treinoId) {
+
+            alert(
+                "Selecione um treino."
+            );
+
+            return;
+
+        }
+
+
+        if (!nome) {
+
+            alert(
+                "Informe o nome do treino."
+            );
+
+            return;
+
+        }
+
+
+        if (!objetivo) {
+
+            alert(
+                "Informe o objetivo."
+            );
+
+            return;
+
+        }
+
+
+        if (!tipoTreino) {
+
+            alert(
+                "Selecione o tipo do treino."
+            );
+
+            return;
+
+        }
+
+
+        if (!descricao) {
+
+            alert(
+                "Informe a descrição."
+            );
+
+            return;
+
+        }
+
+
+        try {
+
+            // Busca o treino atual
+            const respostaAtual =
+                await fetch(
+
+                    API +
+                    "/treinos/" +
+                    treinoId
+
+                );
+
+
+            if (!respostaAtual.ok) {
+
+                throw new Error(
+                    "Erro ao buscar o treino atual: " +
+                    respostaAtual.status
+                );
+
+            }
+
+
+            const treinoAtual =
+                await respostaAtual.json();
+
+
+            // Mantém os relacionamentos existentes
+            const treinoAtualizado = {
+
+                nome:
+                nome,
+
+                objetivo:
+                objetivo,
+
+                descricao:
+                descricao,
+
+                tipoTreino:
+                tipoTreino,
+
+                ativo:
+                treinoAtual.ativo,
+
+                dataCriacao:
+                treinoAtual.dataCriacao,
+
+                aluno:
+                    treinoAtual.aluno
+                        ? {
+                            id:
+                            treinoAtual.aluno.id
+                        }
+                        : null,
+
+                personal:
+                    treinoAtual.personal
+                        ? {
+                            id:
+                            treinoAtual.personal.id
+                        }
+                        : null
+
+            };
+
+
+            const resposta =
+                await fetch(
+
+                    API +
+                    "/treinos/" +
+                    treinoId,
+
+                    {
+
+                        method:
+                            "PUT",
+
+                        headers: {
+
+                            "Content-Type":
+                                "application/json"
+
+                        },
+
+                        body:
+                            JSON.stringify(
+                                treinoAtualizado
+                            )
+
+                    }
+
+                );
+
+
+            const dados =
+                await respostaComoJSON(
+                    resposta
+                );
+
+
+            resultado.textContent =
+                mostrarJSON(dados);
+
+
+            if (!resposta.ok) {
+
+                atualizarStatus(
+                    "❌ Erro ao alterar treino: HTTP " +
+                    resposta.status,
+                    "erro"
+                );
+
+                return;
+
+            }
+
+
+            atualizarStatus(
+                "✅ Treino alterado com sucesso!",
+                "ok"
+            );
+
+
+            alert(
+                "Treino alterado com sucesso!"
+            );
+
+
+        } catch (erro) {
+
+            resultado.textContent =
+                "ERRO:\n\n" +
+                erro.message;
+
+
+            atualizarStatus(
+                "❌ " + erro.message,
+                "erro"
+            );
+
+        }
+
+    }
+
+
+    // ======================================================
+    // PERSONAL — DIAS DO TREINO
+    // ======================================================
+
+    async function carregarDiasParaEdicao() {
+
+        const treinoId =
+            document.getElementById(
+                "personalTreinoSelect"
+            ).value;
+
+
+        const selectDia =
+            document.getElementById(
+                "personalDiaSelect"
+            );
+
+
+        const selectExercicio =
+            document.getElementById(
+                "personalExercicioSelect"
+            );
+
+
+        selectDia.innerHTML =
+            '<option value="">Selecione um dia</option>';
+
+
+        selectExercicio.innerHTML =
+            '<option value="">Selecione um exercício</option>';
+
+
+        limparCamposExercicio();
+
+
+        if (!treinoId) {
+
+            return;
+
+        }
+
+
+        try {
+
+            const resposta =
+                await fetch(
+
+                    API +
+                    "/treino-dias/treino/" +
+                    treinoId
+
+                );
+
+
+            if (!resposta.ok) {
+
+                throw new Error(
+                    "Erro ao carregar dias: " +
+                    resposta.status
+                );
+
+            }
+
+
+            const dias =
+                await resposta.json();
+
+
+            dias.forEach(dia => {
+
+                const option =
+                    document.createElement(
+                        "option"
+                    );
+
+
+                option.value =
+                    dia.id;
+
+
+                option.textContent =
+                    dia.diaSemana +
+                    " (ID " +
+                    dia.id +
+                    ")";
+
+
+                selectDia.appendChild(
+                    option
+                );
+
+            });
+
+
+        } catch (erro) {
+
+            atualizarStatus(
+                "❌ " + erro.message,
+                "erro"
+            );
+
+        }
+
+    }
+
+
+    // ======================================================
+    // PERSONAL — EXERCÍCIOS DO DIA
+    // ======================================================
+
+    async function carregarExerciciosPersonal() {
+
+        const diaId =
+            document.getElementById(
+                "personalDiaSelect"
+            ).value;
+
+
+        const selectExercicio =
+            document.getElementById(
+                "personalExercicioSelect"
+            );
+
+
+        selectExercicio.innerHTML =
+            '<option value="">Selecione um exercício</option>';
+
+
+        limparCamposExercicio();
+
+
+        if (!diaId) {
+
+            return;
+
+        }
+
+
+        try {
+
+            const resposta =
+                await fetch(
+
+                    API +
+                    "/exercicios/dia/" +
+                    diaId
+
+                );
+
+
+            if (!resposta.ok) {
+
+                throw new Error(
+                    "Erro ao carregar exercícios: " +
+                    resposta.status
+                );
+
+            }
+
+
+            const exercicios =
+                await resposta.json();
+
+
+            exercicios.forEach(exercicio => {
+
+                const option =
+                    document.createElement(
+                        "option"
+                    );
+
+
+                option.value =
+                    exercicio.id;
+
+
+                option.textContent =
+                    exercicio.nome +
+                    " (ID " +
+                    exercicio.id +
+                    ")";
+
+
+                selectExercicio.appendChild(
+                    option
+                );
+
+            });
+
+
+        } catch (erro) {
+
+            atualizarStatus(
+                "❌ " + erro.message,
+                "erro"
+            );
+
+        }
+
+    }
+
+
+    // ======================================================
+    // PERSONAL — CARREGAR EXERCÍCIO
+    // ======================================================
+
+    async function carregarExercicioParaEdicao() {
+
+        const exercicioId =
+            document.getElementById(
+                "personalExercicioSelect"
+            ).value;
+
+
+        if (!exercicioId) {
+
+            limparCamposExercicio();
+
+            return;
+
+        }
+
+
+        try {
+
+            const resposta =
+                await fetch(
+
+                    API +
+                    "/exercicios/" +
+                    exercicioId
+
+                );
+
+
+            if (!resposta.ok) {
+
+                throw new Error(
+                    "Erro ao buscar exercício: " +
+                    resposta.status
+                );
+
+            }
+
+
+            const exercicio =
+                await resposta.json();
+
+
+            document.getElementById(
+                "editNomeExercicio"
+            ).value =
+                exercicio.nome || "";
+
+
+            document.getElementById(
+                "editDescricaoExercicio"
+            ).value =
+                exercicio.descricao || "";
+
+
+            document.getElementById(
+                "editSeriesExercicio"
+            ).value =
+                exercicio.series ?? "";
+
+
+            document.getElementById(
+                "editRepeticoesExercicio"
+            ).value =
+                exercicio.repeticoes ?? "";
+
+
+            document.getElementById(
+                "editDescansoExercicio"
+            ).value =
+                exercicio.tempoDescanso ?? "";
+
+
+            document.getElementById(
+                "editCargaExercicio"
+            ).value =
+                exercicio.carga ?? "";
+
+
+            document.getElementById(
+                "resultadoEdicaoExercicio"
+            ).textContent =
+                JSON.stringify(
+                    exercicio,
+                    null,
+                    4
+                );
+
+
+            atualizarStatus(
+                "✅ Exercício carregado.",
+                "ok"
+            );
+
+
+        } catch (erro) {
+
+            atualizarStatus(
+                "❌ " + erro.message,
+                "erro"
+            );
+
+        }
+
+    }
+
+
+    // ======================================================
+    // PERSONAL — SALVAR EXERCÍCIO
+    // ======================================================
+
+    async function salvarExercicioPersonal() {
+
+        const exercicioId =
+            document.getElementById(
+                "personalExercicioSelect"
+            ).value;
+
+
+        const diaId =
+            document.getElementById(
+                "personalDiaSelect"
+            ).value;
+
+
+        const nome =
+            document.getElementById(
+                "editNomeExercicio"
+            ).value.trim();
+
+
+        const descricao =
+            document.getElementById(
+                "editDescricaoExercicio"
+            ).value.trim();
+
+
+        const series =
+            Number(
+                document.getElementById(
+                    "editSeriesExercicio"
+                ).value
+            );
+
+
+        const repeticoes =
+            Number(
+                document.getElementById(
+                    "editRepeticoesExercicio"
+                ).value
+            );
+
+
+        const tempoDescanso =
+            Number(
+                document.getElementById(
+                    "editDescansoExercicio"
+                ).value
+            );
+
+
+        const cargaTexto =
+            document.getElementById(
+                "editCargaExercicio"
+            ).value;
+
+
+        const carga =
+            cargaTexto === ""
+                ? null
+                : Number(cargaTexto);
+
+
+        const resultado =
+            document.getElementById(
+                "resultadoEdicaoExercicio"
+            );
+
+
+        if (!exercicioId) {
+
+            alert(
+                "Selecione um exercício."
+            );
+
+            return;
+
+        }
+
+
+        if (!diaId) {
+
+            alert(
+                "Selecione um dia."
+            );
+
+            return;
+
+        }
+
+
+        if (!nome) {
+
+            alert(
+                "Informe o nome do exercício."
+            );
+
+            return;
+
+        }
+
+
+        if (!descricao) {
+
+            alert(
+                "Informe a descrição."
+            );
+
+            return;
+
+        }
+
+
+        if (!series || series <= 0) {
+
+            alert(
+                "Informe as séries."
+            );
+
+            return;
+
+        }
+
+
+        if (!repeticoes || repeticoes <= 0) {
+
+            alert(
+                "Informe as repetições."
+            );
+
+            return;
+
+        }
+
+
+        if (tempoDescanso < 0) {
+
+            alert(
+                "Informe o tempo de descanso."
+            );
+
+            return;
+
+        }
+
+
+        try {
+
+            const resposta =
+                await fetch(
+
+                    API +
+                    "/exercicios/" +
+                    exercicioId,
+
+                    {
+
+                        method:
+                            "PUT",
+
+                        headers: {
+
+                            "Content-Type":
+                                "application/json"
+
+                        },
+
+                        body:
+                            JSON.stringify({
+
+                                nome:
+                                nome,
+
+                                descricao:
+                                descricao,
+
+                                series:
+                                series,
+
+                                repeticoes:
+                                repeticoes,
+
+                                tempoDescanso:
+                                tempoDescanso,
+
+                                carga:
+                                carga,
+
+                                treinoDia: {
+
+                                    id:
+                                        Number(
+                                            diaId
+                                        )
+
+                                }
+
+                            })
+
+                    }
+
+                );
+
+
+            const dados =
+                await respostaComoJSON(
+                    resposta
+                );
+
+
+            resultado.textContent =
+                mostrarJSON(dados);
+
+
+            if (!resposta.ok) {
+
+                atualizarStatus(
+                    "❌ Erro ao alterar exercício: HTTP " +
+                    resposta.status,
+                    "erro"
+                );
+
+                return;
+
+            }
+
+
+            atualizarStatus(
+                "✅ Exercício alterado com sucesso!",
+                "ok"
+            );
+
+
+            alert(
+                "Exercício alterado com sucesso!"
+            );
+
+
+        } catch (erro) {
+
+            atualizarStatus(
+                "❌ " + erro.message,
+                "erro"
+            );
+
+        }
+
+    }
+
+
+    // ======================================================
+    // LIMPAR CAMPOS
+    // ======================================================
+
+    function limparCamposTreino() {
+
+        document.getElementById(
+            "editNomeTreino"
+        ).value = "";
+
+
+        document.getElementById(
+            "editObjetivoTreino"
+        ).value = "";
+
+
+        document.getElementById(
+            "editTipoTreino"
+        ).value = "";
+
+
+        document.getElementById(
+            "editDescricaoTreino"
+        ).value = "";
+
+
+        document.getElementById(
+            "resultadoEdicaoTreino"
+        ).textContent =
+            "Nenhum treino selecionado.";
+
+    }
+
+
+    function limparCamposExercicio() {
+
+        document.getElementById(
+            "editNomeExercicio"
+        ).value = "";
+
+
+        document.getElementById(
+            "editDescricaoExercicio"
+        ).value = "";
+
+
+        document.getElementById(
+            "editSeriesExercicio"
+        ).value = "";
+
+
+        document.getElementById(
+            "editRepeticoesExercicio"
+        ).value = "";
+
+
+        document.getElementById(
+            "editDescansoExercicio"
+        ).value = "";
+
+
+        document.getElementById(
+            "editCargaExercicio"
+        ).value = "";
+
+
+        const resultado =
+            document.getElementById(
+                "resultadoEdicaoExercicio"
+            );
+
+
+        if (resultado) {
+
+            resultado.textContent =
+                "Nenhum exercício selecionado.";
+
+        }
+
+    }
+
+
+    // ======================================================
+    // FLUXO COMPLETO
+    // ======================================================
+
+    async function testarFluxo() {
+
+        const aluno =
+            document.getElementById(
+                "fluxoAluno"
+            ).value;
+
+
+        const treino =
+            document.getElementById(
+                "fluxoTreino"
+            ).value;
+
+
+        const dia =
+            document.getElementById(
+                "fluxoDia"
+            ).value;
+
+
+        if (!aluno || !treino || !dia) {
+
+            alert(
+                "Preencha os três IDs."
+            );
+
+            return;
+
+        }
+
+
+        const resultado =
+            document.getElementById(
+                "resultadoFluxo"
+            );
+
+
+        try {
+
+            const respostas = {};
+
+
+            let resposta =
+                await fetch(
+                    API +
+                    "/alunos/" +
+                    aluno
+                );
+
+
+            respostas.aluno = {
+
+                status:
+                resposta.status,
+
+                dados:
+                    await respostaComoJSON(
+                        resposta
+                    )
+
+            };
+
+
+            resposta =
+                await fetch(
+                    API +
+                    "/treinos/" +
+                    treino
+                );
+
+
+            respostas.treino = {
+
+                status:
+                resposta.status,
+
+                dados:
+                    await respostaComoJSON(
+                        resposta
+                    )
+
+            };
+
+
+            resposta =
+                await fetch(
+                    API +
+                    "/treino-dias/" +
+                    dia
+                );
+
+
+            respostas.treinoDia = {
+
+                status:
+                resposta.status,
+
+                dados:
+                    await respostaComoJSON(
+                        resposta
+                    )
+
+            };
+
+
+            resposta =
+                await fetch(
+                    API +
+                    "/exercicios/dia/" +
+                    dia
+                );
+
+
+            respostas.exercicios = {
+
+                status:
+                resposta.status,
+
+                dados:
+                    await respostaComoJSON(
+                        resposta
+                    )
+
+            };
+
+
+            resultado.textContent =
+                JSON.stringify(
+                    respostas,
+                    null,
+                    4
+                );
+
+
+            atualizarStatus(
+                "✅ Fluxo testado.",
+                "ok"
+            );
+
+
+        } catch (erro) {
+
+            resultado.textContent =
+                "ERRO:\n\n" +
+                erro.message;
+
+
+            atualizarStatus(
+                "❌ Erro no fluxo.",
+                "erro"
+            );
+
+        }
+
+    }
+
+
+    // ======================================================
+    // SOLICITAÇÃO
+    // ======================================================
+
+    async function buscarSolicitacao() {
+
+        const id =
+            document.getElementById(
+                "solicitacaoId"
+            ).value;
+
+
+        if (!id) {
+
+            alert(
+                "Informe o ID da solicitação."
+            );
+
+            return;
+
+        }
+
+
+        await buscar(
+
+            "/solicitacoes-alteracao/" +
+            id,
+
+            "resultadoSolicitacao"
+
+        );
+
+    }
+
+
+    // ======================================================
+    // STATUS
+    // ======================================================
+
+    function atualizarStatus(
+        mensagem,
+        tipo
+    ) {
+
+        const status =
+            document.getElementById(
+                "status"
+            );
+
+
+        status.textContent =
+            mensagem;
+
+
+        status.className =
+            "status";
+
+
+        if (tipo === "ok") {
+
+            status.classList.add(
+                "ok"
+            );
+
+        }
+
+
+        if (tipo === "erro") {
+
+            status.classList.add(
+                "erro"
+            );
+
+        }
+
+    }
+
+
+    // ======================================================
+    // CARREGAR TUDO
+    // ======================================================
+
+    async function carregarTudo() {
+
+        await Promise.all([
+
+            buscar(
+                "/alunos",
+                "resultadoAlunos"
+            ),
+
+            buscar(
+                "/personais",
+                "resultadoPersonais"
+            ),
+
+            buscar(
+                "/treinos",
+                "resultadoTreinos"
+            ),
+
+            buscar(
+                "/treino-dias",
+                "resultadoTreinoDias"
+            ),
+
+            buscar(
+                "/exercicios",
+                "resultadoExercicios"
+            ),
+
+            buscar(
+                "/solicitacoes-alteracao",
+                "resultadoSolicitacoes"
+            )
+
+        ]);
+
+
+        await carregarAlunosPersonal();
+
+
+        atualizarStatus(
+            "✅ Todos os dados foram carregados.",
+            "ok"
+        );
+
+    }
+
+
+    // ======================================================
+    // INICIALIZAÇÃO
+    // ======================================================
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        function () {
+
+            carregarAlunosPersonal();
+
+        }
+    );
+
+</script>
+
+</body>
+</html>
