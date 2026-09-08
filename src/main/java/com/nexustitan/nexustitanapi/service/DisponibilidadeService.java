@@ -3,6 +3,7 @@ package com.nexustitan.nexustitanapi.service;
 import com.nexustitan.nexustitanapi.dto.DisponibilidadeRequestDTO;
 import com.nexustitan.nexustitanapi.dto.DisponibilidadeResponseDTO;
 import com.nexustitan.nexustitanapi.exception.RecursoNaoEncontradoException;
+import com.nexustitan.nexustitanapi.model.DiaSemana;
 import com.nexustitan.nexustitanapi.model.Disponibilidade;
 import com.nexustitan.nexustitanapi.model.Personal;
 import com.nexustitan.nexustitanapi.repository.DisponibilidadeRepository;
@@ -68,7 +69,13 @@ public class DisponibilidadeService {
         repository.deleteById(id);
     }
 
-    public List<DisponibilidadeResponseDTO> listarPersonal (Long personalId) {
+    public List<DisponibilidadeResponseDTO> consultarPorPersonalEDia(Long personalId, DiaSemana diaSemana) {
+        return repository.findByPersonal_IdAndDiaSemana(personalId, diaSemana).stream()
+                .map(this::paraResponseDTO)
+                .toList();
+    }
+
+    public List<DisponibilidadeResponseDTO> listarPorPersonal (Long personalId) {
         return repository.findByPersonal_Id(personalId).stream().map(this::paraResponseDTO).toList();
     }
 
