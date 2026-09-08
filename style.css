@@ -910,39 +910,6 @@ main {
 
 /* === NÚMERO === */
 
-.numero {
-    position: absolute;
-
-    left: 3rem;
-    top: 10rem;
-
-    color: #7B2CFF;
-
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 7rem;
-    font-weight: 300;
-
-    line-height: 1;
-}
-
-
-/* === LINHA DO NÚMERO === */
-
-.numero::after {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    top: 8rem;
-
-    width: 2px;
-    height: 15rem;
-
-    background: #7B2CFF;
-
-    transform: translateX(-50%);
-}
 
 
 /* === TEXTO === */
