@@ -1,0 +1,1018 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+
+:root {
+
+    --black: #08070B;
+
+    --background: #F8F6FA;
+
+    --purple: #7B2CFF;
+
+    --purple-light: #A855F7;
+
+    --yellow: #FFC400;
+
+    --yellow-light: #FFD84D;
+
+    --white: #FFFFFF;
+
+    --gray: #6E6878;
+
+    --border: #DED9E5;
+
+}
+
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    font-size: 62.5%;
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    background: var(--background);
+
+    color: var(--black);
+
+    font-family: 'Rajdhani', sans-serif;
+
+    font-size: 1.6rem;
+
+}
+
+
+/* ===== HEADER ===== */
+
+header {
+
+    height: 8rem;
+
+    padding: 0 5%;
+
+    display: flex;
+
+    align-items: center;
+
+    background: var(--white);
+
+    border-bottom: 1px solid var(--border);
+
+    position: relative;
+
+    z-index: 10;
+
+}
+
+
+/* --- LOGO --- */
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 1rem;
+
+}
+
+
+.logo > span {
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: 4rem;
+
+    font-weight: 900;
+
+    color: var(--purple);
+
+}
+
+
+.logo h1 {
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: 2rem;
+
+    font-weight: 900;
+
+    letter-spacing: .1rem;
+
+}
+
+
+.logo h1 strong {
+
+    color: var(--purple);
+
+}
+
+
+.logo small {
+
+    font-family: 'Rajdhani', sans-serif;
+
+    font-size: .8rem;
+
+    font-weight: 700;
+
+    letter-spacing: .45rem;
+
+    display: block;
+
+    text-align: center;
+
+}
+
+
+/* --- MENU --- */
+
+nav {
+
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    gap: 3.5rem;
+
+}
+
+
+nav a {
+
+    text-decoration: none;
+
+    color: var(--black);
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: 1.2rem;
+
+    font-weight: 700;
+
+    transition: .3s;
+
+}
+
+
+nav a:hover,
+
+nav a.ativo {
+
+    color: var(--purple);
+
+}
+
+
+/* --- BOTÃO DE MATRÍCULA --- */
+
+.btn-matricula {
+
+    margin-left: auto;
+
+    border: 1px solid var(--purple);
+
+    padding: 1.2rem 2rem;
+
+    text-decoration: none;
+
+    color: var(--purple);
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: 1.2rem;
+
+    font-weight: 700;
+
+    transition: .3s;
+
+}
+
+
+.btn-matricula span,
+
+.btn-principal span,
+
+.btn-plano span {
+
+    margin-left: 1.5rem;
+
+    font-size: 1.8rem;
+
+}
+
+
+.btn-matricula:hover {
+
+    background: var(--purple);
+
+    color: white;
+
+}
+
+
+/* ===== HERO ===== */
+
+.hero-planos {
+
+    min-height: 48rem;
+
+    padding: 8rem 10%;
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: var(--white);
+
+}
+
+
+/* --- CONTEÚDO --- */
+
+.hero-texto {
+
+    max-width: 65rem;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.mini-titulo {
+
+    color: var(--purple);
+
+    font-family: 'Rajdhani', sans-serif;
+
+    font-weight: 700;
+
+    font-size: 1.4rem;
+
+    letter-spacing: .2rem;
+
+}
+
+
+.hero-texto h2 {
+
+    margin-top: 1.5rem;
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: 6rem;
+
+    font-weight: 900;
+
+    line-height: .95;
+
+    max-width: 65rem;
+
+}
+
+
+.hero-texto h2 span {
+
+    display: block;
+
+    color: var(--purple);
+
+}
+
+
+.hero-texto p {
+
+    margin-top: 2.5rem;
+
+    max-width: 58rem;
+
+    line-height: 1.7;
+
+    color: var(--gray);
+
+    font-family: 'Rajdhani', sans-serif;
+
+    font-size: 1.7rem;
+
+    font-weight: 600;
+
+}
+
+
+/* --- BOTÃO PRINCIPAL --- */
+
+.btn-principal {
+
+    display: inline-block;
+
+    margin-top: 3rem;
+
+    padding: 1.5rem 2.5rem;
+
+    background: var(--purple);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-weight: 800;
+
+    font-size: 1.3rem;
+
+    transition: .3s;
+
+}
+
+
+.btn-principal:hover {
+
+    background: var(--black);
+
+    transform: translateY(-3px);
+
+}
+
+
+/* --- ELEMENTOS DECORATIVOS --- */
+
+.hero-detalhes {
+
+    position: absolute;
+
+    right: 0;
+
+    top: 0;
+
+    width: 45%;
+
+    height: 100%;
+
+}
+
+
+.circulo {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+}
+
+
+.circulo.roxo {
+
+    width: 35rem;
+
+    height: 35rem;
+
+    background: var(--purple);
+
+    right: -10rem;
+
+    top: 5rem;
+
+    opacity: .12;
+
+}
+
+
+.circulo.amarelo {
+
+    width: 15rem;
+
+    height: 15rem;
+
+    background: var(--yellow);
+
+    right: 15rem;
+
+    top: 7rem;
+
+    opacity: .8;
+
+}
+
+
+.numero {
+
+    position: absolute;
+
+    right: 15%;
+
+    bottom: 12%;
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: 1.2rem;
+
+    font-weight: 700;
+
+    color: var(--purple);
+
+    letter-spacing: .3rem;
+
+}
+
+
+.numero span {
+
+    display: block;
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: 7rem;
+
+    font-weight: 900;
+
+    line-height: .8;
+
+    opacity: .3;
+
+}
+
+
+/* ===== INTRODUÇÃO ===== */
+
+.introducao {
+
+    padding: 8rem 10%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 8rem;
+
+    border-top: 1px solid var(--border);
+
+}
+
+
+/* --- TÍTULO --- */
+
+.introducao-titulo span,
+
+.titulo-secao > span {
+
+    color: var(--purple);
+
+    font-family: 'Rajdhani', sans-serif;
+
+    font-weight: 700;
+
+    font-size: 1.3rem;
+
+    letter-spacing: .2rem;
+
+}
+
+
+.introducao-titulo h2,
+
+.titulo-secao h2 {
+
+    margin-top: 1.2rem;
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: 4.5rem;
+
+    font-weight: 900;
+
+    line-height: 1;
+
+}
+
+
+.introducao-titulo strong,
+
+.titulo-secao strong {
+
+    color: var(--purple);
+
+}
+
+
+/* --- TEXTO --- */
+
+.introducao-texto {
+
+    color: var(--gray);
+
+    font-family: 'Rajdhani', sans-serif;
+
+    font-weight: 600;
+
+    line-height: 1.8;
+
+    font-size: 1.6rem;
+
+}
+
+
+.introducao-texto p + p {
+
+    margin-top: 2rem;
+
+}
+
+
+/* ===== COMPARAÇÃO ===== */
+
+.comparacao {
+
+    padding: 8rem 8%;
+
+    background: #F1EEF5;
+
+}
+
+
+/* --- TÍTULO DA SEÇÃO --- */
+
+.titulo-secao {
+
+    margin-bottom: 4rem;
+
+}
+
+
+/* --- TABELA --- */
+
+.tabela-wrapper {
+
+    background: white;
+
+    border-radius: 2rem;
+
+    overflow: hidden;
+
+    box-shadow:
+
+        0 1rem 3rem rgba(30, 20, 50, .08);
+
+}
+
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+
+th {
+
+    padding: 2.5rem 2rem;
+
+    background: var(--black);
+
+    color: white;
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: 1.5rem;
+
+    font-weight: 800;
+
+    letter-spacing: .1rem;
+
+}
+
+
+th:not(:first-child) {
+
+    color: var(--yellow);
+
+}
+
+
+td {
+
+    padding: 2rem;
+
+    border-bottom: 1px solid var(--border);
+
+    text-align: center;
+
+    font-family: 'Rajdhani', sans-serif;
+
+    font-size: 1.4rem;
+
+    font-weight: 600;
+
+}
+
+
+td:first-child {
+
+    text-align: left;
+
+    font-weight: 700;
+
+}
+
+
+td:not(:first-child) {
+
+    color: var(--purple);
+
+    font-weight: 700;
+
+}
+
+
+/* ===== PLANOS ===== */
+
+.planos {
+
+    padding: 10rem 8%;
+
+    background: var(--white);
+
+}
+
+
+/* --- TÍTULO --- */
+
+.centralizado {
+
+    text-align: center;
+
+}
+
+
+.centralizado p {
+
+    margin-top: 1.5rem;
+
+    color: var(--gray);
+
+    font-family: 'Rajdhani', sans-serif;
+
+    font-weight: 600;
+
+}
+
+
+/* --- CARDS --- */
+
+.cards-planos {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 2.5rem;
+
+    max-width: 125rem;
+
+    margin: 5rem auto 0;
+
+}
+
+
+.card-plano {
+
+    position: relative;
+
+    padding: 3.5rem 3rem;
+
+    border: 1px solid var(--border);
+
+    border-radius: 2rem;
+
+    background: white;
+
+    box-shadow:
+
+        0 1rem 3rem rgba(30, 20, 50, .08);
+
+    transition: .3s;
+
+}
+
+
+.card-plano:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+
+        0 2rem 4rem rgba(30, 20, 50, .15);
+
+}
+
+
+.card-plano.destaque {
+
+    border: 2px solid var(--purple);
+
+    transform: translateY(-1.5rem);
+
+}
+
+
+.card-plano.destaque:hover {
+
+    transform: translateY(-2.3rem);
+
+}
+
+
+/* --- ETIQUETA --- */
+
+.tag {
+
+    position: absolute;
+
+    top: -1.4rem;
+
+    left: 3rem;
+
+    padding: .7rem 1.5rem;
+
+    background: var(--yellow);
+
+    color: var(--black);
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: 1.1rem;
+
+    font-weight: 800;
+
+}
+
+
+/* --- CABEÇALHO DO CARD --- */
+
+.categoria {
+
+    color: var(--purple);
+
+    font-family: 'Rajdhani', sans-serif;
+
+    font-size: 1.1rem;
+
+    font-weight: 700;
+
+    letter-spacing: .15rem;
+
+}
+
+
+.topo-card h3 {
+
+    margin-top: 1rem;
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: 3rem;
+
+    font-weight: 900;
+
+}
+
+
+.topo-card p {
+
+    margin-top: 1rem;
+
+    color: var(--gray);
+
+    font-family: 'Rajdhani', sans-serif;
+
+    font-weight: 600;
+
+    line-height: 1.6;
+
+    font-size: 1.4rem;
+
+}
+
+
+/* --- PREÇO --- */
+
+.preco {
+
+    margin-top: 3rem;
+
+    padding: 2rem 0;
+
+    border-top: 1px solid var(--border);
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+.preco small {
+
+    color: var(--gray);
+
+    display: block;
+
+    margin-bottom: .5rem;
+
+    font-family: 'Rajdhani', sans-serif;
+
+    font-weight: 600;
+
+}
+
+
+.preco strong {
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: 3.2rem;
+
+    font-weight: 900;
+
+}
+
+
+.preco span {
+
+    color: var(--gray);
+
+    font-family: 'Rajdhani', sans-serif;
+
+    font-weight: 600;
+
+}
+
+
+/* --- BENEFÍCIOS --- */
+
+.beneficios {
+
+    margin-top: 2.5rem;
+
+    min-height: 20rem;
+
+}
+
+
+.beneficios h4 {
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: 1.2rem;
+
+    font-weight: 800;
+
+    color: var(--gray);
+
+    margin-bottom: 1.5rem;
+
+}
+
+
+.beneficios p {
+
+    margin-bottom: 1.2rem;
+
+    font-family: 'Rajdhani', sans-serif;
+
+    font-size: 1.4rem;
+
+    font-weight: 600;
+
+}
+
+
+/* --- BOTÃO DO PLANO --- */
+
+.btn-plano {
+
+    display: block;
+
+    width: 100%;
+
+    padding: 1.5rem;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    border: 1px solid var(--purple);
+
+    color: var(--purple);
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-weight: 800;
+
+    font-size: 1.2rem;
+
+    transition: .3s;
+
+}
+
+
+.card-plano.destaque .btn-plano {
+
+    background: var(--purple);
+
+    color: white;
+
+}
+
+
+.btn-plano:hover {
+
+    background: var(--purple);
+
+    color: white;
+
+}
+
+
+/* ===== CTA FINAL ===== */
+
+.cta-planos {
+
+    padding: 6rem 10%;
+
+    background: var(--black);
+
+    color: white;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+/* --- CONTEÚDO --- */
+
+.cta-planos span {
+
+    color: var(--yellow);
+
+    font-family: 'Rajdhani', sans-serif;
+
+    font-size: 1.2rem;
+
+    font-weight: 700;
+
+    letter-spacing: .2rem;
+
+}
+
+
+.cta-planos h2 {
+
+    margin-top: 1rem;
+
+    font-family: 'Orbitron', sans-serif;
+
+    font-size: 4rem;
+
+    font-weight: 900;
+
+}
+
+
+.cta-planos h2 strong {
+
+    color: var(--purple-light);
+
+}
