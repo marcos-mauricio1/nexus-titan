@@ -1,16 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap');
 
-:root {
-    --black: #08070B;
-    --background: #F8F6FA;
-    --purple: #7B2CFF;
-    --purple-light: #A855F7;
-    --yellow: #FFC400;
-    --yellow-light: #FFD84D;
-    --white: #FFFFFF;
-    --gray: #6E6878;
-    --border: #DED9E5;
-}
+/* ===== RESET ===== */
 
 * {
     margin: 0;
@@ -24,22 +14,20 @@ html {
 }
 
 body {
-    background: var(--background);
-    color: var(--black);
-    font-family: 'Montserrat', sans-serif;
+    background: #F8F6FA;
+    color: #08070B;
+    font-family: 'Rajdhani', sans-serif;
     font-size: 1.6rem;
 }
 
 /* ===== HEADER ===== */
-
-/* Header de ponta a ponta em tom claro */
 .navbar-wrapper {
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-    background-color: #ffffff; /* Fundo Branco */
+    background-color: #ffffff;
     border-bottom: 1px solid #e2e8f0;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 }
@@ -53,7 +41,7 @@ body {
     padding-left: 20px;
 }
 
-/* Área da Logo e Tipografia */
+/* --- LOGO --- */
 .brand-container {
     display: flex;
     align-items: center;
@@ -81,7 +69,7 @@ body {
     font-family: "Orbitron", sans-serif;
     font-weight: 900;
     font-size: 2rem;
-    color: #2b1055; /* Roxo Escuro Premium */
+    color: #2b1055;
     letter-spacing: -0.5px;
 }
 
@@ -89,7 +77,7 @@ body {
     font-family: "Orbitron", sans-serif;
     font-weight: 900;
     font-size: 2rem;
-    color: #d9b206; /* Amarelo / Dourado da marca */
+    color: #d9b206;
     letter-spacing: -0.5px;
 }
 
@@ -97,13 +85,12 @@ body {
     font-family: "Rajdhani", sans-serif;
     font-weight: 700;
     font-size: 1.3rem;
-    color: #7e22ce; /* Roxo intermediário */
+    color: #7e22ce;
     letter-spacing: 5px;
     margin-top: 3px;
     text-transform: uppercase;
 }
 
-/* Divisor Inclinado */
 .diagonal-divider {
     width: 2px;
     height: 76px;
@@ -113,7 +100,7 @@ body {
     margin-right: 12px;
 }
 
-/* Tópicos do Menu */
+/* --- MENU --- */
 .nav-menu {
     display: flex;
     align-items: center;
@@ -136,7 +123,7 @@ body {
     justify-content: center;
     gap: 6px;
     text-decoration: none;
-    color: #334155; /* Grafite escuro para legibilidade no fundo claro */
+    color: #334155;
     height: 100%;
     padding: 0 4px;
     transition: color 0.2s ease;
@@ -148,10 +135,7 @@ body {
     height: 22px;
     stroke-width: 2.2;
     color: #334155;
-    transition:
-    color 0.2s ease,
-    stroke 0.2s ease,
-    transform 0.2s ease;
+    transition: color 0.2s ease, stroke 0.2s ease, transform 0.2s ease;
 }
 
 .nav-item a span {
@@ -161,7 +145,7 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* Linha de Destaque no Hover */
+/* --- HOVER DO MENU --- */
 .hover-line {
     position: absolute;
     bottom: 0;
@@ -173,7 +157,6 @@ body {
     transition: transform 0.2s ease-in-out;
 }
 
-/* Efeito Hover nos itens do menu */
 .nav-item:hover a,
 .nav-item:hover a i,
 .nav-item:hover .custom-dumbbell {
@@ -190,7 +173,7 @@ body {
     transform: scaleX(1);
 }
 
-/* Botão Inclinado Roxo com Ícone Dourado */
+/* --- BOTÃO MATRÍCULA --- */
 .btn-cta {
     height: 100%;
     padding: 0 35px 0 50px;
@@ -205,16 +188,14 @@ body {
     font-size: 2rem;
     letter-spacing: 0.5px;
     clip-path: polygon(25px 0%, 100% 0%, 100% 100%, 0% 100%);
-    transition:
-    filter 0.2s ease,
-    padding 0.2s ease;
+    transition: filter 0.2s ease, padding 0.2s ease;
 }
 
 .btn-cta i {
     width: 18px;
     height: 18px;
     stroke-width: 3;
-    color: #d9b206; /* Seta dourada */
+    color: #d9b206;
     transition: transform 0.2s ease;
 }
 
@@ -227,10 +208,13 @@ body {
     transform: translateX(4px);
 }
 
-/* ===== HERO ===== */
 
+
+
+
+/* --- BANNER PRINCIPAL --- */
 .hero-planos {
-    min-height: 48rem;
+    min-height: calc(100vh - 8rem);
     padding: 8rem 10%;
     display: flex;
     align-items: center;
@@ -240,16 +224,28 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    margin-top: 7rem;
+}
+
+/* --- CAMADA ESCURA --- */
+.hero-planos::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(8, 7, 11, .92) 0%, rgba(8, 7, 11, .72) 38%, rgba(8, 7, 11, .15) 75%, rgba(8, 7, 11, .05) 100%);
+    z-index: 1;
 }
 
 .hero-texto {
     max-width: 65rem;
     position: relative;
     z-index: 2;
+    color: #FFFFFF;
 }
 
 .mini-titulo {
-    color: var(--purple);
+    font-family: "Orbitron", sans-serif;
+    color: #FFD84D;
     font-weight: 800;
     font-size: 1.4rem;
     letter-spacing: .2rem;
@@ -257,7 +253,8 @@ body {
 
 .hero-texto h2 {
     margin-top: 1.5rem;
-    font-family: 'Oswald';
+    font-family: "Orbitron", sans-serif;
+    font-weight: 800;
     font-size: 6rem;
     line-height: .95;
     max-width: 65rem;
@@ -265,97 +262,60 @@ body {
 
 .hero-texto h2 span {
     display: block;
-    color: var(--purple);
+    color: #A855F7;
 }
 
 .hero-texto p {
     margin-top: 2.5rem;
     max-width: 58rem;
     line-height: 1.7;
-    color: var(--gray);
-    font-size: 1.7rem;
+    color: #E4E0E8;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
 }
 
 .btn-principal {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
     margin-top: 3rem;
     padding: 1.5rem 2.5rem;
-    background: var(--purple);
-    color: white;
+    background: #7B2CFF;
+    color: #FFFFFF;
     text-decoration: none;
-    font-weight: 700;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 800;
     font-size: 1.3rem;
     transition: .3s;
 }
 
+.btn-principal span {
+    font-size: 1.8rem;
+}
+
 .btn-principal:hover {
-    background: var(--black);
+    background: #A855F7;
     transform: translateY(-3px);
 }
 
-/* ===== ELEMENTOS DECORATIVOS ===== */
 
-.hero-detalhes {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 45%;
-    height: 100%;
-}
 
-.circulo {
-    position: absolute;
-    border-radius: 50%;
-}
 
-.circulo.roxo {
-    width: 35rem;
-    height: 35rem;
-    background: var(--purple);
-    right: -10rem;
-    top: 5rem;
-    opacity: .12;
-}
-
-.circulo.amarelo {
-    width: 15rem;
-    height: 15rem;
-    background: var(--yellow);
-    right: 15rem;
-    top: 7rem;
-    opacity: .8;
-}
-
-.numero {
-    position: absolute;
-    right: 15%;
-    bottom: 12%;
-    font-family: 'Oswald';
-    font-size: 1.2rem;
-    color: var(--purple);
-    letter-spacing: .3rem;
-}
-
-.numero span {
-    display: block;
-    font-size: 7rem;
-    line-height: .8;
-    opacity: .3;
-}
 
 /* ===== INTRODUÇÃO ===== */
-
 .introducao {
     padding: 8rem 10%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8rem;
-    border-top: 1px solid var(--border);
+    background: #0f051a;
 }
 
 .introducao-titulo span,
 .titulo-secao > span {
-    color: var(--purple);
+    font-family: "Orbitron", sans-serif;
+    color: #7B2CFF;
     font-weight: 800;
     font-size: 1.3rem;
     letter-spacing: .2rem;
@@ -363,29 +323,40 @@ body {
 
 .introducao-titulo h2,
 .titulo-secao h2 {
+    color: white;
     margin-top: 1.2rem;
-    font-family: 'Oswald';
+    font-family: "Orbitron", sans-serif;
+    font-weight: 800;
     font-size: 4.5rem;
     line-height: 1;
 }
 
+.titulo-secao h2 {
+    color: #090514;
+}
+
 .introducao-titulo strong,
 .titulo-secao strong {
-    color: var(--purple);
+    color: #7B2CFF;
 }
 
 .introducao-texto {
-    color: var(--gray);
+    color: #CFC9D8;
+    font-family: "Rajdhani", sans-serif;
     line-height: 1.8;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    font-weight: 500;
 }
 
 .introducao-texto p + p {
     margin-top: 2rem;
 }
 
-/* ===== COMPARAÇÃO ===== */
 
+
+
+
+/* ===== COMPARAÇÃO ===== */
 .comparacao {
     padding: 8rem 8%;
     background: #F1EEF5;
@@ -396,10 +367,10 @@ body {
 }
 
 .tabela-wrapper {
-    background: white;
+    background: #FFFFFF;
     border-radius: 2rem;
     overflow: hidden;
-    box-shadow: 0 1rem 3rem rgba(30, 20, 50, .08);
+    box-shadow: 0 1rem 3rem rgba(30, 20, 50, 0.24);
 }
 
 table {
@@ -409,39 +380,45 @@ table {
 
 th {
     padding: 2.5rem 2rem;
-    background: var(--black);
-    color: white;
-    font-family: 'Oswald';
+    background: #08070B;
+    color: #FFFFFF;
+    font-family: "Orbitron", sans-serif;
     font-size: 1.5rem;
+    font-weight: 700;
     letter-spacing: .1rem;
 }
 
 th:not(:first-child) {
-    color: var(--yellow);
+    color: #FFC400;
 }
 
 td {
     padding: 2rem;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid #DED9E5;
     text-align: center;
-    font-size: 1.4rem;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
 }
 
 td:first-child {
     text-align: left;
-    font-weight: 600;
-}
-
-td:not(:first-child) {
-    color: var(--purple);
     font-weight: 700;
 }
 
-/* ===== PLANOS ===== */
+td:not(:first-child) {
+    color: #7B2CFF;
+    font-weight: 700;
+}
 
+
+
+
+
+/* ===== PLANOS ===== */
 .planos {
     padding: 10rem 8%;
-    background: var(--white);
+    background: #0f051a;
 }
 
 .centralizado {
@@ -450,7 +427,10 @@ td:not(:first-child) {
 
 .centralizado p {
     margin-top: 1.5rem;
-    color: var(--gray);
+    color: #6E6878;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
 }
 
 .cards-planos {
@@ -464,10 +444,10 @@ td:not(:first-child) {
 .card-plano {
     position: relative;
     padding: 3.5rem 3rem;
-    border: 1px solid var(--border);
+    border: 1px solid #DED9E5;
     border-radius: 2rem;
-    background: white;
-    box-shadow: 0 1rem 3rem rgba(30, 20, 50, .08);
+    background: #CFC9D8;
+    box-shadow: 0 1rem 3rem rgba(30, 20, 50, 0.377);
     transition: .3s;
 }
 
@@ -477,7 +457,7 @@ td:not(:first-child) {
 }
 
 .card-plano.destaque {
-    border: 2px solid var(--purple);
+    border: 2px solid #7B2CFF;
     transform: translateY(-1.5rem);
 }
 
@@ -490,14 +470,16 @@ td:not(:first-child) {
     top: -1.4rem;
     left: 3rem;
     padding: .7rem 1.5rem;
-    background: var(--yellow);
-    color: var(--black);
+    background: #FFC400;
+    color: #08070B;
+    font-family: "Orbitron", sans-serif;
     font-size: 1.1rem;
     font-weight: 800;
 }
 
 .categoria {
-    color: var(--purple);
+    color: #7B2CFF;
+    font-family: "Orbitron", sans-serif;
     font-size: 1.1rem;
     font-weight: 800;
     letter-spacing: .15rem;
@@ -505,90 +487,116 @@ td:not(:first-child) {
 
 .topo-card h3 {
     margin-top: 1rem;
-    font-family: 'Oswald';
+    font-family: "Orbitron", sans-serif;
+    font-weight: 800;
     font-size: 3rem;
 }
 
 .topo-card p {
     margin-top: 1rem;
-    color: var(--gray);
+    color: #6E6878;
+    font-family: "Rajdhani", sans-serif;
     line-height: 1.6;
-    font-size: 1.4rem;
+    font-size: 1.7rem;
+    font-weight: 500;
 }
 
+/* --- PREÇO --- */
 .preco {
     margin-top: 3rem;
     padding: 2rem 0;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    border-top: 1px solid #DED9E5;
+    border-bottom: 1px solid #DED9E5;
 }
 
 .preco small {
-    color: var(--gray);
+    color: #6E6878;
     display: block;
     margin-bottom: .5rem;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.5rem;
 }
 
 .preco strong {
+    font-family: "Orbitron", sans-serif;
     font-size: 3.2rem;
 }
 
 .preco span {
-    color: var(--gray);
+    color: #6E6878;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.6rem;
 }
 
+/* --- BENEFÍCIOS --- */
 .beneficios {
     margin-top: 2.5rem;
     min-height: 20rem;
 }
 
 .beneficios h4 {
+    font-family: "Orbitron", sans-serif;
     font-size: 1.2rem;
-    color: var(--gray);
+    color: #6E6878;
     margin-bottom: 1.5rem;
 }
 
 .beneficios p {
     margin-bottom: 1.2rem;
-    font-size: 1.4rem;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
 }
 
+/* --- BOTÃO DO PLANO --- */
 .btn-plano {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
     width: 100%;
     padding: 1.5rem;
     text-align: center;
     text-decoration: none;
-    border: 1px solid var(--purple);
-    color: var(--purple);
+    border: 1px solid #7B2CFF;
+    color: #7B2CFF;
+    font-family: "Orbitron", sans-serif;
     font-weight: 800;
     font-size: 1.2rem;
     transition: .3s;
 }
 
+.btn-plano span {
+    font-size: 1.8rem;
+}
+
 .card-plano.destaque .btn-plano {
-    background: var(--purple);
-    color: white;
+    background: #7B2CFF;
+    color: #FFFFFF;
 }
 
 .btn-plano:hover {
-    background: var(--purple);
-    color: white;
+    background: #7B2CFF;
+    color: #FFFFFF;
 }
 
-/* ===== CTA FINAL ===== */
 
+
+
+
+/* ===== CTA FINAL ===== */
 .cta-planos {
     padding: 6rem 10%;
-    background: var(--black);
-    color: white;
+    background: #0f051a;
+    color: #FFFFFF;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.cta-planos span {
-    color: var(--yellow);
+.cta-planos > div > span {
+    color: #FFC400;
+    font-family: "Orbitron", sans-serif;
     font-size: 1.2rem;
     font-weight: 800;
     letter-spacing: .2rem;
@@ -596,23 +604,19 @@ td:not(:first-child) {
 
 .cta-planos h2 {
     margin-top: 1rem;
-    font-family: 'Oswald';
+    font-family: "Orbitron", sans-serif;
+    font-weight: 800;
     font-size: 4rem;
 }
 
 .cta-planos h2 strong {
-    color: var(--purple-light);
+    color: #A855F7;
 }
 
 
 
 
 
-
-
-
-
-/* FOOTER */
 /* FOOTER STYLES */
 .footer-site {
   background-color: #090514; color: #94a3b8; padding: 60px 40px 20px; position: relative; overflow: hidden; border-top: 3px solid #7e22ce;

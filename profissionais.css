@@ -1,0 +1,599 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+* { /* RESET da página */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+  background-color: #f5f3ef; /* Fundo Creme / Claro */
+    font-family: 'Rajdhani', sans-serif;
+}
+
+/* Header de ponta a ponta em tom claro */
+.navbar-wrapper {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #ffffff; /* Fundo Branco */
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.navbar {
+    width: 100%;
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+}
+
+/* Área da Logo e Tipografia */
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo-img {
+    height: 54px;
+    width: auto;
+    object-fit: contain;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-title {
+    display: flex;
+    gap: 6px;
+    line-height: 1;
+}
+
+.text-nexus {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    color: #2b1055; /* Roxo Escuro Premium */
+    letter-spacing: -0.5px;
+}
+
+.text-titan {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    color: #d9b206;
+    letter-spacing: -0.5px;
+}
+
+.text-academia {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #7e22ce; /* Roxo intermediário */
+    letter-spacing: 5px;
+    margin-top: 3px;
+    text-transform: uppercase;
+}
+
+/* Divisor Inclinado */
+.diagonal-divider {
+    width: 2px;
+    height: 76px;
+    background-color: #d9b206;
+    transform: rotate(25deg);
+    margin-left: 18px;
+    margin-right: 12px;
+}
+
+/* Tópicos do Menu */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+    height: 100%;
+}
+
+.nav-item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.nav-item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-decoration: none;
+    color: #334155; /* Grafite escuro para legibilidade no fundo claro */
+    height: 100%;
+    padding: 0 4px;
+    transition: color 0.2s ease;
+}
+
+.nav-item a i,
+.custom-dumbbell {
+    width: 22px;
+    height: 22px;
+    stroke-width: 2.2;
+    color: #334155;
+    transition:
+    color 0.2s ease,
+    stroke 0.2s ease,
+    transform 0.2s ease;
+}
+
+.nav-item a span {
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+/* Linha de Destaque no Hover */
+.hover-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #7e22ce;
+    transform: scaleX(0);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Efeito Hover nos itens do menu */
+.nav-item:hover a,
+.nav-item:hover a i,
+.nav-item:hover .custom-dumbbell {
+    color: #7e22ce;
+    stroke: #7e22ce;
+}
+
+.nav-item:hover a i,
+.nav-item:hover .custom-dumbbell {
+    transform: translateY(-2px);
+}
+
+.nav-item:hover .hover-line {
+    transform: scaleX(1);
+}
+
+/* Botão Inclinado Roxo com Ícone Dourado */
+.btn-cta {
+    height: 100%;
+    padding: 0 35px 0 50px;
+    background: linear-gradient(135deg, #6b21a8 0%, #3b0764 100%);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+    clip-path: polygon(25px 0%, 100% 0%, 100% 100%, 0% 100%);
+    transition:
+    filter 0.2s ease,
+    padding 0.2s ease;
+}
+
+.btn-cta i {
+    width: 18px;
+    height: 18px;
+    stroke-width: 3;
+    color: #d9b206; /* Seta dourada */
+    transition: transform 0.2s ease;
+}
+
+.btn-cta:hover {
+    filter: brightness(1.15);
+    padding-left: 55px;
+}
+
+.btn-cta:hover i {
+    transform: translateX(4px);
+}
+
+
+
+
+
+/* ===== SESSÃO INICIAL ===== */
+.hero-profissionais {
+    min-height: calc(100vh - 8rem);
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 8rem 10%;
+    background-image: url('imagens-profissionais/banner/banner-principal-profissionais.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    margin-top: 7rem;
+}
+
+.hero-profissionais-conteudo {
+    max-width: 58rem;
+    position: relative;
+    z-index: 2;
+    color: #FFFFFF;
+}
+
+.mini-titulo {
+    color: #A855F7;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: .2rem;
+}
+
+.hero-profissionais-conteudo h1 {
+    margin-top: 1.5rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 5.5rem;
+    font-weight: 900;
+    line-height: .98;
+    color: #FFFFFF;
+}
+
+.hero-profissionais-conteudo h1 strong {
+    color: #A855F7;
+}
+
+.hero-profissionais-conteudo p {
+    margin-top: 2.5rem;
+    max-width: 52rem;
+    color: #D8D4DE;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.7;
+}
+
+.btn-profissionais {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 3rem;
+    padding: 1.4rem 2.2rem;
+    background: #7B2CFF;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    transition: .3s;
+}
+
+.btn-profissionais span {
+    margin-left: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.btn-profissionais:hover {
+    background: #FFC400;
+    color: #08070B;
+    transform: translateY(-3px);
+}
+
+
+
+
+
+/* ===== SOBRE EQUIPE ===== */
+.sobre-equipe {
+    width: 100%;
+    padding: 5rem 7%;
+    background: #0f051a;
+}
+
+.sobre-equipe-conteudo {
+    max-width: 140rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1.8fr;
+    align-items: center;
+}
+
+/* --- TEXTO --- */
+.sobre-equipe-texto {
+    padding-right: 6rem;
+}
+
+.sobre-mini-titulo {
+    display: block;
+    color: #7B2CFF;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: .1rem;
+    margin-bottom: 1rem;
+}
+
+.sobre-equipe-texto h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1.05;
+    color: #ffffff;
+}
+
+.sobre-equipe-texto h2 strong {
+    color: #7B2CFF;
+}
+
+.sobre-equipe-texto p {
+    max-width: 55rem;
+    margin-top: 2rem;
+    color: #CFC9D8;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 500;
+    line-height: 1.45;
+}
+
+/* --- ESTATÍSTICAS --- */
+.sobre-equipe-estatisticas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    min-height: 15rem;
+}
+
+.estatistica {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-left: 1px solid #CFC9D8;
+    padding: 2rem;
+}
+
+.estatistica-icone {
+    width: 3.2rem;
+    height: 3.2rem;
+    color: #7B2CFF;
+    margin-bottom: 1rem;
+}
+
+.estatistica-icone svg {
+    width: 100%;
+    height: 100%;
+}
+
+.estatistica strong {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.8rem;
+    font-weight: 900;
+    line-height: 1;
+    color: #7B2CFF;
+}
+
+.estatistica span {
+    margin-top: .8rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: .02rem;
+}
+
+
+
+
+
+/* ===== CATEGORIA DOS PROFISSIONAIS ===== */
+/* ===== EQUIPE ===== */
+.equipe {
+    padding: 10rem 8%;
+    background: #F8F6FA;
+}
+
+.titulo-equipe {
+    max-width: 75rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.titulo-equipe > span {
+    color: #7B2CFF;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: .2rem;
+}
+
+.titulo-equipe h2 {
+    margin-top: 1.5rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.1;
+    color: #08070B;
+}
+
+.titulo-equipe h2 strong {
+    color: #7B2CFF;
+}
+
+.titulo-equipe p {
+    margin-top: 2rem;
+    color: #6E6878;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+/* ===== CATEGORIAS ===== */
+.categorias-profissionais {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 5rem auto 4rem;
+    flex-wrap: wrap;
+}
+
+.categoria-profissional {
+    padding: 1.3rem 2.5rem;
+    border: 1px solid #DED9E5;
+    background: #FFFFFF;
+    color: #08070B;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.categoria-profissional:hover {
+    border-color: #7B2CFF;
+    color: #7B2CFF;
+}
+
+.categoria-profissional.ativo {
+    background: #7B2CFF;
+    border-color: #7B2CFF;
+    color: #FFFFFF;
+}
+
+/* ===== CARDS ===== */
+.cards-profissionais {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+    max-width: 125rem;
+    margin: 0 auto;
+}
+
+.card-profissional {
+    background: #FFFFFF;
+    border: 1px solid #DED9E5;
+    overflow: hidden;
+    box-shadow: 0 1rem 3rem rgba(30, 20, 50, .08);
+    transition: .3s;
+}
+
+.card-profissional:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 2rem 4rem rgba(30, 20, 50, .15);
+}
+
+.foto-profissional {
+    width: 100%;
+    height: 32rem;
+    overflow: hidden;
+    background: #17131F;
+}
+
+.foto-profissional img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: .4s;
+}
+
+.card-profissional:hover .foto-profissional img {
+    transform: scale(1.04);
+}
+
+.info-profissional {
+    padding: 2.5rem;
+}
+
+.info-profissional > span {
+    color: #7B2CFF;
+    font-family: 'Orbitron', sans-serif;
+    font-size: .9rem;
+    font-weight: 800;
+    letter-spacing: .08rem;
+}
+
+.info-profissional h3 {
+    margin-top: .8rem;
+    color: #08070B;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.info-profissional > p {
+    margin-top: 1rem;
+    min-height: 4.8rem;
+    color: #6E6878;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.horario-profissional {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #DED9E5;
+}
+
+.horario-profissional strong {
+    color: #08070B;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+}
+
+.horario-profissional p {
+    margin-top: .5rem;
+    color: #6E6878;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FOOTER STYLES */
+.footer-site {
+  background-color: #090514; color: #94a3b8; padding: 60px 40px 20px; position: relative; overflow: hidden; border-top: 3px solid #7e22ce;
+}
+.footer-top { display: grid; grid-template-columns: 1.2fr 3fr; gap: 40px; max-width: 1200px; margin: 0 auto 40px; position: relative; z-index: 2; }
+.text-nexus-white { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 1.15rem; color: #ffffff; }
+.slogan-footer { font-family: 'Rajdhani', sans-serif; font-weight: 700; color: #d9b206; margin: 15px 0 20px; font-size: 1.1rem; }
+.social-icons { display: flex; gap: 15px; }
+.social-icons a { color: #d9b206; background: rgba(217, 178, 6, 0.1); width: 38px; height: 38px; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+.footer-cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.f-col h4 { font-family: 'Orbitron', sans-serif; color: #d9b206; font-size: 0.9rem; margin-bottom: 20px; }
+.f-col ul { list-style: none; }
+.f-col ul li { margin-bottom: 10px; }
+.f-col ul li a { color: #cbd5e1; text-decoration: none; font-weight: 600; }
+.f-col p { font-weight: 600; color: #cbd5e1; margin-bottom: 8px; }
+.btn-fale { display: inline-block; margin-top: 10px; padding: 8px 16px; border: 1px solid #7e22ce; color: #ffffff; text-decoration: none; font-family: 'Orbitron', sans-serif; font-size: 0.7rem; font-weight: 800; border-radius: 4px; }
+.footer-watermark { position: absolute; right: -20px; bottom: -20px; opacity: 0.05; pointer-events: none; }
+.footer-watermark img { width: 220px; }
+.footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; }
+.legal-links a { color: #94a3b8; text-decoration: none; margin-left: 20px; }
