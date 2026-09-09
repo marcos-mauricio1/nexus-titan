@@ -20,193 +20,212 @@ body {
     font-size: 1.6rem;
 }
 
+
+
+
+
 /* ===== HEADER ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f3ef; /* Fundo Creme / Claro */
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Header de ponta a ponta em tom claro */
 .navbar-wrapper {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    background-color: #ffffff;
-    border-bottom: 1px solid #e2e8f0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: #ffffff; /* Fundo Branco */
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 }
 
 .navbar {
-    width: 100%;
-    height: 76px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 20px;
+  width: 100%;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
 }
 
-/* --- LOGO --- */
+/* Área da Logo e Tipografia */
 .brand-container {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .brand-logo-img {
-    height: 54px;
-    width: auto;
-    object-fit: contain;
+  height: 54px;
+  width: auto;
+  object-fit: contain;
 }
 
 .brand-text {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .brand-title {
-    display: flex;
-    gap: 6px;
-    line-height: 1;
+  display: flex;
+  gap: 6px;
+  line-height: 1;
 }
 
 .text-nexus {
-    font-family: "Orbitron", sans-serif;
-    font-weight: 900;
-    font-size: 2rem;
-    color: #2b1055;
-    letter-spacing: -0.5px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 1.15rem;
+  color: #2b1055; /* Roxo Escuro Premium */
+  letter-spacing: -0.5px;
 }
 
 .text-titan {
-    font-family: "Orbitron", sans-serif;
-    font-weight: 900;
-    font-size: 2rem;
-    color: #d9b206;
-    letter-spacing: -0.5px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 1.15rem;
+  color: #d9b206; /* Amarelo / Dourado da marca */
+  letter-spacing: -0.5px;
 }
 
 .text-academia {
-    font-family: "Rajdhani", sans-serif;
-    font-weight: 700;
-    font-size: 1.3rem;
-    color: #7e22ce;
-    letter-spacing: 5px;
-    margin-top: 3px;
-    text-transform: uppercase;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: #7e22ce; /* Roxo intermediário */
+  letter-spacing: 5px;
+  margin-top: 3px;
+  text-transform: uppercase;
 }
 
+/* Divisor Inclinado */
 .diagonal-divider {
-    width: 2px;
-    height: 76px;
-    background-color: #d9b206;
-    transform: rotate(25deg);
-    margin-left: 18px;
-    margin-right: 12px;
+  width: 2px;
+  height: 76px;
+  background-color: #d9b206;
+  transform: rotate(25deg);
+  margin-left: 18px;
+  margin-right: 12px;
 }
 
-/* --- MENU --- */
+/* Tópicos do Menu */
 .nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-    list-style: none;
-    height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  height: 100%;
 }
 
 .nav-item {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 .nav-item a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    text-decoration: none;
-    color: #334155;
-    height: 100%;
-    padding: 0 4px;
-    transition: color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+  color: #334155; /* Grafite escuro para legibilidade no fundo claro */
+  height: 100%;
+  padding: 0 4px;
+  transition: color 0.2s ease;
 }
 
 .nav-item a i,
 .custom-dumbbell {
-    width: 22px;
-    height: 22px;
-    stroke-width: 2.2;
-    color: #334155;
-    transition: color 0.2s ease, stroke 0.2s ease, transform 0.2s ease;
+  width: 22px;
+  height: 22px;
+  stroke-width: 2.2;
+  color: #334155;
+  transition: color 0.2s ease, stroke 0.2s ease, transform 0.2s ease;
 }
 
 .nav-item a span {
-    font-family: "Orbitron", sans-serif;
-    font-size: 1.1rem;
-    font-weight: 800;
-    letter-spacing: 0.5px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
 }
 
-/* --- HOVER DO MENU --- */
+/* Linha de Destaque no Hover */
 .hover-line {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: #7e22ce;
-    transform: scaleX(0);
-    transition: transform 0.2s ease-in-out;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #7e22ce;
+  transform: scaleX(0);
+  transition: transform 0.2s ease-in-out;
 }
 
+/* Efeito Hover nos itens do menu */
 .nav-item:hover a,
 .nav-item:hover a i,
 .nav-item:hover .custom-dumbbell {
-    color: #7e22ce;
-    stroke: #7e22ce;
+  color: #7e22ce;
+  stroke: #7e22ce;
 }
 
 .nav-item:hover a i,
 .nav-item:hover .custom-dumbbell {
-    transform: translateY(-2px);
+  transform: translateY(-2px);
 }
 
 .nav-item:hover .hover-line {
-    transform: scaleX(1);
+  transform: scaleX(1);
 }
 
-/* --- BOTÃO MATRÍCULA --- */
+/* Botão Inclinado Roxo com Ícone Dourado */
 .btn-cta {
-    height: 100%;
-    padding: 0 35px 0 50px;
-    background: linear-gradient(135deg, #6b21a8 0%, #3b0764 100%);
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    font-family: "Orbitron", sans-serif;
-    font-weight: 900;
-    font-size: 2rem;
-    letter-spacing: 0.5px;
-    clip-path: polygon(25px 0%, 100% 0%, 100% 100%, 0% 100%);
-    transition: filter 0.2s ease, padding 0.2s ease;
+  height: 100%;
+  padding: 0 35px 0 50px;
+  background: linear-gradient(135deg, #6b21a8 0%, #3b0764 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  clip-path: polygon(25px 0%, 100% 0%, 100% 100%, 0% 100%);
+  transition: filter 0.2s ease, padding 0.2s ease;
 }
 
 .btn-cta i {
-    width: 18px;
-    height: 18px;
-    stroke-width: 3;
-    color: #d9b206;
-    transition: transform 0.2s ease;
+  width: 18px;
+  height: 18px;
+  stroke-width: 3;
+  color: #d9b206; /* Seta dourada */
+  transition: transform 0.2s ease;
 }
 
 .btn-cta:hover {
-    filter: brightness(1.15);
-    padding-left: 55px;
+  filter: brightness(1.15);
+  padding-left: 55px;
 }
 
 .btn-cta:hover i {
-    transform: translateX(4px);
+  transform: translateX(4px);
 }
+
 
 
 
@@ -369,6 +388,10 @@ body {
     box-shadow: 0 1rem 3rem rgba(30, 20, 50, 0.24);
 }
 
+.tit h2 {
+    color: #090514;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -442,7 +465,7 @@ td:not(:first-child) {
     padding: 3.5rem 3rem;
     border: 1px solid #DED9E5;
     border-radius: 2rem;
-    background: #CFC9D8;
+    background: #eae6f1;
     box-shadow: 0 1rem 3rem rgba(126, 116, 146, 0.541);
     transition: .3s;
 }
@@ -613,23 +636,152 @@ td:not(:first-child) {
 
 
 
-/* FOOTER STYLES */
+/* RODAPÉ OFICIAL ESCURO */
+
 .footer-site {
-  background-color: #090514; color: #94a3b8; padding: 60px 40px 20px; position: relative; overflow: hidden; border-top: 3px solid #7e22ce;
+    background-color: #090514;
+    color: #94a3b8;
+    padding: 6rem 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+    border-top: 0.3rem solid #7e22ce;
 }
-.footer-top { display: grid; grid-template-columns: 1.2fr 3fr; gap: 40px; max-width: 1200px; margin: 0 auto 40px; position: relative; z-index: 2; }
-.text-nexus-white { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 1.15rem; color: #ffffff; }
-.slogan-footer { font-family: 'Rajdhani', sans-serif; font-weight: 700; color: #d9b206; margin: 15px 0 20px; font-size: 1.1rem; }
-.social-icons { display: flex; gap: 15px; }
-.social-icons a { color: #d9b206; background: rgba(217, 178, 6, 0.1); width: 38px; height: 38px; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
-.footer-cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.f-col h4 { font-family: 'Orbitron', sans-serif; color: #d9b206; font-size: 0.9rem; margin-bottom: 20px; }
-.f-col ul { list-style: none; }
-.f-col ul li { margin-bottom: 10px; }
-.f-col ul li a { color: #cbd5e1; text-decoration: none; font-weight: 600; }
-.f-col p { font-weight: 600; color: #cbd5e1; margin-bottom: 8px; }
-.btn-fale { display: inline-block; margin-top: 10px; padding: 8px 16px; border: 1px solid #7e22ce; color: #ffffff; text-decoration: none; font-family: 'Orbitron', sans-serif; font-size: 0.7rem; font-weight: 800; border-radius: 4px; }
-.footer-watermark { position: absolute; right: -20px; bottom: -20px; opacity: 0.05; pointer-events: none; }
-.footer-watermark img { width: 220px; }
-.footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; }
-.legal-links a { color: #94a3b8; text-decoration: none; margin-left: 20px; }
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 1.2fr 3fr;
+    gap: 4rem;
+    max-width: 120rem;
+    margin: 0 auto 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+.text-nexus-white {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 1.15rem;
+    color: #ffffff;
+}
+
+.slogan-footer {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    color: #d9b206;
+    margin: 1.5rem 0 2rem;
+    font-size: 1.1rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-icons a {
+    color: #d9b206;
+    background: rgba(217, 178, 6, 0.1);
+    width: 3.8rem;
+    height: 3.8rem;
+    border-radius: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.social-icons a:hover {
+    background: #d9b206;
+    color: #090514;
+}
+
+.footer-cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.f-col h4 {
+    font-family: 'Orbitron', sans-serif;
+    color: #d9b206;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.1rem;
+}
+
+.f-col ul {
+    list-style: none;
+}
+
+.f-col ul li {
+    margin-bottom: 1rem;
+}
+
+.f-col ul li a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.f-col ul li a:hover {
+    color: #c084fc;
+}
+
+.f-col p {
+    font-weight: 600;
+    color: #cbd5e1;
+    margin-bottom: 0.8rem;
+}
+
+.btn-fale {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.6rem;
+    border: 0.1rem solid #7e22ce;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 800;
+    border-radius: 0.4rem;
+    transition: 0.2s;
+}
+
+.btn-fale:hover {
+    background: #7e22ce;
+}
+
+.footer-watermark {
+    position: absolute;
+    right: -2rem;
+    bottom: -2rem;
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+.footer-watermark img {
+    width: 22rem;
+}
+
+.footer-bottom {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding-top: 2rem;
+    border-top: 0.1rem solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.legal-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    margin-left: 2rem;
+}
+
+.legal-links a:hover {
+    color: #ffffff;
+}

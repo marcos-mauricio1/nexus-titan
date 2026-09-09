@@ -242,14 +242,7 @@ main {
     font-family: 'Rajdhani';
     font-size: 2.5rem;
     letter-spacing: .35rem;
-    background: linear-gradient(
-        to bottom,
-        #7B2CFF 0%,
-        #3b166d 100%
-    );
-    /* define o degrade no texto */
-    -webkit-background-clip: text; /* aplica a cor dentro do texto */
-    -webkit-text-fill-color: transparent; /* deixa A COR do texto transparente */
+    color: #7B2CFF;
 }
 
 .conteudo-inicial h1 {
@@ -263,14 +256,7 @@ main {
 }
 
 .conteudo-inicial h1 span {
-    background: linear-gradient(
-        to bottom,
-        #7B2CFF 0%,
-        #3b166d 100%
-    );
-    /* define o degrade no texto */
-    -webkit-background-clip: text; /* aplica a cor dentro do texto */
-    -webkit-text-fill-color: transparent; /* deixa A COR do texto transparente */
+    color: #7B2CFF;
     font-size: 12.5rem;
     margin-bottom: 50%;
 }
@@ -1097,23 +1083,152 @@ main {
 
 
 
-/* FOOTER STYLES */
+/* RODAPÉ OFICIAL ESCURO */
+
 .footer-site {
-  background-color: #090514; color: #94a3b8; padding: 60px 40px 20px; position: relative; overflow: hidden; border-top: 3px solid #7e22ce;
+    background-color: #090514;
+    color: #94a3b8;
+    padding: 6rem 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+    border-top: 0.3rem solid #7e22ce;
 }
-.footer-top { display: grid; grid-template-columns: 1.2fr 3fr; gap: 40px; max-width: 1200px; margin: 0 auto 40px; position: relative; z-index: 2; }
-.text-nexus-white { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 1.15rem; color: #ffffff; }
-.slogan-footer { font-family: 'Rajdhani', sans-serif; font-weight: 700; color: #d9b206; margin: 15px 0 20px; font-size: 1.1rem; }
-.social-icons { display: flex; gap: 15px; }
-.social-icons a { color: #d9b206; background: rgba(217, 178, 6, 0.1); width: 38px; height: 38px; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
-.footer-cols { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.f-col h4 { font-family: 'Orbitron', sans-serif; color: #d9b206; font-size: 0.9rem; margin-bottom: 20px; }
-.f-col ul { list-style: none; }
-.f-col ul li { margin-bottom: 10px; }
-.f-col ul li a { color: #cbd5e1; text-decoration: none; font-weight: 600; }
-.f-col p { font-weight: 600; color: #cbd5e1; margin-bottom: 8px; }
-.btn-fale { display: inline-block; margin-top: 10px; padding: 8px 16px; border: 1px solid #7e22ce; color: #ffffff; text-decoration: none; font-family: 'Orbitron', sans-serif; font-size: 0.7rem; font-weight: 800; border-radius: 4px; }
-.footer-watermark { position: absolute; right: -20px; bottom: -20px; opacity: 0.05; pointer-events: none; }
-.footer-watermark img { width: 220px; }
-.footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; }
-.legal-links a { color: #94a3b8; text-decoration: none; margin-left: 20px; }
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 1.2fr 3fr;
+    gap: 4rem;
+    max-width: 120rem;
+    margin: 0 auto 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+.text-nexus-white {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 1.15rem;
+    color: #ffffff;
+}
+
+.slogan-footer {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    color: #d9b206;
+    margin: 1.5rem 0 2rem;
+    font-size: 1.1rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-icons a {
+    color: #d9b206;
+    background: rgba(217, 178, 6, 0.1);
+    width: 3.8rem;
+    height: 3.8rem;
+    border-radius: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.social-icons a:hover {
+    background: #d9b206;
+    color: #090514;
+}
+
+.footer-cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.f-col h4 {
+    font-family: 'Orbitron', sans-serif;
+    color: #d9b206;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.1rem;
+}
+
+.f-col ul {
+    list-style: none;
+}
+
+.f-col ul li {
+    margin-bottom: 1rem;
+}
+
+.f-col ul li a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.f-col ul li a:hover {
+    color: #c084fc;
+}
+
+.f-col p {
+    font-weight: 600;
+    color: #cbd5e1;
+    margin-bottom: 0.8rem;
+}
+
+.btn-fale {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.6rem;
+    border: 0.1rem solid #7e22ce;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 800;
+    border-radius: 0.4rem;
+    transition: 0.2s;
+}
+
+.btn-fale:hover {
+    background: #7e22ce;
+}
+
+.footer-watermark {
+    position: absolute;
+    right: -2rem;
+    bottom: -2rem;
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+.footer-watermark img {
+    width: 22rem;
+}
+
+.footer-bottom {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding-top: 2rem;
+    border-top: 0.1rem solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.legal-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    margin-left: 2rem;
+}
+
+.legal-links a:hover {
+    color: #ffffff;
+}
