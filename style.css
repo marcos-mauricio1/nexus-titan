@@ -1,17 +1,3 @@
-/* === TITULOS === */
-
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Science+Gothic:wght@100..900&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap'); 
-
-@import url('https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Outfit:wght@100..900&display=swap');  
-
-/* === TEXTOS === */
-
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Oswald:wght@200..700&family=Outfit:wght@100..900&display=swap');
-
 * { /* RESET da página */
     padding: 0;
     margin: 0;
@@ -26,6 +12,10 @@ body {
   background-color: #f5f3ef; /* Fundo Creme / Claro */
     font-family: 'Rajdhani', sans-serif;
 }
+
+
+
+
 
 /* Header de ponta a ponta em tom claro */
 .navbar-wrapper {
@@ -335,14 +325,12 @@ main {
     background-color: #FFC400;
     color: #08070B;
     border: 2px solid #7B2CFF;
-
     transform: translateY(-3px);
 }
 
 .botao a:last-child:hover {
     background-color: #FFC400;
     color: #08070B;
-
     transform: translateY(-3px);
 }
 
@@ -350,9 +338,7 @@ main {
 .conteudo-visual {
     width: 55%;
     height: 100vh;
-
     position: relative;
-
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -369,48 +355,38 @@ main {
 }
 
 
-/* ===== SESSÃO MODALIDADES ===== */
 
+
+
+/* ===== SESSÃO MODALIDADES ===== */
 .modalidades {
     width: 100%;
-
     padding: 0 5% 5% 5%;
-
     background: #F5F4F2;
 }
 
-
 /* === TÍTULO === */
-
 .titulo-modalidades {
     text-align: center;
-
     margin-bottom: 4rem;
 }
 
 .titulo-modalidades span {
     display: block;
-
     margin-bottom: 0.5rem;
-
     color: #7B2CFF;
-
-    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
-
     letter-spacing: 0.1rem;
 }
 
 .titulo-modalidades h2 {
     margin: 0;
-
     color: #17131F;
-
-    font-family: 'Oswald', sans-serif;
-    font-size: 4rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4.5rem;
     font-weight: 700;
-
     line-height: 1.1;
 }
 
@@ -418,47 +394,32 @@ main {
     color: #7B2CFF;
 }
 
-
 /* === LISTA DE MODALIDADES === */
-
 .lista-modalidades {
     width: 100%;
     max-width: 1900px;
-
     margin: 0 auto;
-
     display: flex;
-
     gap: 2rem;
 }
 
 
 /* === CARD === */
-
 .modalidade-card {
     flex: 1;
-
     height: 25rem;
-
     position: relative;
-
     overflow: hidden;
-
     border-radius: 1.5rem;
-
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.20);
-
     transition: transform 0.3s ease,
                 box-shadow 0.3s ease;
 }
 
-
 /* === IMAGENS DOS CARDS === */
-
 .modalidade-card.musculacao {
     background-image: url("imagens-inicio/modalidades/treino-musculacao.jpg");
 }
@@ -475,156 +436,111 @@ main {
     background-image: url("imagens-inicio/modalidades/treino-luta.jpg");
 }
 
-
 /* === ZOOM DA IMAGEM === */
-
 .modalidade-card {
     background-size: 115% auto;
 }
 
-
 /* === OVERLAY ROXO === */
-
 .modalidade-card::before {
     content: "";
-
     position: absolute;
-
     inset: 0;
-
     background: linear-gradient(
         90deg,
         rgba(14, 11, 19, 0.95) 0%,
         rgba(55, 20, 90, 0.72) 50%,
         rgba(123, 44, 255, 0.25) 100%
     );
-
     z-index: 1;
 }
 
-
 /* === CONTEÚDO === */
-
 .modalidade-conteudo {
     position: absolute;
-
     inset: 0;
-
     padding: 2.5rem;
-
     display: flex;
     flex-direction: column;
-
     justify-content: flex-end;
-
     z-index: 2;
 }
 
-
 /* === ÍCONE === */
-
 .modalidade-conteudo > img {
     width: 5rem;
     height: 5rem;
-
     object-fit: contain;
-
     margin-bottom: 1.5rem;
-
     filter: drop-shadow(
         0 0 0.8rem rgba(168, 85, 247, 0.7)
     );
-
     transition: transform 0.3s ease;
 }
 
-
 /* === TEXTO === */
-
 .modalidade-texto {
     max-width: 22rem;
 }
 
 .modalidade-texto h3 {
     margin: 0 0 0.7rem;
-
     color: #FFFFFF;
-
-    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 2.2rem;
     font-weight: 700;
-
     letter-spacing: 0.05rem;
 }
 
 .modalidade-texto p {
     margin: 0;
-
     color: #E5E1EA;
-
     font-family: 'Rajdhani', sans-serif;
     font-size: 1.4rem;
     font-weight: 500;
-
     line-height: 1.4;
 }
 
-
 /* === BOTÃO === */
-
 .modalidade-botao {
     position: absolute;
-
     right: 2rem;
     bottom: 2rem;
-
     width: 3.5rem;
     height: 3.5rem;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     background: #FFC400;
-
     border-radius: 0.7rem;
-
     color: #17131F;
-
     font-family: Arial, sans-serif;
     font-size: 2rem;
     font-weight: 700;
-
     text-decoration: none;
-
     transition: transform 0.3s ease,
                 background 0.3s ease;
 }
 
-
 /* === HOVER DO BOTÃO === */
-
 .modalidade-botao:hover {
     transform: translateX(0.3rem);
-
     background: #FFD84D;
 }
 
-
 /* === HOVER DO CARD === */
-
 .modalidade-card:hover {
     transform: translateY(-0.5rem);
-
     box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
 }
 
-
 /* === HOVER DO ÍCONE === */
-
 .modalidade-card:hover .modalidade-conteudo > img {
     transform: translateY(-0.3rem);
 }
+
+
+
 
 
 /* ===== SESSÃO ESTRUTURA ===== */
@@ -632,12 +548,9 @@ main {
 .estrutura {
     width: 100%;
     height: 70rem;
-
     position: relative;
     overflow: hidden;
-
     background-image: url("imagens-inicio/banner-principal/academia.jpg");
-
     background-size: cover;
     background-position: 75% center;
     background-repeat: no-repeat;
@@ -646,27 +559,20 @@ main {
 /* === DEGRADE SOBRE A IMAGEM === */
 .estrutura::before {
     content: "";
-
     position: absolute;
     inset: 0;
-
     z-index: 1;
-
     background: linear-gradient(
     to left,
-
     #12051F 0%,
     #24103D 20%,
-
     rgba(53, 28, 82, 0.98) 30%,
     rgba(67, 40, 102, 0.88) 38%,
     rgba(91, 63, 133, 0.68) 46%,
     rgba(117, 91, 157, 0.45) 55%,
     rgba(143, 120, 179, 0.20) 65%,
-
     rgba(160, 140, 195, 0) 78%
 );
-
     pointer-events: none;
 }
 
@@ -674,16 +580,12 @@ main {
 .estrutura-conteudo {
     width: 40%;
     height: 100%;
-
     margin-left: auto;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     padding: 3rem;
     padding-left: 16rem;
-
     position: relative;
     z-index: 2;
 }
@@ -691,118 +593,81 @@ main {
 /* === TAG === */
 .estrutura-tag {
     font-family: "Orbitron", sans-serif;
-
     font-size: 1.5rem;
     font-weight: 700;
-
     letter-spacing: .25rem;
-
     color: #d3b2f0;
-
     margin-bottom: 1.5rem;
 }
-
-
 
 /* === TITULO === */
 .estrutura-conteudo h2 {
     font-family: "Orbitron", sans-serif;
-
     font-size: 5.5rem;
     font-weight: 900;
-
     line-height: .9;
     letter-spacing: -2px;
-
     color: #ffffff;
-
     margin-bottom: 2rem;
 }
 
-
 .estrutura-conteudo h2 span {
     display: block;
-
     color: #FFC400;
 }
-
 
 /* === DESCRIÇÃO === */
 .estrutura-descricao {
     max-width: 38rem;
-
     font-family: "Rajdhani";
-
     font-size: 1.7rem;
-
     line-height: 1.45;
-
     color: #ffffff;
-
     margin-bottom: 3rem;
 }
 
 /* === DIFERENCIAIS === */
 .estrutura-diferenciais {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 2rem 3rem;
-
     margin-bottom: 3rem;
 }
-
 
 /* === DIFERENCIAL === */
 .diferencial {
     display: flex;
-
     align-items: center;
-
     gap: 1.2rem;
 }
 
 .diferencial .icone {
     width: 4rem;
     height: 4rem;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     flex-shrink: 0;
-
     border: 1.5px solid #d3b2f0;
-
     border-radius: .8rem;
-
     color: #d3b2f0;
-
     font-size: 1.8rem;
-
     transition:
         background-color .3s ease,
         color .3s ease,
         transform .3s ease;
 }
 
-
 .diferencial p {
     font-family: "Montserrat", sans-serif;
-
     font-size: 1.5rem;
-
     line-height: 1.25;
-
     color: #ffffff;
 }
 
 
 .diferencial strong {
     font-weight: 700;
-
     color: #ffffff;
 }
 
@@ -810,35 +675,23 @@ main {
 /* === EFEITO DIFERENCIAIS === */
 .diferencial:hover .icone {
     background-color: #7B2CFF;
-
     color: #F8F7FA;
-
     transform: translateY(-3px);
 }
 
 /* === BOTÃO === */
 .botao-estrutura {
     width: fit-content;
-
     display: flex;
-
     align-items: center;
-
     gap: 2rem;
-
     padding: 1.3rem 1.8rem;
-
     border: 1.5px solid #7B2CFF;
-
     text-decoration: none;
-
     font-family: "Orbitron", sans-serif;
-
     font-size: 1.3rem;
     font-weight: 700;
-
     color: #ffffff;
-
     transition:
         background-color .3s ease,
         color .3s ease,
@@ -846,177 +699,121 @@ main {
         box-shadow .3s ease;
 }
 
-
 .botao-estrutura span {
     font-size: 2.2rem;
-
     color: #FFC400;
-
     line-height: 0;
-
     transition: transform .3s ease;
 }
 
 /* -- EFEITO DO BOTÃO -- */
 .botao-estrutura:hover {
     background-color: #7B2CFF;
-
     color: #FFFFFF;
-
     transform: translateY(-3px);
-
     box-shadow:
         0 8px 25px rgba(123, 44, 255, .18);
 }
 
-
 .botao-estrutura:hover span {
     transform: translateX(5px);
-
     color: #FFC400;
 }
 
 
 
-/* ===== SEÇÃO PROFISSIONAIS ===== */
 
+
+/* ===== SEÇÃO PROFISSIONAIS ===== */
 .profissionais {
     width: 100%;
     min-height: 65rem;
-
     position: relative;
     overflow: hidden;
-
     display: flex;
     align-items: center;
-
     background-color: #F5F4F2;
-
     background-image: url("imagens-inicio/banner-principal/funcionarios.png");
     background-repeat: no-repeat;
     background-position: right center;
     background-size: auto 100%;
 }
 
-
 /* === CONTEÚDO === */
-
 .profissionais-conteudo {
     width: 55%;
-
     position: relative;
     z-index: 3;
-
     padding: 8rem 4rem 8rem 8%;
 }
 
-
-/* === NÚMERO === */
-
-
-
 /* === TEXTO === */
-
 .profissionais-texto {
     max-width: 60rem;
-
     margin-left: 8rem;
 }
 
-
 /* === SUBTÍTULO === */
-
 .subtitulo {
     display: block;
-
     margin-bottom: 1.5rem;
-
     color: #6421B5;
-
-    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 1.8rem;
     font-weight: 700;
-
     letter-spacing: 0.08rem;
 }
 
-
 /* === TÍTULO === */
-
 .profissionais-texto h2 {
     margin: 0 0 2.5rem;
-
     color: #111111;
-
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 5.5rem;
     font-weight: 700;
-
     line-height: 1.05;
 }
 
-
 /* === DESTAQUE === */
-
 .profissionais-texto h2 strong {
     color: #6F20D5;
 }
 
-
 /* === DESCRIÇÃO === */
-
 .profissionais-texto p {
     max-width: 55rem;
-
     margin: 0 0 3rem;
-
     color: #37323D;
-
     font-family: 'Rajdhani', sans-serif;
     font-size: 1.8rem;
     font-weight: 500;
-
     line-height: 1.5;
 }
 
-
 /* === BOTÃO === */
-
 .botao-profissionais {
     width: fit-content;
-
     padding: 1.5rem 2.5rem;
-
     display: flex;
     align-items: center;
     gap: 3rem;
-
     border: 2px solid #7B2CFF;
     border-radius: 0.6rem;
-
     color: #5F20B7;
-
-    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 1.6rem;
     font-weight: 700;
-
     text-decoration: none;
-
     transition: 0.3s ease;
 }
 
-
 /* === SETA === */
-
 .botao-profissionais span {
     font-size: 2.5rem;
-
     transition: transform 0.3s ease;
 }
 
-
 /* === HOVER === */
-
 .botao-profissionais:hover {
     background: #7B2CFF;
     color: #FFFFFF;
@@ -1026,35 +823,24 @@ main {
     transform: translateX(0.5rem);
 }
 
-
 /* === DETALHE AMARELO === */
-
 .profissionais::after {
     content: "";
-
     position: absolute;
-
     left: -5rem;
     bottom: -10rem;
-
     width: 20rem;
     height: 20rem;
-
     background: #FFC400;
-
     border-radius: 50%;
-
     z-index: 1;
 }
 
 
 
 
-/* ===== SEÇÃO PROFISSIONAIS ===== */
-/* =========================
-   SEÇÃO DE PLANOS
-========================= */
 
+/* ===== SEÇÃO DE PLANOS ===== */
 .planos {
     position: relative;
     padding: 10rem 8%;
@@ -1063,7 +849,6 @@ main {
 }
 
 /* detalhe decorativo */
-
 .planos::before {
     content: "";
     position: absolute;
@@ -1076,10 +861,7 @@ main {
     left: -15rem;
 }
 
-/* =========================
-   TÍTULO
-========================= */
-
+/* === TÍTULO === */
 .titulo-planos {
     max-width: 60rem;
     margin: 0 auto 6rem;
@@ -1089,22 +871,18 @@ main {
 .titulo-planos span {
     display: block;
     margin-bottom: 1rem;
-
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 1.5rem;
     font-weight: 600;
     letter-spacing: .15rem;
-
     color: #7B2CFF;
 }
 
 .titulo-planos h2 {
     margin: 0;
-
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 5rem;
     line-height: .95;
-
     color: #08070B;
 }
 
@@ -1115,174 +893,119 @@ main {
 .titulo-planos p {
     max-width: 50rem;
     margin: 2rem auto 0;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2rem;
+    line-height: 1.2;
 
-    font-size: 1.7rem;
-    line-height: 1.6;
-
-    color: #55515D;
+    color: #1c1b1f;
 }
 
-
-/* =========================
-   CARDS
-========================= */
-
+/* === CARDS === */
 .cards-planos {
     position: relative;
-
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-
     max-width: 125rem;
     margin: auto;
-
     gap: 2.5rem;
     .card-plano {
     background: #ffffff;
     border-radius: 20px;
-
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.281);
 }
 }
 
 .card-plano {
     position: relative;
-
     padding: 4rem 3.5rem;
-
     background: #FFFFFF;
-
     border: 1px solid #E2DEE8;
     border-radius: 1.8rem;
-
     transition: .3s ease;
 }
 
 .card-plano:hover {
     transform: translateY(-1rem);
-
     border-color: #7B2CFF;
-
     box-shadow: 0 2rem 5rem rgba(65, 35, 100, .12);
 }
 
 
-/* =========================
-   NÚMERO
-========================= */
-
+/* === NÚMERO === */
 .numero-plano {
     margin-bottom: 2rem;
-
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 2rem;
-
     color: #A855F7;
 }
 
-
-/* =========================
-   TÍTULO DO PLANO
-========================= */
-
+/* === TÍTULO DO PLANO === */
 .card-plano h3 {
     margin-bottom: 1.5rem;
-
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 2.8rem;
-
     color: #08070B;
 }
 
-
-/* =========================
-   DESCRIÇÃO
-========================= */
-
+/* === DESCRIÇÃO === */
 .descricao-plano {
     min-height: 7rem;
-
-    font-size: 1.5rem;
+    font-size: 2.1rem;
     line-height: 1.6;
-
-    color: #625E68;
+    color: #1c1b1f;
 }
 
 
-/* =========================
-   PREÇO
-========================= */
-
+/* === PREÇO === */
 .preco {
     margin: 3rem 0;
 }
 
 .preco small {
     display: block;
-
     margin-bottom: .5rem;
-
-    font-size: 1.3rem;
-    color: #77727F;
+    font-size: 1.8rem;
+    color: #1c1b1f;
 }
 
 .preco strong {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     font-size: 4rem;
-
     color: #08070B;
 }
 
 .preco span {
-    font-size: 1.4rem;
-    color: #77727F;
+    font-size: 1.9rem;
+    color: #1c1b1f;
 }
 
-
-/* =========================
-   BENEFÍCIOS
-========================= */
-
+/* === BENEFÍCIOS === */
 .card-plano ul {
     display: flex;
     flex-direction: column;
-
     gap: 1.3rem;
-
     margin-bottom: 3rem;
 }
 
 .card-plano li {
     list-style: none;
-
-    font-size: 1.5rem;
-
+    font-size: 1.8rem;
     color: #30283A;
 }
 
-
-/* =========================
-   BOTÃO
-========================= */
-
+/* === BOTÃO === */
 .btn-plano {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     width: 100%;
-
     padding: 1.4rem 1.8rem;
-
     border: 1.5px solid #7B2CFF;
     border-radius: .8rem;
-
     font-size: 1.4rem;
     font-weight: 700;
     letter-spacing: .05rem;
-
     color: #7B2CFF;
-
     transition: .3s ease;
 }
 
@@ -1295,16 +1018,10 @@ main {
     color: #FFFFFF;
 }
 
-
-/* =========================
-   PLANO DESTAQUE
-========================= */
-
+/* === PLANO DESTAQUE === */
 .card-plano.destaque {
     background: #17131F;
-
     border: 2px solid #7B2CFF;
-
     transform: translateY(-1.5rem);
 }
 
@@ -1337,74 +1054,44 @@ main {
     background: #FFD84D;
 }
 
-
-/* =========================
-   TAG
-========================= */
-
+/* === TAG === */
 .tag-plano {
     position: absolute;
-
     top: 2rem;
     right: 2rem;
-
     padding: .7rem 1.2rem;
-
     background: #FFC400;
-
     border-radius: .5rem;
-
     font-size: 1.1rem;
     font-weight: 800;
-
     color: #08070B;
 }
 
-
-/* =========================
-   RODAPÉ DA SEÇÃO
-========================= */
-
+/* === FINAL DA SEÇÃO === */
 .rodape-planos {
     display: flex;
     align-items: center;
     justify-content: center;
-
     gap: 2rem;
-
     margin-top: 5rem;
 }
 
 .rodape-planos span {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Rajdhani', sans-serif;
     font-size: 1.5rem;
-
-    color: #625E68;
+    color: #1c1b1f;
 }
 
 .rodape-planos a {
     font-size: 1.4rem;
     font-weight: 700;
-
     color: #7B2CFF;
-
     transition: .3s;
 }
 
 .rodape-planos a:hover {
     color: #A855F7;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

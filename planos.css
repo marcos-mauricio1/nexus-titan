@@ -331,10 +331,6 @@ body {
     line-height: 1;
 }
 
-.titulo-secao h2 {
-    color: #090514;
-}
-
 .introducao-titulo strong,
 .titulo-secao strong {
     color: #7B2CFF;
@@ -447,13 +443,13 @@ td:not(:first-child) {
     border: 1px solid #DED9E5;
     border-radius: 2rem;
     background: #CFC9D8;
-    box-shadow: 0 1rem 3rem rgba(30, 20, 50, 0.377);
+    box-shadow: 0 1rem 3rem rgba(126, 116, 146, 0.541);
     transition: .3s;
 }
 
 .card-plano:hover {
     transform: translateY(-8px);
-    box-shadow: 0 2rem 4rem rgba(30, 20, 50, .15);
+    box-shadow: 0 2rem 4rem rgba(126, 116, 146, 0.651);
 }
 
 .card-plano.destaque {

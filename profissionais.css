@@ -487,13 +487,13 @@ body {
     background: #FFFFFF;
     border: 1px solid #DED9E5;
     overflow: hidden;
-    box-shadow: 0 1rem 3rem rgba(30, 20, 50, .08);
+    box-shadow: 0 1rem 3rem rgba(30, 20, 50, 0.438);
     transition: .3s;
 }
 
 .card-profissional:hover {
     transform: translateY(-8px);
-    box-shadow: 0 2rem 4rem rgba(30, 20, 50, .15);
+    box-shadow: 0 2rem 4rem rgba(30, 20, 50, 0.562);
 }
 
 .foto-profissional {
