@@ -1,1010 +1,278 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Titan - Gestão</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f4f7f6; color: #333; padding: 20px; }
+        h1 { text-align: center; margin-bottom: 20px; color: #1a2a3a; }
+        
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-    <title>Nexus Titan | Personal</title>
+        .card {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-    <link rel="stylesheet" href="style.css">
+        .card h2 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #0056b3;
+            border-bottom: 2px solid #eef2f5;
+            padding-bottom: 8px;
+        }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        .form-group { margin-bottom: 12px; }
+        label { display: block; font-size: 0.85rem; font-weight: bold; margin-bottom: 4px; }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
 
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
-          rel="stylesheet">
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 100;
+            transition: background 0.2s;
+        }
+
+        button:hover { background-color: #003d80; }
+    </style>
 </head>
-
 <body>
 
-<!-- ================= SIDEBAR ================= -->
-
-<aside class="sidebar">
-
-    <div class="logo">
-        <div class="logo-icon">NT</div>
-
-        <div>
-            <h1>NEXUS</h1>
-            <span>TITAN</span>
-        </div>
-    </div>
-
-    <nav>
-
-        <button class="menu-btn active" onclick="mostrarPagina('dashboard', this)">
-            <span>⌂</span>
-            Dashboard
-        </button>
-
-        <button class="menu-btn" onclick="mostrarPagina('agenda', this)">
-            <span>▣</span>
-            Agenda
-        </button>
-
-        <button class="menu-btn" onclick="mostrarPagina('disponibilidade', this)">
-            <span>◷</span>
-            Disponibilidade
-        </button>
-
-        <button class="menu-btn" onclick="mostrarPagina('alunos', this)">
-            <span>♙</span>
-            Alunos
-        </button>
-
-        <button class="menu-btn" onclick="mostrarPagina('treinos', this)">
-            <span>◆</span>
-            Treinos
-        </button>
-
-        <button class="menu-btn" onclick="mostrarPagina('avaliacoes', this)">
-            <span>▤</span>
-            Avaliações
-        </button>
-
-        <button class="menu-btn" onclick="mostrarPagina('perfil', this)">
-            <span>⚙</span>
-            Meu perfil
-        </button>
-
-    </nav>
-
-    <div class="sidebar-bottom">
-        <div class="personal-mini">
-            <div class="avatar">P</div>
-
-            <div>
-                <strong id="sidebarNome">Personal</strong>
-                <small>Personal Trainer</small>
-            </div>
-        </div>
-    </div>
-
-</aside>
-
-
-<!-- ================= MAIN ================= -->
-
-<main class="main">
-
-    <!-- HEADER -->
-
-    <header class="header">
-
-        <div>
-            <p class="header-small">ÁREA DO PROFISSIONAL</p>
-            <h2 id="pageTitle">Dashboard</h2>
-        </div>
-
-        <div class="header-right">
-
-            <div class="status">
-                <span></span>
-                Sistema online
-            </div>
-
-            <div class="avatar header-avatar">
-                P
-            </div>
-
-        </div>
-
-    </header>
-
-
-    <!-- ================= DASHBOARD ================= -->
-
-    <section id="dashboard" class="page active-page">
-
-        <div class="welcome">
-
-            <div>
-                <p class="section-label">NEXUS TITAN</p>
-
-                <h1>
-                    Olá, <span id="welcomeName">Personal</span>.
-                </h1>
-
-                <p>
-                    Gerencie seus alunos, treinos e horários.
-                </p>
-            </div>
-
-            <div class="welcome-icon">
-                NT
-            </div>
-
-        </div>
-
-
-        <div class="cards">
-
-            <div class="stat-card">
-
-                <div class="stat-icon">♙</div>
-
-                <div>
-                    <span>Alunos</span>
-                    <strong id="totalAlunos">0</strong>
-                </div>
-
-            </div>
-
-
-            <div class="stat-card">
-
-                <div class="stat-icon">◆</div>
-
-                <div>
-                    <span>Treinos</span>
-                    <strong id="totalTreinos">0</strong>
-                </div>
-
-            </div>
-
-
-            <div class="stat-card">
-
-                <div class="stat-icon">▣</div>
-
-                <div>
-                    <span>Agendamentos</span>
-                    <strong id="totalAgendamentos">0</strong>
-                </div>
-
-            </div>
-
-
-            <div class="stat-card">
-
-                <div class="stat-icon">◷</div>
-
-                <div>
-                    <span>Horários</span>
-                    <strong id="totalDisponibilidades">0</strong>
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="dashboard-grid">
-
-            <div class="panel">
-
-                <div class="panel-header">
-
-                    <div>
-                        <span class="section-label">AGENDA</span>
-                        <h3>Próximos agendamentos</h3>
-                    </div>
-
-                    <button onclick="mostrarPagina('agenda')" class="link-btn">
-                        Ver todos →
-                    </button>
-
-                </div>
-
-                <div id="dashboardAgendamentos" class="list">
-                    <div class="empty">
-                        Nenhum agendamento encontrado.
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="panel">
-
-                <div class="panel-header">
-
-                    <div>
-                        <span class="section-label">ALUNOS</span>
-                        <h3>Seus alunos</h3>
-                    </div>
-
-                    <button onclick="mostrarPagina('alunos')" class="link-btn">
-                        Ver todos →
-                    </button>
-
-                </div>
-
-                <div id="dashboardAlunos" class="list">
-                    <div class="empty">
-                        Nenhum aluno encontrado.
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= AGENDA ================= -->
-
-    <section id="agenda" class="page">
-
-        <div class="page-heading">
-
-            <div>
-                <span class="section-label">GERENCIAMENTO</span>
-                <h1>Agenda</h1>
-                <p>Visualize e gerencie seus agendamentos.</p>
-            </div>
-
-            <button class="primary-btn" onclick="abrirModalAgendamento()">
-                + Novo agendamento
-            </button>
-
-        </div>
-
-
-        <div class="panel">
-
-            <div class="filter-bar">
-
-                <select id="filtroAgenda" onchange="carregarAgenda()">
-                    <option value="todos">Todos</option>
-                    <option value="agendado">Agendados</option>
-                    <option value="cancelado">Cancelados</option>
-                </select>
-
-                <button class="secondary-btn" onclick="carregarAgenda()">
-                    Atualizar
-                </button>
-
-            </div>
-
-            <div id="agendaLista" class="appointments">
-                <div class="loading">Carregando...</div>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= DISPONIBILIDADE ================= -->
-
-    <section id="disponibilidade" class="page">
-
-        <div class="page-heading">
-
-            <div>
-                <span class="section-label">HORÁRIOS</span>
-                <h1>Disponibilidade</h1>
-                <p>Defina quando você estará disponível para atender.</p>
-            </div>
-
-            <button class="primary-btn" onclick="abrirModalDisponibilidade()">
-                + Adicionar horário
-            </button>
-
-        </div>
-
-
-        <div class="days-grid">
-
-            <div class="day-card">
-                <h3>SEGUNDA</h3>
-                <div id="SEGUNDA" class="day-content"></div>
-            </div>
-
-            <div class="day-card">
-                <h3>TERÇA</h3>
-                <div id="TERCA" class="day-content"></div>
-            </div>
-
-            <div class="day-card">
-                <h3>QUARTA</h3>
-                <div id="QUARTA" class="day-content"></div>
-            </div>
-
-            <div class="day-card">
-                <h3>QUINTA</h3>
-                <div id="QUINTA" class="day-content"></div>
-            </div>
-
-            <div class="day-card">
-                <h3>SEXTA</h3>
-                <div id="SEXTA" class="day-content"></div>
-            </div>
-
-            <div class="day-card">
-                <h3>SÁBADO</h3>
-                <div id="SABADO" class="day-content"></div>
-            </div>
-
-            <div class="day-card">
-                <h3>DOMINGO</h3>
-                <div id="DOMINGO" class="day-content"></div>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= ALUNOS ================= -->
-
-    <section id="alunos" class="page">
-
-        <div class="page-heading">
-
-            <div>
-                <span class="section-label">CLIENTES</span>
-                <h1>Alunos</h1>
-                <p>Gerencie os alunos da academia.</p>
-            </div>
-
-            <button class="primary-btn" onclick="abrirModalAluno()">
-                + Novo aluno
-            </button>
-
-        </div>
-
-
-        <div class="panel">
-
-            <div class="search">
-
-                <input
-                        type="text"
-                        id="pesquisaAluno"
-                        placeholder="Pesquisar aluno..."
-                        oninput="filtrarAlunos()">
-
-            </div>
-
-            <div id="alunosLista" class="students-grid">
-                <div class="loading">Carregando...</div>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= TREINOS ================= -->
-
-    <section id="treinos" class="page">
-
-        <div class="page-heading">
-
-            <div>
-                <span class="section-label">PRESCRIÇÃO</span>
-                <h1>Treinos</h1>
-                <p>Crie e gerencie os treinos dos seus alunos.</p>
-            </div>
-
-            <button class="primary-btn" onclick="abrirModalTreino()">
-                + Criar treino
-            </button>
-
-        </div>
-
-
-        <div class="panel">
-
-            <div id="treinosLista" class="training-grid">
-                <div class="loading">Carregando...</div>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= AVALIAÇÕES ================= -->
-
-    <section id="avaliacoes" class="page">
-
-        <div class="page-heading">
-
-            <div>
-                <span class="section-label">ACOMPANHAMENTO</span>
-                <h1>Avaliações físicas</h1>
-                <p>Acompanhe a evolução dos seus alunos.</p>
-            </div>
-
-            <button class="primary-btn" onclick="abrirModalAvaliacao()">
-                + Nova avaliação
-            </button>
-
-        </div>
-
-
-        <div class="panel">
-
-            <div id="avaliacoesLista" class="evaluation-grid">
-                <div class="loading">Carregando...</div>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= PERFIL ================= -->
-
-    <section id="perfil" class="page">
-
-        <div class="page-heading">
-
-            <div>
-                <span class="section-label">PROFISSIONAL</span>
-                <h1>Meu perfil</h1>
-                <p>Informações do seu perfil profissional.</p>
-            </div>
-
-        </div>
-
-
-        <div class="profile-panel">
-
-            <div class="profile-header">
-
-                <div class="big-avatar">
-                    P
-                </div>
-
-                <div>
-                    <span class="section-label">PERSONAL TRAINER</span>
-                    <h2 id="perfilNome">Personal</h2>
-                    <p id="perfilTipo">-</p>
-                </div>
-
-            </div>
-
-
-            <form id="perfilForm">
-
-                <div class="form-grid">
-
-                    <div class="form-group">
-                        <label>Nome</label>
-                        <input id="perfilNomeInput" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Idade</label>
-                        <input id="perfilIdadeInput" type="number" min="18" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>CPF</label>
-                        <input id="perfilCpfInput" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Gênero</label>
-
-                        <select id="perfilGeneroInput">
-                            <option value="Masculino">Masculino</option>
-                            <option value="Feminino">Feminino</option>
-                            <option value="Outro">Outro</option>
-                        </select>
-
-                    </div>
-
-                    <div class="form-group full">
-                        <label>Tipo de Personal</label>
-                        <input id="perfilTipoInput" required>
-                    </div>
-
-                </div>
-
-                <button class="primary-btn" type="submit">
-                    Salvar alterações
-                </button>
-
-            </form>
-
-        </div>
-
-    </section>
-
-</main>
-
-
-<!-- =====================================================
-     MODAL ALUNO
-===================================================== -->
-
-<div id="modalAluno" class="modal">
-
-    <div class="modal-box">
-
-        <div class="modal-header">
-            <div>
-                <span class="section-label">CADASTRO</span>
-                <h2>Novo aluno</h2>
-            </div>
-
-            <button class="close-btn" onclick="fecharModais()">×</button>
-        </div>
-
-
-        <form id="alunoForm">
-
-            <div class="form-grid">
-
-                <div class="form-group full">
-                    <label>Nome</label>
-                    <input id="alunoNome" required>
-                </div>
-
+    <h1>Sistema Nexus Titan</h1>
+
+    <div class="container">
+        <!-- FORMULÁRIO 1: ALUNO -->
+        <div class="card">
+            <h2>Cadastrar Aluno</h2>
+            <form onsubmit="cadastrarAluno(event)">
                 <div class="form-group">
-                    <label>E-mail</label>
-                    <input id="alunoEmail" type="email" required>
+                    <label>Nome:</label>
+                    <input type="text" id="alunoNome" required placeholder="Ex: João Silva">
                 </div>
-
                 <div class="form-group">
-                    <label>Idade</label>
-                    <input id="alunoIdade" type="number" min="1" required>
+                    <label>Email:</label>
+                    <input type="email" id="alunoEmail" required placeholder="joao@email.com">
                 </div>
-
                 <div class="form-group">
-                    <label>Peso (kg)</label>
-                    <input id="alunoPeso" type="number" step="0.01" min="0.1" required>
+                    <label>Idade:</label>
+                    <input type="number" id="alunoIdade" min="1" required placeholder="25">
                 </div>
-
                 <div class="form-group">
-                    <label>Altura (m)</label>
-                    <input id="alunoAltura" type="number" step="0.01" min="0.1" required>
+                    <label>Peso (kg):</label>
+                    <input type="number" step="0.1" id="alunoPeso" min="0.1" required placeholder="75.5">
                 </div>
-
-                <div class="form-group full">
-                    <label>Gênero</label>
-
+                <div class="form-group">
+                    <label>Altura (m):</label>
+                    <input type="number" step="0.01" id="alunoAltura" min="0.1" required placeholder="1.75">
+                </div>
+                <div class="form-group">
+                    <label>Gênero:</label>
                     <select id="alunoGenero" required>
-                        <option value="">Selecione</option>
-                        <option value="Masculino">Masculino</option>
-                        <option value="Feminino">Feminino</option>
-                        <option value="Outro">Outro</option>
+                        <option value="">Selecione...</option>
+                        <option value="MASCULINO">Masculino</option>
+                        <option value="FEMININO">Feminino</option>
+                        <option value="OUTRO">Outro</option>
                     </select>
-
                 </div>
-
-            </div>
-
-            <div class="modal-actions">
-
-                <button type="button" class="secondary-btn" onclick="fecharModais()">
-                    Cancelar
-                </button>
-
-                <button class="primary-btn">
-                    Cadastrar aluno
-                </button>
-
-            </div>
-
-        </form>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     MODAL DISPONIBILIDADE
-===================================================== -->
-
-<div id="modalDisponibilidade" class="modal">
-
-    <div class="modal-box">
-
-        <div class="modal-header">
-
-            <div>
-                <span class="section-label">AGENDA</span>
-                <h2>Novo horário</h2>
-            </div>
-
-            <button class="close-btn" onclick="fecharModais()">×</button>
-
+                <button type="submit">Cadastrar Aluno</button>
+            </form>
         </div>
 
-
-        <form id="disponibilidadeForm">
-
-            <div class="form-group">
-
-                <label>Dia da semana</label>
-
-                <select id="dispDia" required>
-
-                    <option value="">Selecione</option>
-                    <option value="SEGUNDA">Segunda-feira</option>
-                    <option value="TERCA">Terça-feira</option>
-                    <option value="QUARTA">Quarta-feira</option>
-                    <option value="QUINTA">Quinta-feira</option>
-                    <option value="SEXTA">Sexta-feira</option>
-                    <option value="SABADO">Sábado</option>
-                    <option value="DOMINGO">Domingo</option>
-
-                </select>
-
-            </div>
-
-
-            <div class="form-grid">
-
+        <!-- FORMULÁRIO 2: PERSONAL -->
+        <div class="card">
+            <h2>Cadastrar Personal</h2>
+            <form onsubmit="cadastrarPersonal(event)">
                 <div class="form-group">
-
-                    <label>Hora inicial</label>
-
-                    <input
-                            type="time"
-                            id="dispInicio"
-                            required>
-
+                    <label>Nome:</label>
+                    <input type="text" id="personalNome" required placeholder="Ex: Carlos Silva">
                 </div>
-
-
                 <div class="form-group">
-
-                    <label>Hora final</label>
-
-                    <input
-                            type="time"
-                            id="dispFim"
-                            required>
-
+                    <label>Idade:</label>
+                    <input type="number" id="personalIdade" min="18" required placeholder="30">
                 </div>
-
-            </div>
-
-
-            <div class="modal-actions">
-
-                <button
-                        type="button"
-                        class="secondary-btn"
-                        onclick="fecharModais()">
-                    Cancelar
-                </button>
-
-                <button class="primary-btn">
-                    Adicionar horário
-                </button>
-
-            </div>
-
-        </form>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     MODAL AGENDAMENTO
-===================================================== -->
-
-<div id="modalAgendamento" class="modal">
-
-    <div class="modal-box">
-
-        <div class="modal-header">
-
-            <div>
-                <span class="section-label">AGENDA</span>
-                <h2>Novo agendamento</h2>
-            </div>
-
-            <button class="close-btn" onclick="fecharModais()">×</button>
-
-        </div>
-
-
-        <form id="agendamentoForm">
-
-            <div class="form-group">
-
-                <label>Aluno</label>
-
-                <select id="agAluno" required>
-                    <option value="">Selecione o aluno</option>
-                </select>
-
-            </div>
-
-
-            <div class="form-grid">
-
                 <div class="form-group">
-
-                    <label>Data e hora inicial</label>
-
-                    <input
-                            type="datetime-local"
-                            id="agInicio"
-                            required>
-
+                    <label>CPF:</label>
+                    <input type="text" id="personalCpf" required placeholder="123.456.789-00">
                 </div>
-
-
                 <div class="form-group">
-
-                    <label>Data e hora final</label>
-
-                    <input
-                            type="datetime-local"
-                            id="agFim"
-                            required>
-
-                </div>
-
-            </div>
-
-
-            <div class="modal-actions">
-
-                <button
-                        type="button"
-                        class="secondary-btn"
-                        onclick="fecharModais()">
-                    Cancelar
-                </button>
-
-                <button class="primary-btn">
-                    Criar agendamento
-                </button>
-
-            </div>
-
-        </form>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     MODAL TREINO
-===================================================== -->
-
-<div id="modalTreino" class="modal">
-
-    <div class="modal-box large">
-
-        <div class="modal-header">
-
-            <div>
-                <span class="section-label">PRESCRIÇÃO</span>
-                <h2>Criar treino</h2>
-            </div>
-
-            <button class="close-btn" onclick="fecharModais()">×</button>
-
-        </div>
-
-
-        <form id="treinoForm">
-
-            <div class="form-grid">
-
-                <div class="form-group">
-
-                    <label>Aluno</label>
-
-                    <select id="treinoAluno" required>
-                        <option value="">Selecione o aluno</option>
+                    <label>Gênero:</label>
+                    <select id="personalGenero" required>
+                        <option value="">Selecione...</option>
+                        <option value="MASCULINO">Masculino</option>
+                        <option value="FEMININO">Feminino</option>
+                        <option value="OUTRO">Outro</option>
                     </select>
-
                 </div>
-
-
                 <div class="form-group">
-
-                    <label>Nome do treino</label>
-
-                    <input
-                            id="treinoNome"
-                            placeholder="Ex: Treino A - Peito"
-                            required>
-
+                    <label>Especialidade / Tipo:</label>
+                    <input type="text" id="personalTipo" required placeholder="Ex: Musculação">
                 </div>
-
-
-                <div class="form-group">
-
-                    <label>Tipo de treino</label>
-
-                    <input
-                            id="treinoTipo"
-                            placeholder="Ex: Hipertrofia"
-                            required>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label>Objetivo</label>
-
-                    <input
-                            id="treinoObjetivo"
-                            placeholder="Ex: Ganho de massa"
-                            required>
-
-                </div>
-
-
-                <div class="form-group full">
-
-                    <label>Descrição</label>
-
-                    <textarea
-                            id="treinoDescricao"
-                            rows="4"
-                            placeholder="Observações gerais do treino..."></textarea>
-
-                </div>
-
-            </div>
-
-
-            <div class="modal-actions">
-
-                <button
-                        type="button"
-                        class="secondary-btn"
-                        onclick="fecharModais()">
-                    Cancelar
-                </button>
-
-                <button class="primary-btn">
-                    Criar treino
-                </button>
-
-            </div>
-
-        </form>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     MODAL AVALIAÇÃO
-===================================================== -->
-
-<div id="modalAvaliacao" class="modal">
-
-    <div class="modal-box">
-
-        <div class="modal-header">
-
-            <div>
-                <span class="section-label">AVALIAÇÃO</span>
-                <h2>Nova avaliação</h2>
-            </div>
-
-            <button class="close-btn" onclick="fecharModais()">×</button>
-
+                <button type="submit">Cadastrar Personal</button>
+            </form>
         </div>
 
-
-        <form id="avaliacaoForm">
-
-            <div class="form-group">
-
-                <label>Aluno</label>
-
-                <select id="avaliacaoAluno" required>
-                    <option value="">Selecione o aluno</option>
-                </select>
-
-            </div>
-
-
-            <div class="form-grid">
-
+        <!-- FORMULÁRIO 3: AGENDAMENTO -->
+        <div class="card">
+            <h2>Novo Agendamento</h2>
+            <form onsubmit="cadastrarAgendamento(event)">
                 <div class="form-group">
-
-                    <label>Peso (kg)</label>
-
-                    <input
-                            id="avaliacaoPeso"
-                            type="number"
-                            step="0.01"
-                            min="0"
-                            required>
-
+                    <label>ID do Aluno:</label>
+                    <input type="number" id="agendamentoAlunoId" min="1" required placeholder="1">
                 </div>
-
-
                 <div class="form-group">
-
-                    <label>Altura (m)</label>
-
-                    <input
-                            id="avaliacaoAltura"
-                            type="number"
-                            step="0.01"
-                            min="0"
-                            required>
-
+                    <label>ID do Personal:</label>
+                    <input type="number" id="agendamentoPersonalId" min="1" required placeholder="1">
                 </div>
-
-
                 <div class="form-group">
-
-                    <label>Data</label>
-
-                    <input
-                            id="avaliacaoData"
-                            type="date">
-
+                    <label>Data e Hora Início:</label>
+                    <input type="datetime-local" id="agendamentoInicio" required>
                 </div>
-
-
-                <div class="form-group full">
-
-                    <label>Observações</label>
-
-                    <textarea
-                            id="avaliacaoObs"
-                            rows="4"></textarea>
-
+                <div class="form-group">
+                    <label>Data e Hora Fim:</label>
+                    <input type="datetime-local" id="agendamentoFim" required>
                 </div>
+                <button type="submit">Agendar Sessão</button>
+            </form>
+        </div>
 
-            </div>
-
-
-            <div class="modal-actions">
-
-                <button
-                        type="button"
-                        class="secondary-btn"
-                        onclick="fecharModais()">
-                    Cancelar
-                </button>
-
-                <button class="primary-btn">
-                    Salvar avaliação
-                </button>
-
-            </div>
-
-        </form>
-
+        <!-- FORMULÁRIO 4: AVALIAÇÃO FÍSICA -->
+        <div class="card">
+            <h2>Nova Avaliação Física</h2>
+            <form onsubmit="cadastrarAvaliacao(event)">
+                <div class="form-group">
+                    <label>ID do Aluno:</label>
+                    <input type="number" id="avaliacaoAlunoId" min="1" required placeholder="1">
+                </div>
+                <div class="form-group">
+                    <label>Peso (kg):</label>
+                    <input type="number" step="0.1" id="avaliacaoPeso" min="0.1" required placeholder="76.0">
+                </div>
+                <div class="form-group">
+                    <label>Altura (m):</label>
+                    <input type="number" step="0.01" id="avaliacaoAltura" min="0.1" required placeholder="1.75">
+                </div>
+                <div class="form-group">
+                    <label>Data da Avaliação (Opcional):</label>
+                    <input type="date" id="avaliacaoData">
+                </div>
+                <div class="form-group">
+                    <label>Observações:</label>
+                    <textarea id="avaliacaoObservacoes" rows="2" placeholder="Ex: Foco em hipertrofia..."></textarea>
+                </div>
+                <button type="submit">Salvar Avaliação</button>
+            </form>
+        </div>
     </div>
 
-</div>
+    <!-- INTEGRACAO COM O BACK-END SPRING BOOT -->
+    <script>
+        const API_URL = 'http://localhost:8080';
 
+        // Função genérica de envio via fetch API
+        async function enviarDados(endpoint, payload) {
+            try {
+                const response = await fetch(`${API_URL}${endpoint}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
 
-<div id="toast"></div>
+                const data = await response.json().catch(() => null);
 
-<script src="script.js"></script>
+                if (!response.ok) {
+                    const msg = data?.erro || data?.message || 'Erro ao salvar no banco de dados.';
+                    throw new Error(msg);
+                }
 
+                alert('Dados salvos no banco de dados com sucesso!');
+                return data;
+            } catch (error) {
+                console.error(`Erro em ${endpoint}:`, error);
+                alert(`Erro: ${error.message}`);
+            }
+        }
+
+        // 1. Envios do Aluno -> @RequestBody Aluno
+        function cadastrarAluno(event) {
+            event.preventDefault();
+            const payload = {
+                nome: document.getElementById('alunoNome').value,
+                email: document.getElementById('alunoEmail').value,
+                idade: parseInt(document.getElementById('alunoIdade').value, 10),
+                peso: parseFloat(document.getElementById('alunoPeso').value),
+                altura: parseFloat(document.getElementById('alunoAltura').value),
+                genero: document.getElementById('alunoGenero').value
+            };
+            enviarDados('/alunos', payload);
+        }
+
+        // 2. Envios do Personal -> @RequestBody Personal
+        function cadastrarPersonal(event) {
+            event.preventDefault();
+            const payload = {
+                nome: document.getElementById('personalNome').value,
+                idade: parseInt(document.getElementById('personalIdade').value, 10),
+                cpf: document.getElementById('personalCpf').value,
+                genero: document.getElementById('personalGenero').value,
+                tipoPersonal: document.getElementById('personalTipo').value
+            };
+            enviarDados('/personais', payload);
+        }
+
+        // 3. Envios do Agendamento -> @RequestBody AgendamentoRequestDTO
+        function cadastrarAgendamento(event) {
+            event.preventDefault();
+            const inicioInput = document.getElementById('agendamentoInicio').value;
+            const fimInput = document.getElementById('agendamentoFim').value;
+
+            const payload = {
+                alunoId: parseInt(document.getElementById('agendamentoAlunoId').value, 10),
+                personalId: parseInt(document.getElementById('agendamentoPersonalId').value, 10),
+                dataHoraInicio: inicioInput.length === 16 ? `${inicioInput}:00` : inicioInput,
+                dataHoraFim: fimInput.length === 16 ? `${fimInput}:00` : fimInput
+            };
+            enviarDados('/agendamentos', payload);
+        }
+
+        // 4. Envios da Avaliação -> @RequestBody AvaliacaoFisicaRequestDTO
+        function cadastrarAvaliacao(event) {
+            event.preventDefault();
+            const dataInput = document.getElementById('avaliacaoData').value;
+
+            const payload = {
+                alunoId: parseInt(document.getElementById('avaliacaoAlunoId').value, 10),
+                peso: parseFloat(document.getElementById('avaliacaoPeso').value),
+                altura: parseFloat(document.getElementById('avaliacaoAltura').value),
+                dataAvaliacao: dataInput ? dataInput : null,
+                observacoes: document.getElementById('avaliacaoObservacoes').value || null
+            };
+            enviarDados('/avaliacoes', payload);
+        }
+    </script>
 </body>
 </html>
