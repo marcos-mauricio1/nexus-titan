@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
 
     <meta charset="UTF-8">
@@ -9,6 +8,7 @@
     <title>Nexus Titan Academia</title>
 
     <!-- CSS do menu -->
+    <link rel="stylesheet" href="menu.css">
     <link rel="stylesheet" href="planos.css">
 
     <!-- Fontes Oficiais da Marca -->
@@ -19,6 +19,8 @@
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800;900&family=Rajdhani:wght@700&display=swap"
         rel="stylesheet"
     >
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- Biblioteca de ícones Lucide -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -427,27 +429,27 @@
 
         <div class="social-icons">
 
-            <!-- Telefone -->
-            <a href="tel:+5511999999999" aria-label="Telefone">
-                <i class="fa-solid fa-phone"></i>
-            </a>
+    <!-- Instagram -->
+    <a href="#" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
 
-            <!-- WhatsApp -->
-            <a href="#" aria-label="WhatsApp">
-                <i class="fa-brands fa-whatsapp"></i>
-            </a>
+    <!-- Telefone -->
+    <a href="tel:+5511999999999" aria-label="Telefone">
+        <i class="fa-solid fa-phone"></i>
+    </a>
 
-            <!-- Instagram -->
-            <a href="#" aria-label="Instagram">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
+    <!-- Facebook -->
+    <a href="#" aria-label="Facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
 
-            <!-- Facebook -->
-            <a href="#" aria-label="Facebook">
-                <i class="fa-brands fa-facebook-f"></i>
-            </a>
+    <!-- YouTube -->
+    <a href="#" aria-label="YouTube">
+        <i class="fa-brands fa-youtube"></i>
+    </a>
 
-        </div>
+</div>
 
       </div>
 
@@ -503,6 +505,12 @@
       </div>
     </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        if (window.lucide) { lucide.createIcons(); }
+        });
+    </script>
 
 </body>
 </html>
