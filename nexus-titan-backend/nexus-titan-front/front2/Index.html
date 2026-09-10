@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nexus Titan | Personal</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+        <div class="logo-icon">NT</div>
+
+        <div>
+            <h1>NEXUS</h1>
+            <span>TITAN</span>
+        </div>
+    </div>
+
+    <nav>
+
+        <button class="menu-btn active" onclick="mostrarPagina('dashboard', this)">
+            <span>⌂</span>
+            Dashboard
+        </button>
+
+        <button class="menu-btn" onclick="mostrarPagina('agenda', this)">
+            <span>▣</span>
+            Agenda
+        </button>
+
+        <button class="menu-btn" onclick="mostrarPagina('disponibilidade', this)">
+            <span>◷</span>
+            Disponibilidade
+        </button>
+
+        <button class="menu-btn" onclick="mostrarPagina('alunos', this)">
+            <span>♙</span>
+            Alunos
+        </button>
+
+        <button class="menu-btn" onclick="mostrarPagina('treinos', this)">
+            <span>◆</span>
+            Treinos
+        </button>
+
+        <button class="menu-btn" onclick="mostrarPagina('avaliacoes', this)">
+            <span>▤</span>
+            Avaliações
+        </button>
+
+        <button class="menu-btn" onclick="mostrarPagina('perfil', this)">
+            <span>⚙</span>
+            Meu perfil
+        </button>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+        <div class="personal-mini">
+            <div class="avatar">P</div>
+
+            <div>
+                <strong id="sidebarNome">Personal</strong>
+                <small>Personal Trainer</small>
+            </div>
+        </div>
+    </div>
+
+</aside>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="main">
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div>
+            <p class="header-small">ÁREA DO PROFISSIONAL</p>
+            <h2 id="pageTitle">Dashboard</h2>
+        </div>
+
+        <div class="header-right">
+
+            <div class="status">
+                <span></span>
+                Sistema online
+            </div>
+
+            <div class="avatar header-avatar">
+                P
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <section id="dashboard" class="page active-page">
+
+        <div class="welcome">
+
+            <div>
+                <p class="section-label">NEXUS TITAN</p>
+
+                <h1>
+                    Olá, <span id="welcomeName">Personal</span>.
+                </h1>
+
+                <p>
+                    Gerencie seus alunos, treinos e horários.
+                </p>
+            </div>
+
+            <div class="welcome-icon">
+                NT
+            </div>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">♙</div>
+
+                <div>
+                    <span>Alunos</span>
+                    <strong id="totalAlunos">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">◆</div>
+
+                <div>
+                    <span>Treinos</span>
+                    <strong id="totalTreinos">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">▣</div>
+
+                <div>
+                    <span>Agendamentos</span>
+                    <strong id="totalAgendamentos">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">◷</div>
+
+                <div>
+                    <span>Horários</span>
+                    <strong id="totalDisponibilidades">0</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="dashboard-grid">
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="section-label">AGENDA</span>
+                        <h3>Próximos agendamentos</h3>
+                    </div>
+
+                    <button onclick="mostrarPagina('agenda')" class="link-btn">
+                        Ver todos →
+                    </button>
+
+                </div>
+
+                <div id="dashboardAgendamentos" class="list">
+                    <div class="empty">
+                        Nenhum agendamento encontrado.
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <span class="section-label">ALUNOS</span>
+                        <h3>Seus alunos</h3>
+                    </div>
+
+                    <button onclick="mostrarPagina('alunos')" class="link-btn">
+                        Ver todos →
+                    </button>
+
+                </div>
+
+                <div id="dashboardAlunos" class="list">
+                    <div class="empty">
+                        Nenhum aluno encontrado.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= AGENDA ================= -->
+
+    <section id="agenda" class="page">
+
+        <div class="page-heading">
+
+            <div>
+                <span class="section-label">GERENCIAMENTO</span>
+                <h1>Agenda</h1>
+                <p>Visualize e gerencie seus agendamentos.</p>
+            </div>
+
+            <button class="primary-btn" onclick="abrirModalAgendamento()">
+                + Novo agendamento
+            </button>
+
+        </div>
+
+
+        <div class="panel">
+
+            <div class="filter-bar">
+
+                <select id="filtroAgenda" onchange="carregarAgenda()">
+                    <option value="todos">Todos</option>
+                    <option value="agendado">Agendados</option>
+                    <option value="cancelado">Cancelados</option>
+                </select>
+
+                <button class="secondary-btn" onclick="carregarAgenda()">
+                    Atualizar
+                </button>
+
+            </div>
+
+            <div id="agendaLista" class="appointments">
+                <div class="loading">Carregando...</div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= DISPONIBILIDADE ================= -->
+
+    <section id="disponibilidade" class="page">
+
+        <div class="page-heading">
+
+            <div>
+                <span class="section-label">HORÁRIOS</span>
+                <h1>Disponibilidade</h1>
+                <p>Defina quando você estará disponível para atender.</p>
+            </div>
+
+            <button class="primary-btn" onclick="abrirModalDisponibilidade()">
+                + Adicionar horário
+            </button>
+
+        </div>
+
+
+        <div class="days-grid">
+
+            <div class="day-card">
+                <h3>SEGUNDA</h3>
+                <div id="SEGUNDA" class="day-content"></div>
+            </div>
+
+            <div class="day-card">
+                <h3>TERÇA</h3>
+                <div id="TERCA" class="day-content"></div>
+            </div>
+
+            <div class="day-card">
+                <h3>QUARTA</h3>
+                <div id="QUARTA" class="day-content"></div>
+            </div>
+
+            <div class="day-card">
+                <h3>QUINTA</h3>
+                <div id="QUINTA" class="day-content"></div>
+            </div>
+
+            <div class="day-card">
+                <h3>SEXTA</h3>
+                <div id="SEXTA" class="day-content"></div>
+            </div>
+
+            <div class="day-card">
+                <h3>SÁBADO</h3>
+                <div id="SABADO" class="day-content"></div>
+            </div>
+
+            <div class="day-card">
+                <h3>DOMINGO</h3>
+                <div id="DOMINGO" class="day-content"></div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ALUNOS ================= -->
+
+    <section id="alunos" class="page">
+
+        <div class="page-heading">
+
+            <div>
+                <span class="section-label">CLIENTES</span>
+                <h1>Alunos</h1>
+                <p>Gerencie os alunos da academia.</p>
+            </div>
+
+            <button class="primary-btn" onclick="abrirModalAluno()">
+                + Novo aluno
+            </button>
+
+        </div>
+
+
+        <div class="panel">
+
+            <div class="search">
+
+                <input
+                        type="text"
+                        id="pesquisaAluno"
+                        placeholder="Pesquisar aluno..."
+                        oninput="filtrarAlunos()">
+
+            </div>
+
+            <div id="alunosLista" class="students-grid">
+                <div class="loading">Carregando...</div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TREINOS ================= -->
+
+    <section id="treinos" class="page">
+
+        <div class="page-heading">
+
+            <div>
+                <span class="section-label">PRESCRIÇÃO</span>
+                <h1>Treinos</h1>
+                <p>Crie e gerencie os treinos dos seus alunos.</p>
+            </div>
+
+            <button class="primary-btn" onclick="abrirModalTreino()">
+                + Criar treino
+            </button>
+
+        </div>
+
+
+        <div class="panel">
+
+            <div id="treinosLista" class="training-grid">
+                <div class="loading">Carregando...</div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= AVALIAÇÕES ================= -->
+
+    <section id="avaliacoes" class="page">
+
+        <div class="page-heading">
+
+            <div>
+                <span class="section-label">ACOMPANHAMENTO</span>
+                <h1>Avaliações físicas</h1>
+                <p>Acompanhe a evolução dos seus alunos.</p>
+            </div>
+
+            <button class="primary-btn" onclick="abrirModalAvaliacao()">
+                + Nova avaliação
+            </button>
+
+        </div>
+
+
+        <div class="panel">
+
+            <div id="avaliacoesLista" class="evaluation-grid">
+                <div class="loading">Carregando...</div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PERFIL ================= -->
+
+    <section id="perfil" class="page">
+
+        <div class="page-heading">
+
+            <div>
+                <span class="section-label">PROFISSIONAL</span>
+                <h1>Meu perfil</h1>
+                <p>Informações do seu perfil profissional.</p>
+            </div>
+
+        </div>
+
+
+        <div class="profile-panel">
+
+            <div class="profile-header">
+
+                <div class="big-avatar">
+                    P
+                </div>
+
+                <div>
+                    <span class="section-label">PERSONAL TRAINER</span>
+                    <h2 id="perfilNome">Personal</h2>
+                    <p id="perfilTipo">-</p>
+                </div>
+
+            </div>
+
+
+            <form id="perfilForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input id="perfilNomeInput" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Idade</label>
+                        <input id="perfilIdadeInput" type="number" min="18" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>CPF</label>
+                        <input id="perfilCpfInput" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Gênero</label>
+
+                        <select id="perfilGeneroInput">
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+
+                    </div>
+
+                    <div class="form-group full">
+                        <label>Tipo de Personal</label>
+                        <input id="perfilTipoInput" required>
+                    </div>
+
+                </div>
+
+                <button class="primary-btn" type="submit">
+                    Salvar alterações
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     MODAL ALUNO
+===================================================== -->
+
+<div id="modalAluno" class="modal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+            <div>
+                <span class="section-label">CADASTRO</span>
+                <h2>Novo aluno</h2>
+            </div>
+
+            <button class="close-btn" onclick="fecharModais()">×</button>
+        </div>
+
+
+        <form id="alunoForm">
+
+            <div class="form-grid">
+
+                <div class="form-group full">
+                    <label>Nome</label>
+                    <input id="alunoNome" required>
+                </div>
+
+                <div class="form-group">
+                    <label>E-mail</label>
+                    <input id="alunoEmail" type="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Idade</label>
+                    <input id="alunoIdade" type="number" min="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Peso (kg)</label>
+                    <input id="alunoPeso" type="number" step="0.01" min="0.1" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Altura (m)</label>
+                    <input id="alunoAltura" type="number" step="0.01" min="0.1" required>
+                </div>
+
+                <div class="form-group full">
+                    <label>Gênero</label>
+
+                    <select id="alunoGenero" required>
+                        <option value="">Selecione</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div class="modal-actions">
+
+                <button type="button" class="secondary-btn" onclick="fecharModais()">
+                    Cancelar
+                </button>
+
+                <button class="primary-btn">
+                    Cadastrar aluno
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MODAL DISPONIBILIDADE
+===================================================== -->
+
+<div id="modalDisponibilidade" class="modal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <div>
+                <span class="section-label">AGENDA</span>
+                <h2>Novo horário</h2>
+            </div>
+
+            <button class="close-btn" onclick="fecharModais()">×</button>
+
+        </div>
+
+
+        <form id="disponibilidadeForm">
+
+            <div class="form-group">
+
+                <label>Dia da semana</label>
+
+                <select id="dispDia" required>
+
+                    <option value="">Selecione</option>
+                    <option value="SEGUNDA">Segunda-feira</option>
+                    <option value="TERCA">Terça-feira</option>
+                    <option value="QUARTA">Quarta-feira</option>
+                    <option value="QUINTA">Quinta-feira</option>
+                    <option value="SEXTA">Sexta-feira</option>
+                    <option value="SABADO">Sábado</option>
+                    <option value="DOMINGO">Domingo</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>Hora inicial</label>
+
+                    <input
+                            type="time"
+                            id="dispInicio"
+                            required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Hora final</label>
+
+                    <input
+                            type="time"
+                            id="dispFim"
+                            required>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                        type="button"
+                        class="secondary-btn"
+                        onclick="fecharModais()">
+                    Cancelar
+                </button>
+
+                <button class="primary-btn">
+                    Adicionar horário
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MODAL AGENDAMENTO
+===================================================== -->
+
+<div id="modalAgendamento" class="modal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <div>
+                <span class="section-label">AGENDA</span>
+                <h2>Novo agendamento</h2>
+            </div>
+
+            <button class="close-btn" onclick="fecharModais()">×</button>
+
+        </div>
+
+
+        <form id="agendamentoForm">
+
+            <div class="form-group">
+
+                <label>Aluno</label>
+
+                <select id="agAluno" required>
+                    <option value="">Selecione o aluno</option>
+                </select>
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>Data e hora inicial</label>
+
+                    <input
+                            type="datetime-local"
+                            id="agInicio"
+                            required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Data e hora final</label>
+
+                    <input
+                            type="datetime-local"
+                            id="agFim"
+                            required>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                        type="button"
+                        class="secondary-btn"
+                        onclick="fecharModais()">
+                    Cancelar
+                </button>
+
+                <button class="primary-btn">
+                    Criar agendamento
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MODAL TREINO
+===================================================== -->
+
+<div id="modalTreino" class="modal">
+
+    <div class="modal-box large">
+
+        <div class="modal-header">
+
+            <div>
+                <span class="section-label">PRESCRIÇÃO</span>
+                <h2>Criar treino</h2>
+            </div>
+
+            <button class="close-btn" onclick="fecharModais()">×</button>
+
+        </div>
+
+
+        <form id="treinoForm">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>Aluno</label>
+
+                    <select id="treinoAluno" required>
+                        <option value="">Selecione o aluno</option>
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Nome do treino</label>
+
+                    <input
+                            id="treinoNome"
+                            placeholder="Ex: Treino A - Peito"
+                            required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Tipo de treino</label>
+
+                    <input
+                            id="treinoTipo"
+                            placeholder="Ex: Hipertrofia"
+                            required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Objetivo</label>
+
+                    <input
+                            id="treinoObjetivo"
+                            placeholder="Ex: Ganho de massa"
+                            required>
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label>Descrição</label>
+
+                    <textarea
+                            id="treinoDescricao"
+                            rows="4"
+                            placeholder="Observações gerais do treino..."></textarea>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                        type="button"
+                        class="secondary-btn"
+                        onclick="fecharModais()">
+                    Cancelar
+                </button>
+
+                <button class="primary-btn">
+                    Criar treino
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MODAL AVALIAÇÃO
+===================================================== -->
+
+<div id="modalAvaliacao" class="modal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <div>
+                <span class="section-label">AVALIAÇÃO</span>
+                <h2>Nova avaliação</h2>
+            </div>
+
+            <button class="close-btn" onclick="fecharModais()">×</button>
+
+        </div>
+
+
+        <form id="avaliacaoForm">
+
+            <div class="form-group">
+
+                <label>Aluno</label>
+
+                <select id="avaliacaoAluno" required>
+                    <option value="">Selecione o aluno</option>
+                </select>
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>Peso (kg)</label>
+
+                    <input
+                            id="avaliacaoPeso"
+                            type="number"
+                            step="0.01"
+                            min="0"
+                            required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Altura (m)</label>
+
+                    <input
+                            id="avaliacaoAltura"
+                            type="number"
+                            step="0.01"
+                            min="0"
+                            required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>Data</label>
+
+                    <input
+                            id="avaliacaoData"
+                            type="date">
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label>Observações</label>
+
+                    <textarea
+                            id="avaliacaoObs"
+                            rows="4"></textarea>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                        type="button"
+                        class="secondary-btn"
+                        onclick="fecharModais()">
+                    Cancelar
+                </button>
+
+                <button class="primary-btn">
+                    Salvar avaliação
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<div id="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

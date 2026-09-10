@@ -33,7 +33,7 @@ public class Agendamento {
     @Column(name = "data_hora_fim",nullable = false)
     private LocalDateTime dataHoraFim;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private StatusAgendamento status;
 

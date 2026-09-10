@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController // é tipo o @Service ele vai avisar a classe que vai receber requisições HTTP e vai devolver com JSON
-@RequestMapping("/") // Define o "prefixo" de ebdereço de todos os endpoints dessa classe
+@RequestMapping("/api/avaliacoes") // Define o "prefixo" de ebdereço de todos os endpoints dessa classe
 // Ou seja, todo método aqui dentro vai começar com http://localhost:8080/api/avaliacoes/...
 
 public class AvaliacaoFisicaController {
