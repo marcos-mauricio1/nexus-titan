@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Titan - Gestão</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f4f7f6; color: #333; padding: 20px; }
+        h1 { text-align: center; margin-bottom: 20px; color: #1a2a3a; }
+        
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #0056b3;
+            border-bottom: 2px solid #eef2f5;
+            padding-bottom: 8px;
+        }
+
+        .form-group { margin-bottom: 12px; }
+        label { display: block; font-size: 0.85rem; font-weight: bold; margin-bottom: 4px; }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 100;
+            transition: background 0.2s;
+        }
+
+        button:hover { background-color: #003d80; }
+    </style>
+</head>
+<body>
+
+    <h1>Sistema Nexus Titan</h1>
+
+    <div class="container">
+        <!-- FORMULÁRIO 1: ALUNO -->
+        <div class="card">
+            <h2>Cadastrar Aluno</h2>
+            <form onsubmit="cadastrarAluno(event)">
+                <div class="form-group">
+                    <label>Nome:</label>
+                    <input type="text" id="alunoNome" required placeholder="Ex: João Silva">
+                </div>
+                <div class="form-group">
+                    <label>Email:</label>
+                    <input type="email" id="alunoEmail" required placeholder="joao@email.com">
+                </div>
+                <div class="form-group">
+                    <label>Idade:</label>
+                    <input type="number" id="alunoIdade" min="1" required placeholder="25">
+                </div>
+                <div class="form-group">
+                    <label>Peso (kg):</label>
+                    <input type="number" step="0.1" id="alunoPeso" min="0.1" required placeholder="75.5">
+                </div>
+                <div class="form-group">
+                    <label>Altura (m):</label>
+                    <input type="number" step="0.01" id="alunoAltura" min="0.1" required placeholder="1.75">
+                </div>
+                <div class="form-group">
+                    <label>Gênero:</label>
+                    <select id="alunoGenero" required>
+                        <option value="">Selecione...</option>
+                        <option value="MASCULINO">Masculino</option>
+                        <option value="FEMININO">Feminino</option>
+                        <option value="OUTRO">Outro</option>
+                    </select>
+                </div>
+                <button type="submit">Cadastrar Aluno</button>
+            </form>
+        </div>
+
+        <!-- FORMULÁRIO 2: PERSONAL -->
+        <div class="card">
+            <h2>Cadastrar Personal</h2>
+            <form onsubmit="cadastrarPersonal(event)">
+                <div class="form-group">
+                    <label>Nome:</label>
+                    <input type="text" id="personalNome" required placeholder="Ex: Carlos Silva">
+                </div>
+                <div class="form-group">
+                    <label>Idade:</label>
+                    <input type="number" id="personalIdade" min="18" required placeholder="30">
+                </div>
+                <div class="form-group">
+                    <label>CPF:</label>
+                    <input type="text" id="personalCpf" required placeholder="123.456.789-00">
+                </div>
+                <div class="form-group">
+                    <label>Gênero:</label>
+                    <select id="personalGenero" required>
+                        <option value="">Selecione...</option>
+                        <option value="MASCULINO">Masculino</option>
+                        <option value="FEMININO">Feminino</option>
+                        <option value="OUTRO">Outro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Especialidade / Tipo:</label>
+                    <input type="text" id="personalTipo" required placeholder="Ex: Musculação">
+                </div>
+                <button type="submit">Cadastrar Personal</button>
+            </form>
+        </div>
+
+        <!-- FORMULÁRIO 3: AGENDAMENTO -->
+        <div class="card">
+            <h2>Novo Agendamento</h2>
+            <form onsubmit="cadastrarAgendamento(event)">
+                <div class="form-group">
+                    <label>ID do Aluno:</label>
+                    <input type="number" id="agendamentoAlunoId" min="1" required placeholder="1">
+                </div>
+                <div class="form-group">
+                    <label>ID do Personal:</label>
+                    <input type="number" id="agendamentoPersonalId" min="1" required placeholder="1">
+                </div>
+                <div class="form-group">
+                    <label>Data e Hora Início:</label>
+                    <input type="datetime-local" id="agendamentoInicio" required>
+                </div>
+                <div class="form-group">
+                    <label>Data e Hora Fim:</label>
+                    <input type="datetime-local" id="agendamentoFim" required>
+                </div>
+                <button type="submit">Agendar Sessão</button>
+            </form>
+        </div>
+
+        <!-- FORMULÁRIO 4: AVALIAÇÃO FÍSICA -->
+        <div class="card">
+            <h2>Nova Avaliação Física</h2>
+            <form onsubmit="cadastrarAvaliacao(event)">
+                <div class="form-group">
+                    <label>ID do Aluno:</label>
+                    <input type="number" id="avaliacaoAlunoId" min="1" required placeholder="1">
+                </div>
+                <div class="form-group">
+                    <label>Peso (kg):</label>
+                    <input type="number" step="0.1" id="avaliacaoPeso" min="0.1" required placeholder="76.0">
+                </div>
+                <div class="form-group">
+                    <label>Altura (m):</label>
+                    <input type="number" step="0.01" id="avaliacaoAltura" min="0.1" required placeholder="1.75">
+                </div>
+                <div class="form-group">
+                    <label>Data da Avaliação (Opcional):</label>
+                    <input type="date" id="avaliacaoData">
+                </div>
+                <div class="form-group">
+                    <label>Observações:</label>
+                    <textarea id="avaliacaoObservacoes" rows="2" placeholder="Ex: Foco em hipertrofia..."></textarea>
+                </div>
+                <button type="submit">Salvar Avaliação</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- INTEGRACAO COM O BACK-END SPRING BOOT -->
+    <script>
+        const API_URL = 'http://localhost:8080';
+
+        // Função genérica de envio via fetch API
+        async function enviarDados(endpoint, payload) {
+            try {
+                const response = await fetch(`${API_URL}${endpoint}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await response.json().catch(() => null);
+
+                if (!response.ok) {
+                    const msg = data?.erro || data?.message || 'Erro ao salvar no banco de dados.';
+                    throw new Error(msg);
+                }
+
+                alert('Dados salvos no banco de dados com sucesso!');
+                return data;
+            } catch (error) {
+                console.error(`Erro em ${endpoint}:`, error);
+                alert(`Erro: ${error.message}`);
+            }
+        }
+
+        // 1. Envios do Aluno -> @RequestBody Aluno
+        function cadastrarAluno(event) {
+            event.preventDefault();
+            const payload = {
+                nome: document.getElementById('alunoNome').value,
+                email: document.getElementById('alunoEmail').value,
+                idade: parseInt(document.getElementById('alunoIdade').value, 10),
+                peso: parseFloat(document.getElementById('alunoPeso').value),
+                altura: parseFloat(document.getElementById('alunoAltura').value),
+                genero: document.getElementById('alunoGenero').value
+            };
+            enviarDados('/alunos', payload);
+        }
+
+        // 2. Envios do Personal -> @RequestBody Personal
+        function cadastrarPersonal(event) {
+            event.preventDefault();
+            const payload = {
+                nome: document.getElementById('personalNome').value,
+                idade: parseInt(document.getElementById('personalIdade').value, 10),
+                cpf: document.getElementById('personalCpf').value,
+                genero: document.getElementById('personalGenero').value,
+                tipoPersonal: document.getElementById('personalTipo').value
+            };
+            enviarDados('/personais', payload);
+        }
+
+        // 3. Envios do Agendamento -> @RequestBody AgendamentoRequestDTO
+        function cadastrarAgendamento(event) {
+            event.preventDefault();
+            const inicioInput = document.getElementById('agendamentoInicio').value;
+            const fimInput = document.getElementById('agendamentoFim').value;
+
+            const payload = {
+                alunoId: parseInt(document.getElementById('agendamentoAlunoId').value, 10),
+                personalId: parseInt(document.getElementById('agendamentoPersonalId').value, 10),
+                dataHoraInicio: inicioInput.length === 16 ? `${inicioInput}:00` : inicioInput,
+                dataHoraFim: fimInput.length === 16 ? `${fimInput}:00` : fimInput
+            };
+            enviarDados('/agendamentos', payload);
+        }
+
+        // 4. Envios da Avaliação -> @RequestBody AvaliacaoFisicaRequestDTO
+        function cadastrarAvaliacao(event) {
+            event.preventDefault();
+            const dataInput = document.getElementById('avaliacaoData').value;
+
+            const payload = {
+                alunoId: parseInt(document.getElementById('avaliacaoAlunoId').value, 10),
+                peso: parseFloat(document.getElementById('avaliacaoPeso').value),
+                altura: parseFloat(document.getElementById('avaliacaoAltura').value),
+                dataAvaliacao: dataInput ? dataInput : null,
+                observacoes: document.getElementById('avaliacaoObservacoes').value || null
+            };
+            enviarDados('/avaliacoes', payload);
+        }
+    </script>
+</body>
+</html>

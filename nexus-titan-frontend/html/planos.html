@@ -1,13 +1,516 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>Nexus Titan Academia</title>
+
+    <!-- CSS do menu -->
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="planos.css">
+
+    <!-- Fontes Oficiais da Marca -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800;900&family=Rajdhani:wght@700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Biblioteca de ícones Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
 </head>
+
 <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+
+    <header class="navbar-wrapper">
+            <nav class="navbar">
+            <!-- LOGO OFICIAL + TEXTO DA MARCA -->
+            <div class="brand-container">
+                <img
+                src="imagens-inicio/logo-icone/logo-header.png"
+                alt="Nexus Titan Logo"
+                class="brand-logo-img"
+                />
+
+                <div class="brand-text">
+                <div class="brand-title">
+                    <span class="text-nexus">NEXUS</span>
+                    <span class="text-titan">TITAN</span>
+                </div>
+                <span class="text-academia">ACADEMIA</span>
+                </div>
+
+                <div class="diagonal-divider"></div>
+            </div>
+
+            <!-- TÓPICOS DO MENU -->
+            <ul class="nav-menu">
+                <li class="nav-item">
+                <a href="index.html">
+                    <i data-lucide="home"></i>
+                    <span>INÍCIO</span>
+                    <div class="hover-line"></div>
+                </a>
+                </li>
+
+                <li class="nav-item">
+                <a href="modalidades.html">
+                    <i data-lucide="shield-check"></i>
+                    <span>MODALIDADES</span>
+                    <div class="hover-line"></div>
+                </a>
+                </li>
+                <li class="nav-item">
+                    <a href="estrutura.html">
+                    <!-- Ícone Haltere Horizontal Personalizado -->
+                    <svg
+                    class="custom-dumbbell"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    >
+                    <path d="M2 12h20" />
+                    <path d="M5 8v8" />
+                    <path d="M7 6v12" />
+                    <path d="M17 6v12" />
+                    <path d="M19 8v8" />
+                    </svg>
+                    <span>ESTRUTURA</span>
+                    <div class="hover-line"></div>
+                </a>
+                </li>
+                <li class="nav-item">
+                <a href="profissionais.html">
+                    <i data-lucide="users"></i>
+                    <span>PROFISSIONAIS</span>
+                    <div class="hover-line"></div>
+                </a>
+                </li>
+                <li class="nav-item">
+                <a href="sobre.html">
+                    <i data-lucide="info"></i>
+                    <span>SOBRE</span>
+                    <div class="hover-line"></div>
+                </a>
+                </li>
+            </ul>
+
+            <!-- BOTÃO FAÇA SUA MATRÍCULA -->
+            <a href="matricula.html" class="btn-cta">
+                <span>FAÇA SUA MATRÍCULA</span>
+                <i data-lucide="arrow-right"></i>
+            </a>
+            </nav>
+    </header>
+
+    <main>
+
+        <!-- === SESSÃO INICIAL === -->
+        <section class="hero-planos">
+
+            <div class="hero-texto">
+                <span class="mini-titulo">
+                    PLANOS NEXUS TITAN
+                </span>
+                <h2>
+                    ESCOLHA O PLANO
+                    <span>QUE COMBINA COM VOCÊ.</span>
+                </h2>
+                <p>
+                    Diferentes objetivos, diferentes caminhos.
+                    Encontre o plano ideal para sua rotina e tenha
+                    estrutura, acompanhamento e liberdade para evoluir.
+                </p>
+                <a href="#planos" class="btn-principal">
+                    VER PLANOS
+                    <span>→</span>
+                </a>
+            </div>
+
+        </section>
+
+        <!-- === INTRODUÇÃO === -->
+        <section class="introducao">
+            <div class="introducao-titulo">
+                <span>ENCONTRE SEU CAMINHO</span>
+                <h2>
+                    UM PLANO PARA
+                    <strong>CADA OBJETIVO.</strong>
+                </h2>
+            </div>
+
+            <div class="introducao-texto">
+                <p>
+                    Na Nexus Titan, você escolhe como quer treinar.
+                    Nossos planos foram pensados para oferecer diferentes
+                    níveis de acesso, benefícios e acompanhamento.
+                </p>
+                <p>
+                    Seja para começar, evoluir ou buscar o máximo
+                    desempenho, existe uma opção ideal para você.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- COMPARAÇÃO -->
+        <section class="comparacao">
+
+            <div class="titulo-secao tit">
+                <span>COMPARE</span>
+                <h2>
+                    ENCONTRE O PLANO
+                    <strong>IDEAL PARA VOCÊ.</strong>
+                </h2>
+            </div>
+
+            <div class="tabela-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>BENEFÍCIOS</th>
+                            <th>NEXUS START</th>
+                            <th>NEXUS PERFORMANCE</th>
+                            <th>NEXUS ELITE</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Acesso à academia</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+
+                        <tr>
+                            <td>Musculação</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+
+                        <tr>
+                            <td>Treino funcional</td>
+                            <td>—</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+
+                        <tr>
+                            <td>Aulas coletivas</td>
+                            <td>—</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+
+                        <tr>
+                            <td>Acompanhamento profissional</td>
+                            <td>—</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+
+                        <tr>
+                            <td>Avaliação física</td>
+                            <td>1 por semestre</td>
+                            <td>1 por trimestre</td>
+                            <td>Mensal</td>
+                        </tr>
+
+                        <tr>
+                            <td>Treino personalizado</td>
+                            <td>—</td>
+                            <td>✓</td>
+                            <td>✓</td>
+                        </tr>
+
+                        <tr>
+                            <td>Acompanhamento individual</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>✓</td>
+                        </tr>
+
+                        <tr>
+                            <td>Consultoria com profissional</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>✓</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <!-- PLANOS -->
+        <section class="planos" id="planos">
+
+            <div class="titulo-secao centralizado">
+                <span>ESCOLHA SEU PLANO</span>
+                <h2>
+                    PRONTO PARA
+                    <strong>EVOLUIR?</strong>
+                </h2>
+                <p>
+                    Escolha a opção que mais combina com seus objetivos.
+                </p>
+            </div>
+
+            <div class="cards-planos">
+
+                <!-- PLANO 1 -->
+                <article class="card-plano">
+                    <div class="topo-card">
+                        <span class="categoria">
+                            PARA COMEÇAR
+                        </span>
+                        <h3>NEXUS START</h3>
+                        <p>
+                            O essencial para você começar
+                            sua jornada.
+                        </p>
+                    </div>
+
+                    <div class="preco">
+                        <small>A partir de</small>
+                        <div>
+                            <strong>R$ 89,90</strong>
+                            <span>/mês</span>
+                        </div>
+                    </div>
+
+                    <div class="beneficios">
+                        <h4>INCLUI:</h4>
+                        <p>✓ Acesso à academia</p>
+                        <p>✓ Área de musculação</p>
+                        <p>✓ Equipamentos completos</p>
+                        <p>✓ Avaliação física semestral</p>
+                    </div>
+
+                    <a href="#" class="btn-plano">
+                        ESCOLHER PLANO
+                        <span>→</span>
+                    </a>
+
+                </article>
+
+
+                <!-- PLANO 2 -->
+                <article class="card-plano destaque">
+
+                    <div class="tag">
+                        MAIS ESCOLHIDO
+                    </div>
+
+                    <div cLass="topo-card">
+                        <span class="categoria">
+                            PARA EVOLUIR
+                        </span>
+                        <h3>NEXUS TITAN</h3>
+                        <p>
+                            Mais recursos para acelerar
+                            sua evolução.
+                        </p>
+                    </div>
+
+                    <div class="preco">
+                        <small>A partir de</small>
+                        <div>
+                            <strong>R$ 129,90</strong>
+                            <span>/mês</span>
+                        </div>
+                    </div>
+
+                    <div class="beneficios">
+                        <h4>INCLUI:</h4>
+                        <p>✓ Tudo do plano Start</p>
+                        <p>✓ Treino funcional</p>
+                        <p>✓ Aulas coletivas</p>
+                        <p>✓ Treino personalizado</p>
+                        <p>✓ Avaliação física trimestral</p>
+                        <p>✓ Acompanhamento profissional</p>
+                    </div>
+
+                    <a href="#" class="btn-plano">
+                        ESCOLHER PLANO
+                        <span>→</span>
+                    </a>
+
+                </article>
+
+
+                <!-- PLANO 3 -->
+
+                <article class="card-plano">
+
+                    <div class="topo-card">
+                        <span class="categoria">
+                            ALTA PERFORMANCE
+                        </span>
+                        <h3>NEXUS PRO</h3>
+                        <p>
+                            A experiência completa para
+                            quem busca seu máximo potencial.
+                        </p>
+                    </div>
+
+                    <div class="preco">
+                        <small>A partir de</small>
+                        <div>
+                            <strong>R$ 179,90</strong>
+                            <span>/mês</span>
+                        </div>
+                    </div>
+
+                    <div class="beneficios">
+                        <h4>INCLUI:</h4>
+                        <p>✓ Tudo do plano Performance</p>
+                        <p>✓ Acompanhamento individual</p>
+                        <p>✓ Consultoria profissional</p>
+                        <p>✓ Avaliação física mensal</p>
+                        <p>✓ Treino totalmente personalizado</p>
+                    </div>
+
+                    <a href="#" class="btn-plano">
+                        ESCOLHER PLANO
+                        <span>→</span>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="cta-planos">
+
+            <div>
+                <span>SEU PRÓXIMO NÍVEL COMEÇA AGORA.</span>
+                <h2>
+                    QUAL SERÁ O
+                    <strong>SEU PLANO?</strong>
+                </h2>
+            </div>
+
+            <a href="#" class="btn-principal">
+                FAZER MINHA MATRÍCULA
+                <span>→</span>
+            </a>
+
+        </section>
+
+    </main>
+
+    <footer class="footer-site">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand-container">
+          <img src="imagens-inicio/logo-icone/logo-header.png" alt="Nexus Titan Logo" class="brand-logo-img">
+          <div class="brand-text">
+            <div class="brand-title">
+              <span class="text-nexus-white">NEXUS</span>
+              <span class="text-titan">TITAN</span>
+            </div>
+            <span class="text-academia">ACADEMIA</span>
+          </div>
+        </div>
+        <p class="slogan-footer">Disciplina. Foco. Evolução.</p>
+
+        <div class="social-icons">
+
+    <!-- Instagram -->
+    <a href="#" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <!-- Telefone -->
+    <a href="tel:+5511999999999" aria-label="Telefone">
+        <i class="fa-solid fa-phone"></i>
+    </a>
+
+    <!-- Facebook -->
+    <a href="#" aria-label="Facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+    </a>
+
+    <!-- YouTube -->
+    <a href="#" aria-label="YouTube">
+        <i class="fa-brands fa-youtube"></i>
+    </a>
+
+</div>
+
+      </div>
+
+      <div class="footer-cols">
+        <div class="f-col">
+          <h4>NAVIGAÇÃO</h4>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="modalidades.html">Modalidades</a></li>
+            <li><a href="estrutura.html">Estrutura</a></li>
+            <li><a href="#profissionais">Profissionais</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="#">Contato</a></li>
+          </ul>
+        </div>
+        <div class="f-col">
+          <h4>MODALIDADES</h4>
+          <ul>
+            <li><a href="#">Musculação</a></li>
+            <li><a href="#">Funcional</a></li>
+            <li><a href="#">Lutas</a></li>
+            <li><a href="#">Yoga</a></li>
+          </ul>
+        </div>
+        <div class="f-col">
+          <h4>PLANOS</h4>
+          <ul>
+            <li><a href="#">Start</a></li>
+            <li><a href="#">Titan</a></li>
+            <li><a href="#">Pro</a></li>
+            <li><a href="#">Todos os planos</a></li>
+          </ul>
+        </div>
+        <div class="f-col">
+          <h4>CONTATO</h4>
+          <p>(11) 99999-9999</p>
+          <p>contato@nexustitan.com.br</p>
+          <p>24 horas por dia</p>
+          <a href="matricula.html" class="btn-fale">FALE CONOSCO</a>
+        </div>
+      </div>
+
+      <div class="footer-watermark">
+        <img src="imagens-inicio/logo-icone/logo-header.png" alt="Watermark Logo">
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Nexus Titan. Todos os direitos reservados.</p>
+      <div class="legal-links">
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Termos de Uso</a>
+      </div>
+    </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        if (window.lucide) { lucide.createIcons(); }
+        });
+    </script>
+
 </body>
 </html>

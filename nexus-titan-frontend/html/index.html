@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <title>NexusTitan</title>
     </head>
@@ -36,7 +39,7 @@
             <!-- TÓPICOS DO MENU -->
             <ul class="nav-menu">
                 <li class="nav-item">
-                <a href="#inicio">
+                <a href="index.html">
                     <i data-lucide="home"></i>
                     <span>INÍCIO</span>
                     <div class="hover-line"></div>
@@ -44,14 +47,14 @@
                 </li>
 
                 <li class="nav-item">
-                <a href="#modalidades">
+                <a href="modalidades.html">
                     <i data-lucide="shield-check"></i>
                     <span>MODALIDADES</span>
                     <div class="hover-line"></div>
                 </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#estrutura">
+                    <a href="estrutura.html">
                     <!-- Ícone Haltere Horizontal Personalizado -->
                     <svg
                     class="custom-dumbbell"
@@ -73,7 +76,7 @@
                 </a>
                 </li>
                 <li class="nav-item">
-                <a href="#profissionais">
+                <a href="profissionais.html">
                     <i data-lucide="users"></i>
                     <span>PROFISSIONAIS</span>
                     <div class="hover-line"></div>
@@ -155,6 +158,7 @@
 
                         <img 
                             src="/Imagens/imagens-inicio/logo-icone/icone-peso.png" 
+                            src="imagens-inicio/logo-icone/treino-musculacao.png" 
                             alt="Ícone de musculação"
                         >
 
@@ -270,6 +274,7 @@
 
         </section>
 
+        <!-- ===== SESSÃO ESTRUTURA ===== -->
         <section class="estrutura">
 
             <div class="estrutura-conteudo">
@@ -331,12 +336,11 @@
 
         </section>
 
-    <!-- ===== SEÇÃO PROFISSIONAIS ===== -->
+        <!-- ===== SEÇÃO PROFISSIONAIS ===== -->
         <section class="profissionais">
 
             <div class="profissionais-conteudo">
 
-                <span class="numero">03</span>
 
                 <div class="profissionais-texto">
 
@@ -363,70 +367,219 @@
             </div>
 
         </section>
-    </main>
 
-    <footer class="footer-site">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="brand-container">
-          <img src="imagem/LOGO 2.png" alt="Nexus Titan Logo" class="brand-logo-img">
-          <div class="brand-text">
-            <div class="brand-title">
-              <span class="text-nexus-white">NEXUS</span>
-              <span class="text-titan">TITAN</span>
+        <!-- ===== SESSÃO PLANOS ===== -->
+        <section class="planos" id="planos">
+
+            <div class="titulo-planos">
+                <span>ESCOLHA SEU PLANO</span>
+                <h2>SEU OBJETIVO.<br><strong>SEU PLANO.</strong></h2>
+                <p>
+                    Encontre o plano ideal para acompanhar sua jornada
+                    e alcançar seus objetivos.
+                </p>
             </div>
-            <span class="text-academia">ACADEMIA</span>
-          </div>
-        </div>
-        <p class="slogan-footer">Disciplina. Foco. Evolução.</p>
-        <div class="social-icons">
-          <a href="#"><i data-lucide="instagram"></i></a>
-          <a href="#"><i data-lucide="phone"></i></a>
-          <a href="#"><i data-lucide="facebook"></i></a>
-          <a href="#"><i data-lucide="youtube"></i></a>
-        </div>
-      </div>
 
-      <div class="footer-cols">
-        <div class="f-col">
-          <h4>NAVIGAÇÃO</h4>
-          <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="modalidades.html">Modalidades</a></li>
-            <li><a href="estrutura.html">Estrutura</a></li>
-            <li><a href="#profissionais">Profissionais</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-            <li><a href="#">Unidades</a></li>
-            <li><a href="#">Contato</a></li>
-          </ul>
+            <div class="cards-planos">
+
+                <!-- PLANO START -->
+                <article class="card-plano">
+                    <div class="numero-plano">01</div>
+
+                    <h3>NEXUS START</h3>
+
+                    <p class="descricao-plano">
+                        Para quem está começando sua jornada e quer
+                        transformar seus hábitos.
+                    </p>
+
+                    <div class="preco">
+                        <small>A partir de</small>
+                        <strong>R$ 89,90</strong>
+                        <span>/mês</span>
+                    </div>
+
+                    <ul>
+                        <li>✓ Acesso à academia</li>
+                        <li>✓ Área de musculação</li>
+                        <li>✓ Aulas coletivas</li>
+                    </ul>
+
+                    <a href="planos.html" class="btn-plano">
+                        SAIBA MAIS
+                        <span>→</span>
+                    </a>
+                </article>
+
+
+                <!-- PLANO PERFORMANCE -->
+                <article class="card-plano destaque">
+
+                    <div class="tag-plano">
+                        MAIS ESCOLHIDO
+                    </div>
+
+                    <div class="numero-plano">02</div>
+
+                    <h3>NEXUS PERFORMANCE</h3>
+
+                    <p class="descricao-plano">
+                        Para quem busca evolução constante,
+                        acompanhamento e resultados.
+                    </p>
+
+                    <div class="preco">
+                        <small>A partir de</small>
+                        <strong>R$ 119,90</strong>
+                        <span>/mês</span>
+                    </div>
+
+                    <ul>
+                        <li>✓ Acesso à academia</li>
+                        <li>✓ Todas as modalidades</li>
+                        <li>✓ Avaliação física</li>
+                        <li>✓ Treino personalizado</li>
+                    </ul>
+
+                    <a href="planos.html" class="btn-plano">
+                        SAIBA MAIS
+                        <span>→</span>
+                    </a>
+                </article>
+
+
+                <!-- PLANO ELITE -->
+                <article class="card-plano">
+                    <div class="numero-plano">03</div>
+
+                    <h3>NEXUS ELITE</h3>
+
+                    <p class="descricao-plano">
+                        A experiência mais completa para quem
+                        quer levar sua evolução ao próximo nível.
+                    </p>
+
+                    <div class="preco">
+                        <small>A partir de</small>
+                        <strong>R$ 159,90</strong>
+                        <span>/mês</span>
+                    </div>
+
+                    <ul>
+                        <li>✓ Todos os benefícios</li>
+                        <li>✓ Acompanhamento profissional</li>
+                        <li>✓ Treino personalizado</li>
+                        <li>✓ Avaliações periódicas</li>
+                    </ul>
+
+                    <a href="planos.html" class="btn-plano">
+                        SAIBA MAIS
+                        <span>→</span>
+                    </a>
+                </article>
+
+            </div>
+
+            <div class="rodape-planos">
+                <span>AINDA NÃO SABE QUAL ESCOLHER?</span>
+                <a href="planos.html">COMPARE TODOS OS PLANOS →</a>
+            </div>
+
+        </section>
+
+        </main>
+
+        <footer class="footer-site">
+        <div class="footer-top">
+        <div class="footer-brand">
+            <div class="brand-container">
+            <img src="" class="brand-logo-img">
+            <div class="brand-text">
+                <div class="brand-title">
+                <span class="text-nexus-white">NEXUS</span>
+                <span class="text-titan">TITAN</span>
+                </div>
+                <span class="text-academia">ACADEMIA</span>
+            </div>
+            </div>
+            <p class="slogan-footer">Disciplina. Foco. Evolução.</p>
+
+            <div class="social-icons">
+
+                <!-- Telefone -->
+                <a href="tel:+5511999999999" aria-label="Telefone">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+
+                <!-- WhatsApp -->
+                <a href="#" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+                <!-- Instagram -->
+                <a href="#" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <!-- Facebook -->
+                <a href="#" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+            </div>
+
         </div>
-        <div class="f-col">
-          <h4>MODALIDADES</h4>
-          <ul>
-            <li><a href="#">Musculação</a></li>
-            <li><a href="#">Cardio</a></li>
-            <li><a href="#">Funcional</a></li>
-            <li><a href="#">Lutas</a></li>
-            <li><a href="#">Spinning</a></li>
-            <li><a href="#">Yoga</a></li>
-            <li><a href="#">Dança</a></li>
-          </ul>
+
+        <div class="footer-cols">
+            <div class="f-col">
+            <h4>NAVIGAÇÃO</h4>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="modalidades.html">Modalidades</a></li>
+                <li><a href="estrutura.html">Estrutura</a></li>
+                <li><a href="#profissionais">Profissionais</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+            </div>
+            <div class="f-col">
+            <h4>MODALIDADES</h4>
+            <ul>
+                <li><a href="#">Musculação</a></li>
+                <li><a href="#">Funcional</a></li>
+                <li><a href="#">Lutas</a></li>
+                <li><a href="#">Yoga</a></li>
+            </ul>
+            </div>
+            <div class="f-col">
+            <h4>PLANOS</h4>
+            <ul>
+                <li><a href="#">Start</a></li>
+                <li><a href="#">Titan</a></li>
+                <li><a href="#">Pro</a></li>
+                <li><a href="#">Todos os planos</a></li>
+            </ul>
+            </div>
+            <div class="f-col">
+            <h4>CONTATO</h4>
+            <p>(11) 99999-9999</p>
+            <p>contato@nexustitan.com.br</p>
+            <p>24 horas por dia</p>
+            <a href="matricula.html" class="btn-fale">FALE CONOSCO</a>
+            </div>
         </div>
-        <div class="f-col">
-          <h4>PLANOS</h4>
-          <ul>
-            <li><a href="#">Start</a></li>
-            <li><a href="#">Titan</a></li>
-            <li><a href="#">Pro</a></li>
-            <li><a href="#">Todos os planos</a></li>
-          </ul>
+
+        <div class="footer-watermark">
+            <img src="imagens-inicio/logo-icone/logo-header.png" alt="Watermark Logo">
         </div>
-        <div class="f-col">
-          <h4>CONTATO</h4>
-          <p>(11) 99999-9999</p>
-          <p>contato@nexustitan.com.br</p>
-          <p>24 horas por dia</p>
-          <a href="matricula.html" class="btn-fale">FALE CONOSCO</a>
+        </div>
+
+        <div class="footer-bottom">
+        <p>© 2026 Nexus Titan. Todos os direitos reservados.</p>
+        <div class="legal-links">
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Termos de Uso</a>
+        </div>
         </div>
       </div>
 

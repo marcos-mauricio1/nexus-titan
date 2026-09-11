@@ -1,0 +1,581 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+/* ===== RESET ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #F8F6FA;
+    color: #08070B;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.6rem;
+}
+
+
+
+
+
+
+/* --- BANNER PRINCIPAL --- */
+.hero-planos {
+    min-height: calc(100vh - 8rem);
+    padding: 8rem 10%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background-image: url('imagens-planos/banner/banner-planos.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 7rem;
+}
+
+/* --- CAMADA ESCURA --- */
+.hero-planos::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(8, 7, 11, .92) 0%, rgba(8, 7, 11, .72) 38%, rgba(8, 7, 11, .15) 75%, rgba(8, 7, 11, .05) 100%);
+    z-index: 1;
+}
+
+.hero-texto {
+    max-width: 65rem;
+    position: relative;
+    z-index: 2;
+    color: #FFFFFF;
+}
+
+.mini-titulo {
+    font-family: "Orbitron", sans-serif;
+    color: #FFD84D;
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: .2rem;
+}
+
+.hero-texto h2 {
+    margin-top: 1.5rem;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 800;
+    font-size: 6rem;
+    line-height: .95;
+    max-width: 65rem;
+}
+
+.hero-texto h2 span {
+    display: block;
+    color: #A855F7;
+}
+
+.hero-texto p {
+    margin-top: 2.5rem;
+    max-width: 58rem;
+    line-height: 1.7;
+    color: #E4E0E8;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.btn-principal {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding: 1.5rem 2.5rem;
+    background: #7B2CFF;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 800;
+    font-size: 1.3rem;
+    transition: .3s;
+}
+
+.btn-principal span {
+    font-size: 1.8rem;
+}
+
+.btn-principal:hover {
+    background: #A855F7;
+    transform: translateY(-3px);
+}
+
+
+
+
+
+/* ===== INTRODUÇÃO ===== */
+.introducao {
+    padding: 8rem 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8rem;
+    background: #0f051a;
+}
+
+.introducao-titulo span,
+.titulo-secao > span {
+    font-family: "Orbitron", sans-serif;
+    color: #7B2CFF;
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: .2rem;
+}
+
+.introducao-titulo h2,
+.titulo-secao h2 {
+    color: white;
+    margin-top: 1.2rem;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 800;
+    font-size: 4.5rem;
+    line-height: 1;
+}
+
+.introducao-titulo strong,
+.titulo-secao strong {
+    color: #7B2CFF;
+}
+
+.introducao-texto {
+    color: #CFC9D8;
+    font-family: "Rajdhani", sans-serif;
+    line-height: 1.8;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.introducao-texto p + p {
+    margin-top: 2rem;
+}
+
+
+
+
+
+/* ===== COMPARAÇÃO ===== */
+.comparacao {
+    padding: 8rem 8%;
+    background: #F1EEF5;
+}
+
+.titulo-secao {
+    margin-bottom: 4rem;
+}
+
+.tabela-wrapper {
+    background: #FFFFFF;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0 1rem 3rem rgba(30, 20, 50, 0.24);
+}
+
+.tit h2 {
+    color: #090514;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 2.5rem 2rem;
+    background: #08070B;
+    color: #FFFFFF;
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: .1rem;
+}
+
+th:not(:first-child) {
+    color: #FFC400;
+}
+
+td {
+    padding: 2rem;
+    border-bottom: 1px solid #DED9E5;
+    text-align: center;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+td:first-child {
+    text-align: left;
+    font-weight: 700;
+}
+
+td:not(:first-child) {
+    color: #7B2CFF;
+    font-weight: 700;
+}
+
+
+
+
+
+/* ===== PLANOS ===== */
+.planos {
+    padding: 10rem 8%;
+    background: #0f051a;
+}
+
+.centralizado {
+    text-align: center;
+}
+
+.centralizado p {
+    margin-top: 1.5rem;
+    color: #6E6878;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.cards-planos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    max-width: 125rem;
+    margin: 5rem auto 0;
+}
+
+.card-plano {
+    position: relative;
+    padding: 3.5rem 3rem;
+    border: 1px solid #DED9E5;
+    border-radius: 2rem;
+    background: #eae6f1;
+    box-shadow: 0 1rem 3rem rgba(126, 116, 146, 0.541);
+    transition: .3s;
+}
+
+.card-plano:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 2rem 4rem rgba(126, 116, 146, 0.651);
+}
+
+.card-plano.destaque {
+    border: 2px solid #7B2CFF;
+    transform: translateY(-1.5rem);
+}
+
+.card-plano.destaque:hover {
+    transform: translateY(-2.3rem);
+}
+
+.tag {
+    position: absolute;
+    top: -1.4rem;
+    left: 3rem;
+    padding: .7rem 1.5rem;
+    background: #FFC400;
+    color: #08070B;
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.categoria {
+    color: #7B2CFF;
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: .15rem;
+}
+
+.topo-card h3 {
+    margin-top: 1rem;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 800;
+    font-size: 3rem;
+}
+
+.topo-card p {
+    margin-top: 1rem;
+    color: #6E6878;
+    font-family: "Rajdhani", sans-serif;
+    line-height: 1.6;
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+
+/* --- PREÇO --- */
+.preco {
+    margin-top: 3rem;
+    padding: 2rem 0;
+    border-top: 1px solid #DED9E5;
+    border-bottom: 1px solid #DED9E5;
+}
+
+.preco small {
+    color: #6E6878;
+    display: block;
+    margin-bottom: .5rem;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.5rem;
+}
+
+.preco strong {
+    font-family: "Orbitron", sans-serif;
+    font-size: 3.2rem;
+}
+
+.preco span {
+    color: #6E6878;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.6rem;
+}
+
+/* --- BENEFÍCIOS --- */
+.beneficios {
+    margin-top: 2.5rem;
+    min-height: 20rem;
+}
+
+.beneficios h4 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.2rem;
+    color: #6E6878;
+    margin-bottom: 1.5rem;
+}
+
+.beneficios p {
+    margin-bottom: 1.2rem;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+/* --- BOTÃO DO PLANO --- */
+.btn-plano {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+    padding: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #7B2CFF;
+    color: #7B2CFF;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    transition: .3s;
+}
+
+.btn-plano span {
+    font-size: 1.8rem;
+}
+
+.card-plano.destaque .btn-plano {
+    background: #7B2CFF;
+    color: #FFFFFF;
+}
+
+.btn-plano:hover {
+    background: #7B2CFF;
+    color: #FFFFFF;
+}
+
+
+
+
+
+/* ===== CTA FINAL ===== */
+.cta-planos {
+    padding: 6rem 10%;
+    background: #0f051a;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cta-planos > div > span {
+    color: #FFC400;
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: .2rem;
+}
+
+.cta-planos h2 {
+    margin-top: 1rem;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 800;
+    font-size: 4rem;
+}
+
+.cta-planos h2 strong {
+    color: #A855F7;
+}
+
+
+
+
+
+/* RODAPÉ OFICIAL ESCURO */
+
+.footer-site {
+    background-color: #090514;
+    color: #94a3b8;
+    padding: 6rem 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+    border-top: 0.3rem solid #7e22ce;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 1.2fr 3fr;
+    gap: 4rem;
+    max-width: 120rem;
+    margin: 0 auto 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+.text-nexus-white {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 1.15rem;
+    color: #ffffff;
+}
+
+.slogan-footer {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    color: #d9b206;
+    margin: 1.5rem 0 2rem;
+    font-size: 1.1rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-icons a {
+    color: #d9b206;
+    background: rgba(217, 178, 6, 0.1);
+    width: 3.8rem;
+    height: 3.8rem;
+    border-radius: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.social-icons a:hover {
+    background: #d9b206;
+    color: #090514;
+}
+
+.footer-cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.f-col h4 {
+    font-family: 'Orbitron', sans-serif;
+    color: #d9b206;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.1rem;
+}
+
+.f-col ul {
+    list-style: none;
+}
+
+.f-col ul li {
+    margin-bottom: 1rem;
+}
+
+.f-col ul li a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.f-col ul li a:hover {
+    color: #c084fc;
+}
+
+.f-col p {
+    font-weight: 600;
+    color: #cbd5e1;
+    margin-bottom: 0.8rem;
+}
+
+.btn-fale {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.6rem;
+    border: 0.1rem solid #7e22ce;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 800;
+    border-radius: 0.4rem;
+    transition: 0.2s;
+}
+
+.btn-fale:hover {
+    background: #7e22ce;
+}
+
+.footer-watermark {
+    position: absolute;
+    right: -2rem;
+    bottom: -2rem;
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+.footer-watermark img {
+    width: 22rem;
+}
+
+.footer-bottom {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding-top: 2rem;
+    border-top: 0.1rem solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.legal-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    margin-left: 2rem;
+}
+
+.legal-links a:hover {
+    color: #ffffff;
+}
