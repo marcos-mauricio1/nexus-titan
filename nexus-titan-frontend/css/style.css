@@ -157,7 +157,7 @@ body {
   align-items: center;
   padding: 0 8%;
   box-sizing: border-box;
-  background-image: url('imagem/academia por fora.png');
+  background-image: url('/ por fora.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -694,19 +694,19 @@ main {
 /* === IMAGENS DOS CARDS === */
 
 .modalidade-card.musculacao {
-    background-image: url("/Imagens/imagens-inicio/modalidades/treino-musculacao.jpg");
+    background-image: url("/nexus-titan-frontend/Imagens/imagens-inicio/modalidades/treino-musculacao.jpg");
 }
 
 .modalidade-card.cardio {
-    background-image: url("/Imagens/imagens-inicio/modalidades/treino-funcional.jpg");
+    background-image: url("/nexus-titan-frontend/Imagens/imagens-inicio/modalidades/treino-funcional.jpg");
 }
 
 .modalidade-card.funcional {
-    background-image: url("/Imagens/imagens-inicio/modalidades/treino-yoga.jpg");
+    background-image: url("/nexus-titan-frontend/Imagens/imagens-inicio/modalidades/treino-yoga.jpg");
 }
 
 .modalidade-card.yoga {
-    background-image: url("/Imagens/imagens-inicio/modalidades/treino-luta.jpg");
+    background-image: url("/nexus-titan-frontend/Imagens/imagens-inicio/modalidades/treino-luta.jpg");
 }
 
 
@@ -870,7 +870,7 @@ main {
     position: relative;
     overflow: hidden;
 
-    background-image: url("/Imagens/imagens-inicio/banner-principal/academia.jpg");
+    background-image: url("/nexus-titan-frontend/Imagens/imagens-inicio/banner-principal/academia.jpg");
 
     background-size: cover;
     background-position: 75% center;
@@ -1126,7 +1126,7 @@ main {
 
     background-color: #F5F4F2;
 
-    background-image: url("/Imagens/imagens-inicio/banner-principal/funcionarios.png");
+    background-image: url("/nexus-titan-frontend/Imagens/imagens-inicio/banner-principal/funcionarios.png");
     background-repeat: no-repeat;
     background-position: right center;
     background-size: auto 100%;

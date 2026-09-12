@@ -7,6 +7,7 @@ import com.nexustitan.nexustitanapi.model.Aluno;
 import com.nexustitan.nexustitanapi.model.AvaliacaoFisica;
 import com.nexustitan.nexustitanapi.repository.AlunoRepository;
 import com.nexustitan.nexustitanapi.repository.AvaliacaoFisicaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -17,7 +18,10 @@ import java.util.List;
 // em outras classes que precisarem dela" (no caso, o Controller).
 public class AvaliacaoFisicaService {
 
+
     private final AvaliacaoFisicaRepository repository;
+
+
     private final AlunoRepository alunoRepository;
 
     public AvaliacaoFisicaService(AvaliacaoFisicaRepository repository, AlunoRepository alunoRepository) {

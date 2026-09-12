@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/agendamento")
+@RequestMapping("/agendamentos")
+@CrossOrigin(origins = "*")
 public class AgendamentoController {
 
     private final AgendamentoService service;

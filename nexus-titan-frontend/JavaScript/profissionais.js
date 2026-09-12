@@ -1,27 +1,28 @@
-const botoes = document.querySelectorAll(".filtro");
-const cards = document.querySelectorAll(".card");
+const botoesCategoria = document.querySelectorAll('.categoria-profissional');
+const cardsProfissionais = document.querySelectorAll('.card-profissional');
 
-botoes.forEach((botao) => {
-    botao.addEventListener("click", () => {
+function mostrarCategoria(categoria) {
+    cardsProfissionais.forEach(card => {
+        if (card.dataset.modalidade === categoria) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
 
-        const filtro = botao.dataset.filtro;
+botoesCategoria.forEach(botao => {
+    botao.addEventListener('click', () => {
+        const categoriaSelecionada = botao.dataset.categoria;
 
-        botoes.forEach((b) => {
-            b.classList.remove("ativo");
+        botoesCategoria.forEach(item => {
+            item.classList.remove('ativo');
         });
 
-        botao.classList.add("ativo");
+        botao.classList.add('ativo');
 
-        cards.forEach((card) => {
-
-            const periodo = card.dataset.periodo;
-
-            if (filtro === "todos" || periodo === filtro) {
-                card.style.display = "flex";
-            } else {
-                card.style.display = "none";
-            }
-
-        });
+        mostrarCategoria(categoriaSelecionada);
     });
 });
+
+mostrarCategoria('musculacao');
