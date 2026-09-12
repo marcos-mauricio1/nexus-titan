@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController // é tipo o @Service ele vai avisar a classe que vai receber requisições HTTP e vai devolver com JSON
-@RequestMapping("/api/avaliacoes") // Define o "prefixo" de ebdereço de todos os endpoints dessa classe
+@RequestMapping("/avaliacoes") // Define o "prefixo" de ebdereço de todos os endpoints dessa classe
 // Ou seja, todo método aqui dentro vai começar com http://localhost:8080/api/avaliacoes/...
-
+@CrossOrigin(origins = "*")
 public class AvaliacaoFisicaController {
 
     private final AvaliacaoFisicaService service;
@@ -56,7 +56,7 @@ public class AvaliacaoFisicaController {
         return ResponseEntity.ok(service.buscarPorId(id));
     }
 
-    @GetMapping("/aluno/{alunoid}")
+    @GetMapping("/{alunoId}")
     public ResponseEntity<List<AvaliacaoFisicaResponseDTO>> listarHistorico (@PathVariable Long alunoId) {
         return ResponseEntity.ok(service.listarHistoricoDoAluno(alunoId));
     }

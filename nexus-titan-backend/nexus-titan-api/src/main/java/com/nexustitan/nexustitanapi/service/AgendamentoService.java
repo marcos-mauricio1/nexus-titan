@@ -9,6 +9,7 @@ import com.nexustitan.nexustitanapi.repository.AgendamentoRepository;
 import com.nexustitan.nexustitanapi.repository.AlunoRepository;
 import com.nexustitan.nexustitanapi.repository.DisponibilidadeRepository;
 import com.nexustitan.nexustitanapi.repository.PersonalRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.DayOfWeek;
@@ -22,9 +23,16 @@ public class AgendamentoService {
     // Repare: esse Service precisa de QUATRO repositories diferentes,
     // porque ele mexe com Agendamento, mas também precisa CONSULTAR
     // Aluno, Personal e Disponibilidade pra fazer as validações.
+
     private final AgendamentoRepository agendamentoRepository;
+
+
     private final DisponibilidadeRepository disponibilidadeRepository;
+
+
     private final AlunoRepository alunoRepository;
+
+
     private final PersonalRepository personalRepository;
 
     public AgendamentoService(AgendamentoRepository agendamentoRepository,

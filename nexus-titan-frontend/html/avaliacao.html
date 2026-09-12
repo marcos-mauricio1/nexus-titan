@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Titan - Avaliação Física</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --purple-main: #6a0ded;
+            --purple-dark: #120327;
+            --purple-hover: #5200c7;
+            --yellow-accent: #fbc02d;
+            --bg-light: #f8f9fa;
+            --text-dark: #1a1a1a;
+            --text-muted: #666666;
+            --border-color: #e2e8f0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-dark); min-height: 100vh; }
+
+        /* HEADER / NAVBAR */
+        header {
+            background-color: #ffffff;
+            border-bottom: 2px solid var(--border-color);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--purple-dark);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            color: var(--purple-main);
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--purple-main);
+        }
+
+        .btn-matricula {
+            background: linear-gradient(135deg, var(--purple-main), var(--purple-dark));
+            color: #fff !important;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 800;
+        }
+
+        /* BANNER TOPO */
+        .page-banner {
+            background: linear-gradient(135deg, var(--purple-dark) 0%, #290859 100%);
+            color: white;
+            padding: 40px 5%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-banner::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            right: 5%;
+            width: 100px;
+            height: 100px;
+            background-color: var(--yellow-accent);
+            border-radius: 50%;
+            z-index: 1;
+            opacity: 0.8;
+        }
+
+        .page-banner h1 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-banner h1 span {
+            color: var(--yellow-accent);
+        }
+
+        .page-banner p {
+            color: #d1c4e9;
+            font-size: 0.9rem;
+            margin-top: 5px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* CONTAINER & CARDS */
+        .container {
+            max-width: 600px; /* Reduzido para centralizar o formulário único */
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .card-header {
+            margin-bottom: 25px;
+            border-left: 4px solid var(--purple-main);
+            padding-left: 12px;
+        }
+
+        .card-header h2 {
+            font-size: 1.2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--purple-dark);
+        }
+
+        /* FORMULÁRIO */
+        .form-row { display: flex; gap: 15px; }
+        .form-group { margin-bottom: 18px; flex: 1; }
+        
+        label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.2s;
+            outline: none;
+            background-color: #fcfcfc;
+        }
+
+        input:focus, textarea:focus {
+            border-color: var(--purple-main);
+            background-color: #fff;
+            box-shadow: 0 0 0 3px rgba(106, 13, 237, 0.1);
+        }
+
+        button.btn-primary {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--purple-main);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            margin-top: 10px;
+        }
+
+        button.btn-primary:hover {
+            background-color: var(--purple-hover);
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="logo-container">
+            <div class="logo-text">NEXUS <span>TITAN</span></div>
+        </div>
+        <nav>
+            <a href="index.html">Início / Pessoas</a>
+            <a href="agendamentos.html">Agendamentos</a>
+            <a href="avaliacao.html" class="active">Avaliação Física</a>
+            <a href="#" class="btn-matricula">Faça sua Matrícula</a>
+        </nav>
+    </header>
+
+    <!-- BANNER TOPO -->
+    <section class="page-banner">
+        <h1>Avaliação <span>Física</span></h1>
+        <p>Cadastre os dados da avaliação física do aluno no sistema.</p>
+    </section>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="container">
+        
+        <!-- FORMULÁRIO DE CADASTRO -->
+        <div class="card">
+            <div class="card-header">
+                <h2>Nova Avaliação</h2>
+            </div>
+            <form id="formAvaliacao" onsubmit="cadastrarAvaliacao(event)">
+                <div class="form-group">
+                    <label>ID do Aluno</label>
+                    <input type="number" id="alunoId" min="1" required placeholder="Ex: 1">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Peso (kg)</label>
+                        <input type="text" id="peso" required placeholder="Ex: 80.5">
+                    </div>
+                    <div class="form-group">
+                        <label>Altura (m)</label>
+                        <input type="text" id="altura" required placeholder="Ex: 1.81">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Data da Avaliação (Opcional)</label>
+                    <input type="date" id="dataAvaliacao">
+                </div>
+
+                <div class="form-group">
+                    <label>Observações Técnicas</label>
+                    <textarea id="observacoes" rows="3" placeholder="Anotações de bioimpedância, dobras cutâneas..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary">Salvar Avaliação</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- SCRIPT DE REQUISIÇÃO -->
+    <script>
+        const API_URL = 'http://localhost:8080/avaliacoes';
+
+        async function cadastrarAvaliacao(event) {
+            event.preventDefault();
+
+            const rawPeso = document.getElementById('peso').value.replace(',', '.');
+            const rawAltura = document.getElementById('altura').value.replace(',', '.');
+            const dataInput = document.getElementById('dataAvaliacao').value;
+
+            const pesoNum = parseFloat(rawPeso);
+            const alturaNum = parseFloat(rawAltura);
+
+            if (isNaN(pesoNum) || isNaN(alturaNum)) {
+                alert('Insira valores numéricos válidos para Peso e Altura.');
+                return;
+            }
+
+            const payload = {
+                alunoId: parseInt(document.getElementById('alunoId').value, 10),
+                peso: pesoNum,
+                altura: alturaNum,
+                dataAvaliacao: dataInput.trim() !== "" ? dataInput : null,
+                observacoes: document.getElementById('observacoes').value || null
+            };
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    const errorMsg = await response.text();
+                    throw new Error(`Status ${response.status}: ${errorMsg || 'Falha ao salvar'}`);
+                }
+
+                alert('Avaliação Física cadastrada com sucesso!');
+                document.getElementById('formAvaliacao').reset();
+            } catch (err) {
+                console.error('Erro na requisição:', err);
+                alert(`Erro ao salvar: ${err.message}`);
+            }
+        }
+    </script>
+</body>
+</html>

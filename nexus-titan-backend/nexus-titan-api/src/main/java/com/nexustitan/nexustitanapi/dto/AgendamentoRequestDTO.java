@@ -1,5 +1,6 @@
 package com.nexustitan.nexustitanapi.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
@@ -19,8 +20,10 @@ public class AgendamentoRequestDTO {
     private Long personalId;
 
     @NotNull
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime dataHoraInicio;
 
     @NotNull
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime dataHoraFim;
 }
